@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/end-conversion-therapy/static/css/main.edcc9869.chunk.css",
-    "main.js": "/end-conversion-therapy/static/js/main.a45a2876.chunk.js",
-    "main.js.map": "/end-conversion-therapy/static/js/main.a45a2876.chunk.js.map",
-    "runtime-main.js": "/end-conversion-therapy/static/js/runtime-main.61c7ffbd.js",
-    "runtime-main.js.map": "/end-conversion-therapy/static/js/runtime-main.61c7ffbd.js.map",
-    "static/js/2.5ea715de.chunk.js": "/end-conversion-therapy/static/js/2.5ea715de.chunk.js",
-    "static/js/2.5ea715de.chunk.js.map": "/end-conversion-therapy/static/js/2.5ea715de.chunk.js.map",
-    "index.html": "/end-conversion-therapy/index.html",
-    "precache-manifest.e63df1d31afb905856c825bdd7f9e994.js": "/end-conversion-therapy/precache-manifest.e63df1d31afb905856c825bdd7f9e994.js",
-    "service-worker.js": "/end-conversion-therapy/service-worker.js",
-    "static/css/main.edcc9869.chunk.css.map": "/end-conversion-therapy/static/css/main.edcc9869.chunk.css.map",
-    "static/js/2.5ea715de.chunk.js.LICENSE.txt": "/end-conversion-therapy/static/js/2.5ea715de.chunk.js.LICENSE.txt",
-    "static/media/EndConversionTherapyCircle.png": "/end-conversion-therapy/static/media/EndConversionTherapyCircle.2a48b9bb.png"
+    "main.css": "/static/css/main.edcc9869.chunk.css",
+    "main.js": "/static/js/main.562ee3c2.chunk.js",
+    "main.js.map": "/static/js/main.562ee3c2.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.75b75a84.js",
+    "runtime-main.js.map": "/static/js/runtime-main.75b75a84.js.map",
+    "static/js/2.5ea715de.chunk.js": "/static/js/2.5ea715de.chunk.js",
+    "static/js/2.5ea715de.chunk.js.map": "/static/js/2.5ea715de.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.d19a564e84dee0b9e3ea231ce6f0212b.js": "/precache-manifest.d19a564e84dee0b9e3ea231ce6f0212b.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.edcc9869.chunk.css.map": "/static/css/main.edcc9869.chunk.css.map",
+    "static/js/2.5ea715de.chunk.js.LICENSE.txt": "/static/js/2.5ea715de.chunk.js.LICENSE.txt",
+    "static/media/EndConversionTherapyCircle.png": "/static/media/EndConversionTherapyCircle.2a48b9bb.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.61c7ffbd.js",
+    "static/js/runtime-main.75b75a84.js",
     "static/js/2.5ea715de.chunk.js",
     "static/css/main.edcc9869.chunk.css",
-    "static/js/main.a45a2876.chunk.js"
+    "static/js/main.562ee3c2.chunk.js"
   ]
 }
