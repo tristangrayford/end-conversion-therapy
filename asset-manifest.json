@@ -1,24 +1,30 @@
 {
   "files": {
-    "main.css": "/static/css/main.0767b6ac.chunk.css",
-    "main.js": "/static/js/main.2728c5b3.chunk.js",
-    "main.js.map": "/static/js/main.2728c5b3.chunk.js.map",
+    "main.css": "/static/css/main.3a34834a.chunk.css",
+    "main.js": "/static/js/main.8124bb65.chunk.js",
+    "main.js.map": "/static/js/main.8124bb65.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.75b75a84.js",
     "runtime-main.js.map": "/static/js/runtime-main.75b75a84.js.map",
-    "static/js/2.81352d23.chunk.js": "/static/js/2.81352d23.chunk.js",
-    "static/js/2.81352d23.chunk.js.map": "/static/js/2.81352d23.chunk.js.map",
+    "static/js/2.f4ad87c9.chunk.js": "/static/js/2.f4ad87c9.chunk.js",
+    "static/js/2.f4ad87c9.chunk.js.map": "/static/js/2.f4ad87c9.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.26945b4a4c9f155a802623da90de2f45.js": "/precache-manifest.26945b4a4c9f155a802623da90de2f45.js",
+    "precache-manifest.9806f2b20dfbe88e74120565a6011625.js": "/precache-manifest.9806f2b20dfbe88e74120565a6011625.js",
     "service-worker.js": "/service-worker.js",
-    "static/css/main.0767b6ac.chunk.css.map": "/static/css/main.0767b6ac.chunk.css.map",
-    "static/js/2.81352d23.chunk.js.LICENSE.txt": "/static/js/2.81352d23.chunk.js.LICENSE.txt",
+    "static/css/main.3a34834a.chunk.css.map": "/static/css/main.3a34834a.chunk.css.map",
+    "static/js/2.f4ad87c9.chunk.js.LICENSE.txt": "/static/js/2.f4ad87c9.chunk.js.LICENSE.txt",
     "static/media/CandidateStatement.png": "/static/media/CandidateStatement.5196e7c6.png",
-    "static/media/EndConversionTherapyCircle.png": "/static/media/EndConversionTherapyCircle.2a48b9bb.png"
+    "static/media/EndConversionTherapyCircle.png": "/static/media/EndConversionTherapyCircle.2a48b9bb.png",
+    "static/media/Greens.png": "/static/media/Greens.f17d1343.png",
+    "static/media/Labour.png": "/static/media/Labour.5eee9e23.png",
+    "static/media/LibDems.png": "/static/media/LibDems.e976dd9f.png",
+    "static/media/ReformUK.png": "/static/media/ReformUK.43c29faf.png",
+    "static/media/SNP.svg": "/static/media/SNP.2efd3b0d.svg",
+    "static/media/Tories.jpg": "/static/media/Tories.03c1b89e.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.75b75a84.js",
-    "static/js/2.81352d23.chunk.js",
-    "static/css/main.0767b6ac.chunk.css",
-    "static/js/main.2728c5b3.chunk.js"
+    "static/js/2.f4ad87c9.chunk.js",
+    "static/css/main.3a34834a.chunk.css",
+    "static/js/main.8124bb65.chunk.js"
   ]
 }
