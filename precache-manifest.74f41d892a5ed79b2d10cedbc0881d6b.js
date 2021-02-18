@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "563079654e6c54d5d9e5b2728dff2a45",
+    "revision": "6a101f04f9447326b4c597463cace747",
     "url": "/index.html"
   },
   {
-    "revision": "5cbc732443a3e479a9ca",
+    "revision": "385ee834deb6ae46ff2b",
     "url": "/static/css/main.f073d03d.chunk.css"
   },
   {
@@ -16,16 +16,16 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/js/2.c3bf3d38.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "5cbc732443a3e479a9ca",
-    "url": "/static/js/main.f74ed78c.chunk.js"
+    "revision": "385ee834deb6ae46ff2b",
+    "url": "/static/js/main.90d7eee4.chunk.js"
   },
   {
     "revision": "2546776c80699c7f554a",
     "url": "/static/js/runtime-main.75b75a84.js"
   },
   {
-    "revision": "5196e7c64fffdb38255883915df5fb98",
-    "url": "/static/media/CandidateStatement.5196e7c6.png"
+    "revision": "613c73dc0f7824b2ac0c27be7c3e8de7",
+    "url": "/static/media/CandidateStatement.613c73dc.jpg"
   },
   {
     "revision": "2a48b9bbbdea803167f4b9124a0dee3c",
