@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/static/css/main.08e6f0b5.chunk.css",
-    "main.js": "/static/js/main.e29959ac.chunk.js",
-    "main.js.map": "/static/js/main.e29959ac.chunk.js.map",
+    "main.css": "/static/css/main.87928d62.chunk.css",
+    "main.js": "/static/js/main.d3110b57.chunk.js",
+    "main.js.map": "/static/js/main.d3110b57.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.75b75a84.js",
     "runtime-main.js.map": "/static/js/runtime-main.75b75a84.js.map",
-    "static/js/2.e9b26a2a.chunk.js": "/static/js/2.e9b26a2a.chunk.js",
-    "static/js/2.e9b26a2a.chunk.js.map": "/static/js/2.e9b26a2a.chunk.js.map",
+    "static/js/2.c94d4cdb.chunk.js": "/static/js/2.c94d4cdb.chunk.js",
+    "static/js/2.c94d4cdb.chunk.js.map": "/static/js/2.c94d4cdb.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.7c01416ee0d65b662adcbde6ae254b4a.js": "/precache-manifest.7c01416ee0d65b662adcbde6ae254b4a.js",
+    "precache-manifest.15827f4b249d26519412838799a9a294.js": "/precache-manifest.15827f4b249d26519412838799a9a294.js",
     "service-worker.js": "/service-worker.js",
-    "static/css/main.08e6f0b5.chunk.css.map": "/static/css/main.08e6f0b5.chunk.css.map",
-    "static/js/2.e9b26a2a.chunk.js.LICENSE.txt": "/static/js/2.e9b26a2a.chunk.js.LICENSE.txt",
+    "static/css/main.87928d62.chunk.css.map": "/static/css/main.87928d62.chunk.css.map",
+    "static/js/2.c94d4cdb.chunk.js.LICENSE.txt": "/static/js/2.c94d4cdb.chunk.js.LICENSE.txt",
     "static/media/CandidateStatement.jpg": "/static/media/CandidateStatement.ce49d4a3.jpg",
     "static/media/EndConversionTherapyCircle.png": "/static/media/EndConversionTherapyCircle.2a48b9bb.png",
     "static/media/Greens.png": "/static/media/Greens.f17d1343.png",
@@ -19,12 +19,13 @@
     "static/media/LibDems.png": "/static/media/LibDems.e976dd9f.png",
     "static/media/ReformUK.png": "/static/media/ReformUK.43c29faf.png",
     "static/media/SNP.svg": "/static/media/SNP.2efd3b0d.svg",
-    "static/media/Tories.jpg": "/static/media/Tories.03c1b89e.jpg"
+    "static/media/Tories.jpg": "/static/media/Tories.03c1b89e.jpg",
+    "static/media/indyscotparty.jpg": "/static/media/indyscotparty.a12779f1.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.75b75a84.js",
-    "static/js/2.e9b26a2a.chunk.js",
-    "static/css/main.08e6f0b5.chunk.css",
-    "static/js/main.e29959ac.chunk.js"
+    "static/js/2.c94d4cdb.chunk.js",
+    "static/css/main.87928d62.chunk.css",
+    "static/js/main.d3110b57.chunk.js"
   ]
 }
