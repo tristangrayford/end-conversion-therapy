@@ -1,31 +1,34 @@
 {
   "files": {
-    "main.css": "/static/css/main.87928d62.chunk.css",
-    "main.js": "/static/js/main.368e91dc.chunk.js",
-    "main.js.map": "/static/js/main.368e91dc.chunk.js.map",
+    "main.css": "/static/css/main.067e3f46.chunk.css",
+    "main.js": "/static/js/main.d59c1828.chunk.js",
+    "main.js.map": "/static/js/main.d59c1828.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.75b75a84.js",
     "runtime-main.js.map": "/static/js/runtime-main.75b75a84.js.map",
-    "static/js/2.c94d4cdb.chunk.js": "/static/js/2.c94d4cdb.chunk.js",
-    "static/js/2.c94d4cdb.chunk.js.map": "/static/js/2.c94d4cdb.chunk.js.map",
+    "static/js/2.b095b112.chunk.js": "/static/js/2.b095b112.chunk.js",
+    "static/js/2.b095b112.chunk.js.map": "/static/js/2.b095b112.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.5bc1fec3fe1c588d463499589a5eded5.js": "/precache-manifest.5bc1fec3fe1c588d463499589a5eded5.js",
+    "precache-manifest.976d3061be68e93df468970959dd0afe.js": "/precache-manifest.976d3061be68e93df468970959dd0afe.js",
     "service-worker.js": "/service-worker.js",
-    "static/css/main.87928d62.chunk.css.map": "/static/css/main.87928d62.chunk.css.map",
-    "static/js/2.c94d4cdb.chunk.js.LICENSE.txt": "/static/js/2.c94d4cdb.chunk.js.LICENSE.txt",
+    "static/css/main.067e3f46.chunk.css.map": "/static/css/main.067e3f46.chunk.css.map",
+    "static/js/2.b095b112.chunk.js.LICENSE.txt": "/static/js/2.b095b112.chunk.js.LICENSE.txt",
+    "static/media/AllForUnity.png": "/static/media/AllForUnity.e01b858a.png",
     "static/media/CandidateStatement.jpg": "/static/media/CandidateStatement.ce49d4a3.jpg",
     "static/media/EndConversionTherapyCircle.png": "/static/media/EndConversionTherapyCircle.2a48b9bb.png",
+    "static/media/FamilyParty.jpg": "/static/media/FamilyParty.da4c1ed9.jpg",
     "static/media/Greens.png": "/static/media/Greens.f17d1343.png",
     "static/media/Labour.png": "/static/media/Labour.5eee9e23.png",
     "static/media/LibDems.png": "/static/media/LibDems.e976dd9f.png",
     "static/media/ReformUK.png": "/static/media/ReformUK.43c29faf.png",
     "static/media/SNP.svg": "/static/media/SNP.2efd3b0d.svg",
     "static/media/Tories.jpg": "/static/media/Tories.03c1b89e.jpg",
+    "static/media/UKIP.png": "/static/media/UKIP.a102881d.png",
     "static/media/indyscotparty.jpg": "/static/media/indyscotparty.a12779f1.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.75b75a84.js",
-    "static/js/2.c94d4cdb.chunk.js",
-    "static/css/main.87928d62.chunk.css",
-    "static/js/main.368e91dc.chunk.js"
+    "static/js/2.b095b112.chunk.js",
+    "static/css/main.067e3f46.chunk.css",
+    "static/js/main.d59c1828.chunk.js"
   ]
 }
