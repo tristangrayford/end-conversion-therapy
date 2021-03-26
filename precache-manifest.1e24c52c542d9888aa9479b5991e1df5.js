@@ -1,27 +1,31 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "b22497a4057cf6fbd5a1a0df865cb6e2",
+    "revision": "f68ba0ef3910f02fd26e8ed2ac8c78ca",
     "url": "/index.html"
   },
   {
-    "revision": "e7efed6f49e1b2cbd455",
-    "url": "/static/css/main.067e3f46.chunk.css"
+    "revision": "5282860ecfac29315fe5",
+    "url": "/static/css/main.405716df.chunk.css"
   },
   {
-    "revision": "f0965666472e09a54b48",
-    "url": "/static/js/2.b095b112.chunk.js"
+    "revision": "af6c22c8e324cde0f4fb",
+    "url": "/static/js/2.a9e42062.chunk.js"
   },
   {
     "revision": "3453b8997016469371284a28c0e873e2",
-    "url": "/static/js/2.b095b112.chunk.js.LICENSE.txt"
+    "url": "/static/js/2.a9e42062.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "e7efed6f49e1b2cbd455",
-    "url": "/static/js/main.121acaf5.chunk.js"
+    "revision": "5282860ecfac29315fe5",
+    "url": "/static/js/main.c29414ff.chunk.js"
   },
   {
     "revision": "2546776c80699c7f554a",
     "url": "/static/js/runtime-main.75b75a84.js"
+  },
+  {
+    "revision": "a7f773c600ca76c66f5a2d320e1233cf",
+    "url": "/static/media/AlbaParty.a7f773c6.jpg"
   },
   {
     "revision": "e01b858a2ae03330f0c2589a0541d7fd",
