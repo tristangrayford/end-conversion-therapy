@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/static/css/main.405716df.chunk.css",
-    "main.js": "/static/js/main.c29414ff.chunk.js",
-    "main.js.map": "/static/js/main.c29414ff.chunk.js.map",
+    "main.js": "/static/js/main.c090560b.chunk.js",
+    "main.js.map": "/static/js/main.c090560b.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.75b75a84.js",
     "runtime-main.js.map": "/static/js/runtime-main.75b75a84.js.map",
-    "static/js/2.a9e42062.chunk.js": "/static/js/2.a9e42062.chunk.js",
-    "static/js/2.a9e42062.chunk.js.map": "/static/js/2.a9e42062.chunk.js.map",
+    "static/js/2.b095b112.chunk.js": "/static/js/2.b095b112.chunk.js",
+    "static/js/2.b095b112.chunk.js.map": "/static/js/2.b095b112.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.1e24c52c542d9888aa9479b5991e1df5.js": "/precache-manifest.1e24c52c542d9888aa9479b5991e1df5.js",
+    "precache-manifest.938fb827b4bb2ece8e29f9d3dbac5980.js": "/precache-manifest.938fb827b4bb2ece8e29f9d3dbac5980.js",
     "service-worker.js": "/service-worker.js",
     "static/css/main.405716df.chunk.css.map": "/static/css/main.405716df.chunk.css.map",
-    "static/js/2.a9e42062.chunk.js.LICENSE.txt": "/static/js/2.a9e42062.chunk.js.LICENSE.txt",
+    "static/js/2.b095b112.chunk.js.LICENSE.txt": "/static/js/2.b095b112.chunk.js.LICENSE.txt",
     "static/media/AlbaParty.jpg": "/static/media/AlbaParty.a7f773c6.jpg",
     "static/media/AllForUnity.png": "/static/media/AllForUnity.e01b858a.png",
     "static/media/CandidateStatement.jpg": "/static/media/CandidateStatement.ce49d4a3.jpg",
@@ -23,13 +23,12 @@
     "static/media/ReformUK.png": "/static/media/ReformUK.43c29faf.png",
     "static/media/SNP.svg": "/static/media/SNP.2efd3b0d.svg",
     "static/media/Tories.jpg": "/static/media/Tories.03c1b89e.jpg",
-    "static/media/UKIP.png": "/static/media/UKIP.a102881d.png",
-    "static/media/indyscotparty.jpg": "/static/media/indyscotparty.a12779f1.jpg"
+    "static/media/UKIP.png": "/static/media/UKIP.a102881d.png"
   },
   "entrypoints": [
     "static/js/runtime-main.75b75a84.js",
-    "static/js/2.a9e42062.chunk.js",
+    "static/js/2.b095b112.chunk.js",
     "static/css/main.405716df.chunk.css",
-    "static/js/main.c29414ff.chunk.js"
+    "static/js/main.c090560b.chunk.js"
   ]
 }
