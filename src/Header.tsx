@@ -45,7 +45,7 @@ export function Header() {
           </div>
         )}
         <NavLink to="/Press" end>
-          Press
+          Press and Policy
         </NavLink>
       </nav>
     </>

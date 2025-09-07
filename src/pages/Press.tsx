@@ -1,6 +1,16 @@
+import Press1 from "../assets/policy/Policy1.jpeg";
+import Press2 from "../assets/policy/Policy2.jpeg";
+import Press3 from "../assets/policy/Policy3.jpeg";
+import Press4 from "../assets/policy/Policy4.jpeg";
+
 function Press() {
   return (
     <div className="page-content">
+      <h2>Policy Briefing</h2>
+      <img className="policy" src={Press1} alt="first policy briefing image" />
+      <img className="policy" src={Press2} alt="second policy briefing image" />
+      <img className="policy" src={Press3} alt="third policy briefing image" />
+      <img className="policy" src={Press4} alt="fourth policy briefing image" />
       <h2>Press Summary</h2>
       <p>
         <b>An End to Conversion Therapy is Scotland’s Future, </b>

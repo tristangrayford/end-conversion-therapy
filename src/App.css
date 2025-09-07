@@ -106,7 +106,12 @@ body {
 }
 }
 
-@media (max-width: 1000px) {
+.policy {
+  width: calc(100vw - 10rem);
+  max-width: 1000px;
+}
+
+@media (max-width: 1200px) {
   .header {
     gap: 1rem;
 
@@ -120,7 +125,7 @@ body {
   } 
 }
 
-@media (max-width: 800px) {
+@media (max-width: 900px) {
   .header {
     a, p {
       font-size: 1rem;
@@ -128,7 +133,7 @@ body {
   } 
 }
 
-@media (max-width: 725px) {
+@media (max-width: 800px) {
   body {
     .page-content {
       padding: 1rem;
@@ -155,6 +160,10 @@ body {
       flex-wrap: wrap;
     }
   } 
+
+  .policy {
+    max-width: calc(100vw - 4rem);
+  }
 }
 
 @media (max-width: 500px) {
