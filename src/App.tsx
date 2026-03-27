@@ -9,6 +9,7 @@ import Candidates2021 from "./pages/Candidates2021";
 import Elected2021 from "./pages/Elected2021";
 import Candidates2026 from "./pages/Candidates2026";
 import Request from "./pages/Request";
+import Request26 from "./pages/Request26";
 
 function App() {
   return (
@@ -18,11 +19,11 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="request" element={<Home />} />
         <Route path="background" element={<Background />} />
-        <Route path="holyrood21">
-          <Route path="candidates" element={<Candidates2021 />} />
-          <Route path="msps" element={<Elected2021 />} />
-          <Route path="request" element={<Request />} />
-        </Route>
+        <Route path="holyrood21/candidates" element={<Candidates2021 />} />
+        <Route path="holyrood21/msps" element={<Elected2021 />} />
+        <Route path="holyrood21/request" element={<Request />} />
+        <Route path="holyrood26/candidates" element={<Candidates2026 />} />
+        <Route path="holyrood26/request" element={<Request26 />} />
         <Route path="holyrood26" element={<Candidates2026 />} />
         <Route path="petition" element={<Petition />} />
         <Route path="press" element={<Press />} />

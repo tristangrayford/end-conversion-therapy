@@ -5,9 +5,11 @@ import logo from "./assets/ECT Scotland.png";
 
 export function Header() {
   const [dropdownOpen21, set21DropDownOpen] = useState(false);
+  const [dropdownOpen26, set26DropDownOpen] = useState(false);
 
   const handleClose = () => {
     set21DropDownOpen(false);
+    set26DropDownOpen(false);
   };
 
   const ref = useOutsideClickOrScroll<HTMLDivElement>(handleClose);
@@ -21,30 +23,38 @@ export function Header() {
         <NavLink to="/" end>
           Home
         </NavLink>
-        <NavLink to="/Background" end>
+        <NavLink to="/background" end>
           Background
         </NavLink>
-        <NavLink to="/Petition" end>
+        <NavLink to="/petition" end>
           Petition
         </NavLink>
-        <NavLink to="/Holyrood26" end>
-          Holyrood '26
-        </NavLink>
-        <p onClick={() => set21DropDownOpen(true)}>Holyrood '21</p>
-        {dropdownOpen21 && (
+        <p onClick={() => set26DropDownOpen(true)}>Holyrood '26</p>
+        {dropdownOpen26 && (
           <div className="dropdown" ref={ref}>
-            <NavLink to="/Holyrood21/Candidates" end>
+            <NavLink to="/holyrood26/candidates" end>
               Candidates
             </NavLink>
-            <NavLink to="/Holyrood21/MSPs" end>
-              Elected MSPs
-            </NavLink>
-            <NavLink to="/Holyrood21/Request" end>
+            <NavLink to="/holyrood26/request" end>
               Request
             </NavLink>
           </div>
         )}
-        <NavLink to="/Press" end>
+        <p onClick={() => set21DropDownOpen(true)}>Holyrood '21</p>
+        {dropdownOpen21 && (
+          <div className="dropdown" ref={ref}>
+            <NavLink to="/holyrood21/candidates" end>
+              Candidates
+            </NavLink>
+            <NavLink to="/holyrood21/msps" end>
+              Elected MSPs
+            </NavLink>
+            <NavLink to="/holyrood21/request" end>
+              Request
+            </NavLink>
+          </div>
+        )}
+        <NavLink to="/press" end>
           Press and Policy
         </NavLink>
       </nav>
