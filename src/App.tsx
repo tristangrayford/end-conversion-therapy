@@ -1,5 +1,5 @@
 import "./App.css";
-import { BrowserRouter, Route, Routes } from "react-router";
+import { HashRouter, Route, Routes } from "react-router";
 import Home from "./pages/Home";
 import { Header } from "./Header";
 import Background from "./pages/Background";
@@ -13,7 +13,7 @@ import Request26 from "./pages/Request26";
 
 function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -28,7 +28,7 @@ function App() {
         <Route path="petition" element={<Petition />} />
         <Route path="press" element={<Press />} />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
