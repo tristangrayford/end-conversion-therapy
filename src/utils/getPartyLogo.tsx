@@ -23,6 +23,7 @@ import Tories from "../assets/Tories.jpg";
 import TUSC from "../assets/TUSC.png";
 import UKIP from "../assets/UKIP.png";
 import WEP from "../assets/WEP.jpg";
+import Reform from "../assets/Reform.png";
 
 export const GetPartyLogo = (party: Party): ReactElement => {
   switch (party) {
@@ -72,6 +73,8 @@ export const GetPartyLogo = (party: Party): ReactElement => {
       return <img src={UKIP} />;
     case Party.ScottishWomensEqualityParty:
       return <img src={WEP} />;
+    case Party.Reform:
+      return <img src={Reform} />;
     default:
       return <div></div>;
   }
