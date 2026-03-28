@@ -16,9 +16,9 @@ body {
   }
 }
 
-@media (prefers-color-scheme: dark){
+@media (prefers-color-scheme: dark) {
   body {
-    color: #E8E8E8;
+    color: #e8e8e8;
     background-color: #121212;
   }
 }
@@ -56,20 +56,23 @@ body {
     text-wrap: wrap;
   }
 
-  a, p {
+  a,
+  p {
     margin: 0;
     font-weight: bold;
     font-size: 1.5rem;
     color: #646cff;
   }
 
-  a:hover, p:hover {
+  a:hover,
+  p:hover {
     font-weight: bold;
     color: #998aff;
   }
 }
 
-.no-support, .support {
+.no-support,
+.support {
   border: 0.1rem solid #121212;
   margin-bottom: 1rem;
 }
@@ -84,7 +87,8 @@ body {
     text-align: left;
   }
 
-  th, td {
+  th,
+  td {
     border: 0.1rem solid #555;
     padding: 0.4rem;
   }
@@ -95,20 +99,82 @@ body {
     gap: 1rem;
     align-items: center;
 
-  img, p {
-    display: inline-block;
-    margin: 0;
-  }
+    img,
+    p {
+      display: inline-block;
+      margin: 0;
+    }
 
-  img {
-    height: 2rem;
+    img {
+      height: 2rem;
+    }
   }
 }
+
+.filter-controls {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  align-items: flex-end;
+
+  .filter-input {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    label {
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+
+    input,
+    select {
+      padding: 0.5rem;
+      border: 0.1rem solid #555;
+      border-radius: 0.25rem;
+      font-size: 1rem;
+      min-width: 12rem;
+    }
+
+    input::placeholder {
+      color: #999;
+    }
+
+    select {
+      background-color: white;
+      cursor: pointer;
+    }
+  }
 }
 
 .policy {
   width: calc(100vw - 10rem);
   max-width: 1000px;
+}
+
+.support-yes {
+  background-color: #43e97b;
+  color: #042b16;
+  padding: 0.4rem;
+  border-radius: 0.25rem;
+  font-weight: 600;
+}
+
+.support-no {
+  background-color: #ff6b6b;
+  color: #2f0000;
+  padding: 0.4rem;
+  border-radius: 0.25rem;
+  font-weight: 600;
+}
+
+.support-neutral {
+  background-color: transparent;
+  color: inherit;
+  padding: 0;
+  border-radius: 0;
+  font-weight: 400;
 }
 
 @media (max-width: 1200px) {
@@ -119,18 +185,20 @@ body {
       height: 6rem;
     }
 
-    a, p {
+    a,
+    p {
       font-size: 1.25rem;
     }
-  } 
+  }
 }
 
 @media (max-width: 900px) {
   .header {
-    a, p {
+    a,
+    p {
       font-size: 1rem;
     }
-  } 
+  }
 }
 
 @media (max-width: 800px) {
@@ -159,7 +227,7 @@ body {
       height: auto;
       flex-wrap: wrap;
     }
-  } 
+  }
 
   .policy {
     max-width: calc(100vw - 4rem);

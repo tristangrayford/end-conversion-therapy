@@ -3,5 +3,9 @@ export const CamelCaseToSentence = (s?: string): string => {
     return "";
   }
 
-  return s.replace(/([A-Z])/g, " $1").trim();
+  return s
+    .replace(/and/g, " and ")
+    .replace(/([A-Z])/g, " $1")
+    .trim()
+    .replace(/\s+/g, " ");
 };
