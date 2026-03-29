@@ -1,5 +1,6 @@
 export type Candidate = {
   Name: string;
+  Email?: string;
   RegionRank?: number;
   Region?: Region;
   SupportBan: Support;

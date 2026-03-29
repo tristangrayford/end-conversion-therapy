@@ -3,6 +3,7 @@ import { Party, Region, Support, type Candidate } from "./Types26";
 export const FullCandidateData26: Candidate[] = [
   {
     Name: "Neil Gray",
+    Email: "Neil.Gray@snp.org",
     Party: Party.ScottishNationalParty,
     Region: Region.CentralScotlandandLothiansWest,
     RegionRank: 2,
@@ -13,6 +14,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Angela Constance",
+    Email: "Angela.Constance@snp.org",
     Party: Party.ScottishNationalParty,
     Region: Region.CentralScotlandandLothiansWest,
     RegionRank: undefined,
@@ -23,6 +25,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Pauline Stafford",
+    Email: "Pauline.Stafford@snp.org",
     Party: Party.ScottishNationalParty,
     Region: Region.CentralScotlandandLothiansWest,
     RegionRank: 1,
@@ -33,6 +36,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Fulton MacGregor",
+    Email: "Fulton.MacGregor@snp.org",
     Party: Party.ScottishNationalParty,
     Region: Region.CentralScotlandandLothiansWest,
     RegionRank: undefined,
@@ -43,6 +47,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Jamie Hepburn",
+    Email: "Jamie.Hepburn@snp.org",
     Party: Party.ScottishNationalParty,
     Region: Region.CentralScotlandandLothiansWest,
     RegionRank: undefined,
@@ -53,6 +58,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Martyn Dey",
+    Email: "Martyn.Dey@snp.org",
     Party: Party.ScottishNationalParty,
     Region: Region.CentralScotlandandLothiansWest,
     RegionRank: undefined,
@@ -63,6 +69,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Gary Bouse",
+    Email: "Gary.Bouse@snp.org",
     Party: Party.ScottishNationalParty,
     Region: Region.CentralScotlandandLothiansWest,
     RegionRank: undefined,
@@ -73,6 +80,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Clare Adamson",
+    Email: "Clare.Adamson@snp.org",
     Party: Party.ScottishNationalParty,
     Region: Region.CentralScotlandandLothiansWest,
     RegionRank: 4,
@@ -83,6 +91,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Steven Bonnar",
+    Email: "Steven.Bonnar@snp.org",
     Party: Party.ScottishNationalParty,
     Region: Region.CentralScotlandandLothiansWest,
     RegionRank: 6,
@@ -93,6 +102,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Toni Giugliano",
+    Email: "",
     Party: Party.ScottishNationalParty,
     Region: Region.CentralScotlandandLothiansWest,
     RegionRank: 3,
@@ -103,6 +113,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Callum Cox",
+    Email: "",
     Party: Party.ScottishNationalParty,
     Region: Region.CentralScotlandandLothiansWest,
     RegionRank: 5,
@@ -113,6 +124,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Tracy Carragher",
+    Email: "",
     Party: Party.ScottishNationalParty,
     Region: Region.CentralScotlandandLothiansWest,
     RegionRank: 7,
@@ -123,6 +135,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Stacey Devine",
+    Email: "",
     Party: Party.ScottishNationalParty,
     Region: Region.CentralScotlandandLothiansWest,
     RegionRank: 8,
@@ -133,6 +146,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Paul McLennan",
+    Email: "Paul.McLennan@snp.org",
     Party: Party.ScottishNationalParty,
     Region: Region.EdinburghandLothiansEast,
     RegionRank: 5,
@@ -143,6 +157,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Angus Robertson",
+    Email: "Angus.Robertson@snp.org",
     Party: Party.ScottishNationalParty,
     Region: Region.EdinburghandLothiansEast,
     RegionRank: 4,
@@ -153,6 +168,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Kate Campbell",
+    Email: "Kate.Campbell@snp.org",
     Party: Party.ScottishNationalParty,
     Region: Region.EdinburghandLothiansEast,
     RegionRank: undefined,
@@ -163,6 +179,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Ben Macpherson",
+    Email: "Ben.Macpherson@snp.org",
     Party: Party.ScottishNationalParty,
     Region: Region.EdinburghandLothiansEast,
     RegionRank: undefined,
@@ -173,6 +190,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Lyn Jardine",
+    Email: "Lyn.Jardine@snp.org",
     Party: Party.ScottishNationalParty,
     Region: Region.EdinburghandLothiansEast,
     RegionRank: 8,
@@ -183,6 +201,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Euan Hyslop",
+    Email: "Euan.Hyslop@snp.org",
     Party: Party.ScottishNationalParty,
     Region: Region.EdinburghandLothiansEast,
     RegionRank: undefined,
@@ -193,6 +212,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Simita Kumar",
+    Email: "Simita.Kumar@snp.org",
     Party: Party.ScottishNationalParty,
     Region: Region.EdinburghandLothiansEast,
     RegionRank: 3,
@@ -203,6 +223,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Deidre Brock",
+    Email: "Deidre.Brock@snp.org",
     Party: Party.ScottishNationalParty,
     Region: Region.EdinburghandLothiansEast,
     RegionRank: 2,
@@ -213,6 +234,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Colin Beattie",
+    Email: "Colin.Beattie@snp.org",
     Party: Party.ScottishNationalParty,
     Region: Region.EdinburghandLothiansEast,
     RegionRank: 6,
@@ -223,6 +245,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Tommy Sheppard",
+    Email: "",
     Party: Party.ScottishNationalParty,
     Region: Region.EdinburghandLothiansEast,
     RegionRank: 1,
@@ -233,6 +256,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Kelly Parry",
+    Email: "",
     Party: Party.ScottishNationalParty,
     Region: Region.EdinburghandLothiansEast,
     RegionRank: 7,
@@ -243,6 +267,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Colm Merrick",
+    Email: "Colm.Merrick@snp.org",
     Party: Party.ScottishNationalParty,
     Region: Region.Glasgow,
     RegionRank: 6,
@@ -253,6 +278,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "David Linden",
+    Email: "David.Linden@snp.org",
     Party: Party.ScottishNationalParty,
     Region: Region.Glasgow,
     RegionRank: 4,
@@ -263,6 +289,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Zen Ghani",
+    Email: "Zen.Ghani@snp.org",
     Party: Party.ScottishNationalParty,
     Region: Region.Glasgow,
     RegionRank: 8,
@@ -273,6 +300,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Alison Thewliss",
+    Email: "Alison.Thewliss@snp.org",
     Party: Party.ScottishNationalParty,
     Region: Region.Glasgow,
     RegionRank: 1,
@@ -283,6 +311,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Ivan McKee",
+    Email: "Ivan.McKee@snp.org",
     Party: Party.ScottishNationalParty,
     Region: Region.Glasgow,
     RegionRank: 2,
@@ -293,6 +322,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Bob Doris",
+    Email: "Bob.Doris@snp.org",
     Party: Party.ScottishNationalParty,
     Region: Region.Glasgow,
     RegionRank: undefined,
@@ -303,6 +333,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Kaukab Stewart",
+    Email: "Kaukab.Stewart@snp.org",
     Party: Party.ScottishNationalParty,
     Region: Region.Glasgow,
     RegionRank: 3,
@@ -313,6 +344,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Clare Haughey",
+    Email: "Clare.Haughey@snp.org",
     Party: Party.ScottishNationalParty,
     Region: Region.Glasgow,
     RegionRank: undefined,
@@ -323,6 +355,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Graham Campbell",
+    Email: "",
     Party: Party.ScottishNationalParty,
     Region: Region.Glasgow,
     RegionRank: 5,
@@ -333,6 +366,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Declan Blench",
+    Email: "",
     Party: Party.ScottishNationalParty,
     Region: Region.Glasgow,
     RegionRank: 7,
@@ -343,6 +377,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Annette Christie",
+    Email: "",
     Party: Party.ScottishNationalParty,
     Region: Region.Glasgow,
     RegionRank: 9,
@@ -353,6 +388,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Abdul Bostani",
+    Email: "",
     Party: Party.ScottishNationalParty,
     Region: Region.Glasgow,
     RegionRank: 10,
@@ -363,6 +399,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Adekemi Giwa",
+    Email: "",
     Party: Party.ScottishNationalParty,
     Region: Region.Glasgow,
     RegionRank: 11,
@@ -373,6 +410,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Qasim Hanif",
+    Email: "",
     Party: Party.ScottishNationalParty,
     Region: Region.Glasgow,
     RegionRank: 12,
@@ -383,6 +421,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Jenni Minto",
+    Email: "Jenni.Minto@snp.org",
     Party: Party.ScottishNationalParty,
     Region: Region.HighlandsandIslands,
     RegionRank: undefined,
@@ -393,6 +432,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Maree Todd",
+    Email: "Maree.Todd@snp.org",
     Party: Party.ScottishNationalParty,
     Region: Region.HighlandsandIslands,
     RegionRank: 1,
@@ -403,6 +443,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Alasdair Allan",
+    Email: "Alasdair.Allan@snp.org",
     Party: Party.ScottishNationalParty,
     Region: Region.HighlandsandIslands,
     RegionRank: undefined,
@@ -413,6 +454,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Emma Roddick",
+    Email: "Emma.Roddick@snp.org",
     Party: Party.ScottishNationalParty,
     Region: Region.HighlandsandIslands,
     RegionRank: 3,
@@ -423,6 +465,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Laura Mitchell",
+    Email: "Laura.Mitchell@snp.org",
     Party: Party.ScottishNationalParty,
     Region: Region.HighlandsandIslands,
     RegionRank: undefined,
@@ -433,6 +476,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Robert Leslie",
+    Email: "Robert.Leslie@snp.org",
     Party: Party.ScottishNationalParty,
     Region: Region.HighlandsandIslands,
     RegionRank: 2,
@@ -443,6 +487,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Hannah MaryGoodlad",
+    Email: "Hannah.MaryGoodlad@snp.org",
     Party: Party.ScottishNationalParty,
     Region: Region.HighlandsandIslands,
     RegionRank: 4,
@@ -453,6 +498,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Eilidh Munro",
+    Email: "Eilidh.Munro@snp.org",
     Party: Party.ScottishNationalParty,
     Region: Region.HighlandsandIslands,
     RegionRank: undefined,
@@ -463,6 +509,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Keith Brown",
+    Email: "Keith.Brown@snp.org",
     Party: Party.ScottishNationalParty,
     Region: Region.MidandFife,
     RegionRank: undefined,
@@ -473,6 +520,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "David Barratt",
+    Email: "David.Barratt@snp.org",
     Party: Party.ScottishNationalParty,
     Region: Region.MidandFife,
     RegionRank: undefined,
@@ -483,6 +531,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Shirley-Anne Somerville",
+    Email: "Shirley-Anne.Somerville@snp.org",
     Party: Party.ScottishNationalParty,
     Region: Region.MidandFife,
     RegionRank: 2,
@@ -493,6 +542,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "David Torrance",
+    Email: "David.Torrance@snp.org",
     Party: Party.ScottishNationalParty,
     Region: Region.MidandFife,
     RegionRank: 6,
@@ -503,6 +553,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Jenny Gilruth",
+    Email: "Jenny.Gilruth@snp.org",
     Party: Party.ScottishNationalParty,
     Region: Region.MidandFife,
     RegionRank: undefined,
@@ -513,6 +564,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "John Swinney",
+    Email: "John.Swinney@snp.org",
     Party: Party.ScottishNationalParty,
     Region: Region.MidandFife,
     RegionRank: 1,
@@ -523,6 +575,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Jim Fairlie",
+    Email: "Jim.Fairlie@snp.org",
     Party: Party.ScottishNationalParty,
     Region: Region.MidandFife,
     RegionRank: 5,
@@ -533,6 +586,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Alyn Smith",
+    Email: "Alyn.Smith@snp.org",
     Party: Party.ScottishNationalParty,
     Region: Region.MidandFife,
     RegionRank: 4,
@@ -543,6 +597,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Fiona Law",
+    Email: "",
     Party: Party.ScottishNationalParty,
     Region: Region.MidandFife,
     RegionRank: 3,
@@ -553,6 +608,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Susan McGill",
+    Email: "",
     Party: Party.ScottishNationalParty,
     Region: Region.MidandFife,
     RegionRank: 7,
@@ -563,6 +619,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "John Beare",
+    Email: "",
     Party: Party.ScottishNationalParty,
     Region: Region.MidandFife,
     RegionRank: 8,
@@ -573,6 +630,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "David Mitchell",
+    Email: "",
     Party: Party.ScottishNationalParty,
     Region: Region.MidandFife,
     RegionRank: 9,
@@ -583,6 +641,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Jack Middleton",
+    Email: "Jack.Middleton@snp.org",
     Party: Party.ScottishNationalParty,
     Region: Region.NorthEast,
     RegionRank: undefined,
@@ -593,6 +652,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Stephen Flynn",
+    Email: "Stephen.Flynn@snp.org",
     Party: Party.ScottishNationalParty,
     Region: Region.NorthEast,
     RegionRank: 1,
@@ -603,6 +663,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Jackie Dunbar",
+    Email: "Jackie.Dunbar@snp.org",
     Party: Party.ScottishNationalParty,
     Region: Region.NorthEast,
     RegionRank: undefined,
@@ -613,6 +674,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Gillian Martin",
+    Email: "Gillian.Martin@snp.org",
     Party: Party.ScottishNationalParty,
     Region: Region.NorthEast,
     RegionRank: 2,
@@ -623,6 +685,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Fatima Joji",
+    Email: "Fatima.Joji@snp.org",
     Party: Party.ScottishNationalParty,
     Region: Region.NorthEast,
     RegionRank: 3,
@@ -633,6 +696,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Dawn Black",
+    Email: "Dawn.Black@snp.org",
     Party: Party.ScottishNationalParty,
     Region: Region.NorthEast,
     RegionRank: 5,
@@ -643,6 +707,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Lloyd Melville",
+    Email: "Lloyd.Melville@snp.org",
     Party: Party.ScottishNationalParty,
     Region: Region.NorthEast,
     RegionRank: undefined,
@@ -653,6 +718,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Karen Adam",
+    Email: "Karen.Adam@snp.org",
     Party: Party.ScottishNationalParty,
     Region: Region.NorthEast,
     RegionRank: undefined,
@@ -663,6 +729,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Stephen Gethins",
+    Email: "Stephen.Gethins@snp.org",
     Party: Party.ScottishNationalParty,
     Region: Region.NorthEast,
     RegionRank: undefined,
@@ -673,6 +740,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Heather Anderson",
+    Email: "Heather.Anderson@snp.org",
     Party: Party.ScottishNationalParty,
     Region: Region.NorthEast,
     RegionRank: undefined,
@@ -683,6 +751,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Christian Allard",
+    Email: "",
     Party: Party.ScottishNationalParty,
     Region: Region.NorthEast,
     RegionRank: 4,
@@ -693,6 +762,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Miranda Radley",
+    Email: "",
     Party: Party.ScottishNationalParty,
     Region: Region.NorthEast,
     RegionRank: 6,
@@ -703,6 +773,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Michael Hutchsion",
+    Email: "",
     Party: Party.ScottishNationalParty,
     Region: Region.NorthEast,
     RegionRank: 7,
@@ -713,6 +784,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Siobhian Brown",
+    Email: "Siobhian.Brown@snp.org",
     Party: Party.ScottishNationalParty,
     Region: Region.South,
     RegionRank: 4,
@@ -723,6 +795,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Katie Hagman",
+    Email: "Katie.Hagman@snp.org",
     Party: Party.ScottishNationalParty,
     Region: Region.South,
     RegionRank: 5,
@@ -733,6 +806,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Máiri McAllan",
+    Email: "Máiri.McAllan@snp.org",
     Party: Party.ScottishNationalParty,
     Region: Region.South,
     RegionRank: 1,
@@ -743,6 +817,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Stephen Thompson",
+    Email: "Stephen.Thompson@snp.org",
     Party: Party.ScottishNationalParty,
     Region: Region.South,
     RegionRank: 8,
@@ -753,6 +828,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Collette Stevenson",
+    Email: "Collette.Stevenson@snp.org",
     Party: Party.ScottishNationalParty,
     Region: Region.South,
     RegionRank: 7,
@@ -763,16 +839,19 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "John Redpath",
+    Email: "John.Redpath@snp.org",
     Party: Party.ScottishNationalParty,
     Region: Region.South,
     RegionRank: 6,
     SupportBan: Support.Yes,
     SupportLife: Support.Yes,
     SupportHealthcare: Support.Yes,
-    Statement: "",
+    Statement:
+      "Thank you for getting in touch with me. I completely agree with your cause and am very happy to sign on to your pledge.",
   },
   {
     Name: "Emma Harper",
+    Email: "Emma.Harper@snp.org",
     Party: Party.ScottishNationalParty,
     Region: Region.South,
     RegionRank: 3,
@@ -783,6 +862,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Alex Kerr",
+    Email: "Alex.Kerr@snp.org",
     Party: Party.ScottishNationalParty,
     Region: Region.South,
     RegionRank: 9,
@@ -793,6 +873,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Alan Brown",
+    Email: "Alan.Brown@snp.org",
     Party: Party.ScottishNationalParty,
     Region: Region.South,
     RegionRank: 2,
@@ -803,6 +884,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Calum Kerr",
+    Email: "Calum.Kerr@snp.org",
     Party: Party.ScottishNationalParty,
     Region: Region.South,
     RegionRank: undefined,
@@ -813,6 +895,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Allan Dorans",
+    Email: "",
     Party: Party.ScottishNationalParty,
     Region: Region.South,
     RegionRank: 10,
@@ -823,6 +906,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Kirsty Campbell",
+    Email: "",
     Party: Party.ScottishNationalParty,
     Region: Region.South,
     RegionRank: 11,
@@ -833,6 +917,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Ross Clark",
+    Email: "",
     Party: Party.ScottishNationalParty,
     Region: Region.South,
     RegionRank: 12,
@@ -843,6 +928,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Marie McNair",
+    Email: "Marie.McNair@snp.org",
     Party: Party.ScottishNationalParty,
     Region: Region.West,
     RegionRank: undefined,
@@ -853,6 +939,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Kenneth Gibson",
+    Email: "Kenneth.Gibson@snp.org",
     Party: Party.ScottishNationalParty,
     Region: Region.West,
     RegionRank: 5,
@@ -863,6 +950,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Patricia Gibson",
+    Email: "Patricia.Gibson@snp.org",
     Party: Party.ScottishNationalParty,
     Region: Region.West,
     RegionRank: 4,
@@ -873,6 +961,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Sophie Traynor",
+    Email: "Sophie.Traynor@snp.org",
     Party: Party.ScottishNationalParty,
     Region: Region.West,
     RegionRank: undefined,
@@ -883,6 +972,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Kirsten Oswald",
+    Email: "Kirsten.Oswald@snp.org",
     Party: Party.ScottishNationalParty,
     Region: Region.West,
     RegionRank: 2,
@@ -893,6 +983,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Stuart McMillan",
+    Email: "Stuart.McMillan@snp.org",
     Party: Party.ScottishNationalParty,
     Region: Region.West,
     RegionRank: 1,
@@ -903,6 +994,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "George Adam",
+    Email: "George.Adam@snp.org",
     Party: Party.ScottishNationalParty,
     Region: Region.West,
     RegionRank: undefined,
@@ -913,6 +1005,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Michelle Campbell",
+    Email: "Michelle.Campbell@snp.org",
     Party: Party.ScottishNationalParty,
     Region: Region.West,
     RegionRank: 3,
@@ -923,6 +1016,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Tom Arthur",
+    Email: "Tom.Arthur@snp.org",
     Party: Party.ScottishNationalParty,
     Region: Region.West,
     RegionRank: 6,
@@ -933,6 +1027,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Denis Johnston",
+    Email: "Denis.Johnston@snp.org",
     Party: Party.ScottishNationalParty,
     Region: Region.West,
     RegionRank: 8,
@@ -943,6 +1038,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Sophie Traynor",
+    Email: "",
     Party: Party.ScottishNationalParty,
     Region: Region.West,
     RegionRank: 7,
@@ -953,6 +1049,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Michael Gibbons",
+    Email: "",
     Party: Party.ScottishNationalParty,
     Region: Region.West,
     RegionRank: 9,
@@ -963,6 +1060,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Andrew Steel",
+    Email: "",
     Party: Party.ScottishNationalParty,
     Region: Region.West,
     RegionRank: 10,
@@ -973,6 +1071,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Euan Blockley",
+    Email: "",
     Party: Party.ScottishConservativeParty,
     Region: Region.CentralScotlandandLothiansWest,
     RegionRank: undefined,
@@ -983,6 +1082,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Damian Doran-Timson",
+    Email: "",
     Party: Party.ScottishConservativeParty,
     Region: Region.CentralScotlandandLothiansWest,
     RegionRank: 7,
@@ -993,6 +1093,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Peter Heggie",
+    Email: "",
     Party: Party.ScottishConservativeParty,
     Region: Region.CentralScotlandandLothiansWest,
     RegionRank: 6,
@@ -1003,6 +1104,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Andy Bruce",
+    Email: "",
     Party: Party.ScottishConservativeParty,
     Region: Region.CentralScotlandandLothiansWest,
     RegionRank: 5,
@@ -1013,6 +1115,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Lewis Stein",
+    Email: "",
     Party: Party.ScottishConservativeParty,
     Region: Region.CentralScotlandandLothiansWest,
     RegionRank: 2,
@@ -1023,6 +1126,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Meghan Gallacher",
+    Email: "",
     Party: Party.ScottishConservativeParty,
     Region: Region.CentralScotlandandLothiansWest,
     RegionRank: 1,
@@ -1033,6 +1137,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Keith Allan",
+    Email: "",
     Party: Party.ScottishConservativeParty,
     Region: Region.CentralScotlandandLothiansWest,
     RegionRank: 3,
@@ -1043,6 +1148,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Neil Benny",
+    Email: "",
     Party: Party.ScottishConservativeParty,
     Region: Region.CentralScotlandandLothiansWest,
     RegionRank: 4,
@@ -1053,6 +1159,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Miles Briggs",
+    Email: "",
     Party: Party.ScottishConservativeParty,
     Region: Region.EdinburghandLothiansEast,
     RegionRank: 1,
@@ -1063,6 +1170,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Jo Mowat",
+    Email: "joanna.mowat@edinburgh.gov.uk",
     Party: Party.ScottishConservativeParty,
     Region: Region.EdinburghandLothiansEast,
     RegionRank: 5,
@@ -1073,6 +1181,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Tim Jones",
+    Email: "",
     Party: Party.ScottishConservativeParty,
     Region: Region.EdinburghandLothiansEast,
     RegionRank: 6,
@@ -1083,6 +1192,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Christopher Cowdy",
+    Email: "",
     Party: Party.ScottishConservativeParty,
     Region: Region.EdinburghandLothiansEast,
     RegionRank: 4,
@@ -1093,6 +1203,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Sue Webber",
+    Email: "",
     Party: Party.ScottishConservativeParty,
     Region: Region.EdinburghandLothiansEast,
     RegionRank: 2,
@@ -1103,6 +1214,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Marie-Clair Munro",
+    Email: "",
     Party: Party.ScottishConservativeParty,
     Region: Region.EdinburghandLothiansEast,
     RegionRank: 3,
@@ -1113,6 +1225,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Phil Doggart",
+    Email: "",
     Party: Party.ScottishConservativeParty,
     Region: Region.EdinburghandLothiansEast,
     RegionRank: undefined,
@@ -1123,6 +1236,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Sandesh Gulhane",
+    Email: "",
     Party: Party.ScottishConservativeParty,
     Region: Region.Glasgow,
     RegionRank: 2,
@@ -1133,6 +1247,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "John Murray",
+    Email: "",
     Party: Party.ScottishConservativeParty,
     Region: Region.Glasgow,
     RegionRank: 5,
@@ -1143,6 +1258,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Kyle Park",
+    Email: "",
     Party: Party.ScottishConservativeParty,
     Region: Region.Glasgow,
     RegionRank: 4,
@@ -1153,6 +1269,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Naveed Asghar",
+    Email: "",
     Party: Party.ScottishConservativeParty,
     Region: Region.Glasgow,
     RegionRank: undefined,
@@ -1163,6 +1280,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Josephine Macleod",
+    Email: "",
     Party: Party.ScottishConservativeParty,
     Region: Region.Glasgow,
     RegionRank: 6,
@@ -1173,6 +1291,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Annie Wells",
+    Email: "",
     Party: Party.ScottishConservativeParty,
     Region: Region.Glasgow,
     RegionRank: 1,
@@ -1183,6 +1302,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Ross Hutton",
+    Email: "",
     Party: Party.ScottishConservativeParty,
     Region: Region.Glasgow,
     RegionRank: 3,
@@ -1193,6 +1313,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Amanda Hampsey",
+    Email: "",
     Party: Party.Reform,
     Region: Region.HighlandsandIslands,
     RegionRank: undefined,
@@ -1203,6 +1324,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Elaine Kirby",
+    Email: "",
     Party: Party.ScottishConservativeParty,
     Region: Region.HighlandsandIslands,
     RegionRank: 6,
@@ -1213,6 +1335,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "George MacPherson",
+    Email: "",
     Party: Party.ScottishConservativeParty,
     Region: Region.HighlandsandIslands,
     RegionRank: 5,
@@ -1223,6 +1346,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Ruraidh Stewart",
+    Email: "",
     Party: Party.ScottishConservativeParty,
     Region: Region.HighlandsandIslands,
     RegionRank: 4,
@@ -1233,6 +1357,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Tim Eagle",
+    Email: "",
     Party: Party.ScottishConservativeParty,
     Region: Region.HighlandsandIslands,
     RegionRank: 1,
@@ -1243,6 +1368,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Jamie HalcroJohnston",
+    Email: "",
     Party: Party.ScottishConservativeParty,
     Region: Region.HighlandsandIslands,
     RegionRank: 2,
@@ -1253,6 +1379,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Helen Crawford",
+    Email: "",
     Party: Party.ScottishConservativeParty,
     Region: Region.HighlandsandIslands,
     RegionRank: 3,
@@ -1263,6 +1390,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Alexander Stewart",
+    Email: "alexander.stewart@scottishconservatives.com",
     Party: Party.ScottishConservativeParty,
     Region: Region.MidandFife,
     RegionRank: 4,
@@ -1273,6 +1401,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Darren Watt",
+    Email: "",
     Party: Party.ScottishConservativeParty,
     Region: Region.MidandFife,
     RegionRank: 7,
@@ -1283,6 +1412,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Thomas Heald",
+    Email: "",
     Party: Party.ScottishConservativeParty,
     Region: Region.MidandFife,
     RegionRank: 6,
@@ -1293,6 +1423,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Edward Sheasby",
+    Email: "",
     Party: Party.ScottishConservativeParty,
     Region: Region.MidandFife,
     RegionRank: 5,
@@ -1303,6 +1434,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Murdo Fraser",
+    Email: "",
     Party: Party.ScottishConservativeParty,
     Region: Region.MidandFife,
     RegionRank: 1,
@@ -1313,6 +1445,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Roz McCall",
+    Email: "",
     Party: Party.ScottishConservativeParty,
     Region: Region.MidandFife,
     RegionRank: 3,
@@ -1323,6 +1456,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Stephen Kerr",
+    Email: "evakestner4labour@gmail.com",
     Party: Party.ScottishConservativeParty,
     Region: Region.MidandFife,
     RegionRank: 2,
@@ -1333,6 +1467,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Stewart Whyte",
+    Email: "stewart.whyte@btinternet.com",
     Party: Party.ScottishConservativeParty,
     Region: Region.NorthEast,
     RegionRank: 5,
@@ -1343,6 +1478,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Liam Kerr",
+    Email: "kerr4aberdeen@gmail.com",
     Party: Party.ScottishConservativeParty,
     Region: Region.NorthEast,
     RegionRank: 1,
@@ -1353,6 +1489,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Hannah Powell",
+    Email: "",
     Party: Party.ScottishConservativeParty,
     Region: Region.NorthEast,
     RegionRank: 6,
@@ -1363,6 +1500,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Douglas Lumsden",
+    Email: "",
     Party: Party.ScottishConservativeParty,
     Region: Region.NorthEast,
     RegionRank: 2,
@@ -1373,6 +1511,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Alexander Burnett",
+    Email: "",
     Party: Party.ScottishConservativeParty,
     Region: Region.NorthEast,
     RegionRank: 3,
@@ -1383,6 +1522,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Tracey Smith",
+    Email: "",
     Party: Party.ScottishConservativeParty,
     Region: Region.NorthEast,
     RegionRank: 7,
@@ -1393,6 +1533,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "James Adams",
+    Email: "",
     Party: Party.ScottishConservativeParty,
     Region: Region.NorthEast,
     RegionRank: 4,
@@ -1403,6 +1544,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Jack Cruickshanks",
+    Email: "",
     Party: Party.ScottishConservativeParty,
     Region: Region.NorthEast,
     RegionRank: 8,
@@ -1413,6 +1555,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Sharon Dowey",
+    Email: "",
     Party: Party.ScottishConservativeParty,
     Region: Region.South,
     RegionRank: 4,
@@ -1423,6 +1566,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Tracey Clark",
+    Email: "",
     Party: Party.ScottishConservativeParty,
     Region: Region.South,
     RegionRank: 9,
@@ -1433,6 +1577,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Craig Hoy",
+    Email: "",
     Party: Party.ScottishConservativeParty,
     Region: Region.South,
     RegionRank: 2,
@@ -1443,6 +1588,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Brian Whittle",
+    Email: "",
     Party: Party.ScottishConservativeParty,
     Region: Region.South,
     RegionRank: 5,
@@ -1453,6 +1599,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Rachael Hamilton",
+    Email: "",
     Party: Party.ScottishConservativeParty,
     Region: Region.South,
     RegionRank: 1,
@@ -1463,6 +1610,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Finlay Carson",
+    Email: "",
     Party: Party.ScottishConservativeParty,
     Region: Region.South,
     RegionRank: 3,
@@ -1473,6 +1621,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Keith Cockburn",
+    Email: "",
     Party: Party.ScottishConservativeParty,
     Region: Region.South,
     RegionRank: undefined,
@@ -1483,6 +1632,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Keith Cockburn",
+    Email: "",
     Party: Party.ScottishConservativeParty,
     Region: Region.South,
     RegionRank: 6,
@@ -1493,6 +1643,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Julie Pirone",
+    Email: "",
     Party: Party.ScottishConservativeParty,
     Region: Region.South,
     RegionRank: 7,
@@ -1503,6 +1654,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "James Adams",
+    Email: "",
     Party: Party.ScottishConservativeParty,
     Region: Region.South,
     RegionRank: 8,
@@ -1513,6 +1665,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Alix Mathieson",
+    Email: "",
     Party: Party.ScottishConservativeParty,
     Region: Region.West,
     RegionRank: 4,
@@ -1523,6 +1676,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Ronnie Stalker",
+    Email: "",
     Party: Party.ScottishConservativeParty,
     Region: Region.West,
     RegionRank: 8,
@@ -1533,6 +1687,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Gary Mulvaney",
+    Email: "",
     Party: Party.ScottishConservativeParty,
     Region: Region.West,
     RegionRank: 5,
@@ -1543,6 +1698,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Jackson Carlaw",
+    Email: "",
     Party: Party.ScottishConservativeParty,
     Region: Region.West,
     RegionRank: 2,
@@ -1553,6 +1709,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Ted Runciman",
+    Email: "",
     Party: Party.ScottishConservativeParty,
     Region: Region.West,
     RegionRank: 10,
@@ -1563,6 +1720,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Jack Hall",
+    Email: "",
     Party: Party.ScottishConservativeParty,
     Region: Region.West,
     RegionRank: 7,
@@ -1573,6 +1731,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Farooq Choudhury",
+    Email: "",
     Party: Party.ScottishConservativeParty,
     Region: Region.West,
     RegionRank: 9,
@@ -1583,6 +1742,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Pam Gosal",
+    Email: "",
     Party: Party.ScottishConservativeParty,
     Region: Region.West,
     RegionRank: 3,
@@ -1593,6 +1753,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Russell Findlay",
+    Email: "",
     Party: Party.ScottishConservativeParty,
     Region: Region.West,
     RegionRank: 1,
@@ -1603,6 +1764,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Maurice Corry",
+    Email: "",
     Party: Party.ScottishConservativeParty,
     Region: Region.West,
     RegionRank: 6,
@@ -1613,6 +1775,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Suzanne Macleod",
+    Email: "suzannemacleodlabour@outlook.com",
     Party: Party.ScottishLabourParty,
     Region: Region.CentralScotlandandLothiansWest,
     RegionRank: undefined,
@@ -1623,6 +1786,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Jordan Stokoe",
+    Email: "hello@jordanstokoe.com",
     Party: Party.ScottishLabourParty,
     Region: Region.CentralScotlandandLothiansWest,
     RegionRank: undefined,
@@ -1633,6 +1797,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Jenny Young",
+    Email: "",
     Party: Party.ScottishLabourParty,
     Region: Region.CentralScotlandandLothiansWest,
     RegionRank: 2,
@@ -1643,6 +1808,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Kieron Higgins",
+    Email: "",
     Party: Party.ScottishLabourParty,
     Region: Region.CentralScotlandandLothiansWest,
     RegionRank: 3,
@@ -1653,6 +1819,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "James McPhilemy",
+    Email: "JMcPhilemyLabour@hotmail.com",
     Party: Party.ScottishLabourParty,
     Region: Region.CentralScotlandandLothiansWest,
     RegionRank: undefined,
@@ -1663,6 +1830,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Siobhan Paterson",
+    Email: "siobhan.paterson@falkirk.gov.uk",
     Party: Party.ScottishLabourParty,
     Region: Region.CentralScotlandandLothiansWest,
     RegionRank: 4,
@@ -1673,6 +1841,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Paul Godzik",
+    Email: "",
     Party: Party.ScottishLabourParty,
     Region: Region.CentralScotlandandLothiansWest,
     RegionRank: undefined,
@@ -1683,6 +1852,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Ayeshah Khan",
+    Email: "ayeshahkhanlabour@gmail.com",
     Party: Party.ScottishLabourParty,
     Region: Region.CentralScotlandandLothiansWest,
     RegionRank: undefined,
@@ -1693,6 +1863,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Mark Griffin",
+    Email: "",
     Party: Party.ScottishLabourParty,
     Region: Region.CentralScotlandandLothiansWest,
     RegionRank: undefined,
@@ -1703,6 +1874,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Mark Griffin",
+    Email: "",
     Party: Party.ScottishLabourParty,
     Region: Region.CentralScotlandandLothiansWest,
     RegionRank: 1,
@@ -1713,6 +1885,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Martin Whitfield",
+    Email: "ellabour@yahoo.com",
     Party: Party.ScottishLabourParty,
     Region: Region.EdinburghandLothiansEast,
     RegionRank: 5,
@@ -1723,6 +1896,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "James Dalgleish",
+    Email: "james.dalgleish.labour@gmail.com",
     Party: Party.ScottishLabourParty,
     Region: Region.EdinburghandLothiansEast,
     RegionRank: undefined,
@@ -1733,6 +1907,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Katherine Sangster",
+    Email: "katherine@katherinesangster2026.com",
     Party: Party.ScottishLabourParty,
     Region: Region.EdinburghandLothiansEast,
     RegionRank: 2,
@@ -1743,6 +1918,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Oliver Thomas",
+    Email: "oliver4edinburgh@gmail.com",
     Party: Party.ScottishLabourParty,
     Region: Region.EdinburghandLothiansEast,
     RegionRank: undefined,
@@ -1753,6 +1929,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Irshad Ahmad",
+    Email: "",
     Party: Party.ScottishLabourParty,
     Region: Region.EdinburghandLothiansEast,
     RegionRank: 1,
@@ -1763,6 +1940,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Eleanor Ryan-Saha",
+    Email: "",
     Party: Party.ScottishLabourParty,
     Region: Region.EdinburghandLothiansEast,
     RegionRank: undefined,
@@ -1773,6 +1951,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Catriona Munro",
+    Email: "catriona4FandC@catrionamunro.com",
     Party: Party.ScottishLabourParty,
     Region: Region.EdinburghandLothiansEast,
     RegionRank: 4,
@@ -1783,6 +1962,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Daniel Johnson",
+    Email: "contact@danieljohnson.org.uk",
     Party: Party.ScottishLabourParty,
     Region: Region.EdinburghandLothiansEast,
     RegionRank: 3,
@@ -1793,6 +1973,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Caitlin Stott",
+    Email: "",
     Party: Party.ScottishLabourParty,
     Region: Region.EdinburghandLothiansEast,
     RegionRank: undefined,
@@ -1803,6 +1984,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Eunis Jassemi",
+    Email: "Eunis.Jassemi@Glasgow.gov.uk",
     Party: Party.ScottishLabourParty,
     Region: Region.Glasgow,
     RegionRank: undefined,
@@ -1813,6 +1995,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Pauline McNeill",
+    Email: "",
     Party: Party.ScottishLabourParty,
     Region: Region.Glasgow,
     RegionRank: 2,
@@ -1823,6 +2006,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Anas Sarwar",
+    Email: "",
     Party: Party.ScottishLabourParty,
     Region: Region.Glasgow,
     RegionRank: 1,
@@ -1833,6 +2017,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Vonnie Sandlan",
+    Email: "labourvonnie@gmail.com",
     Party: Party.ScottishLabourParty,
     Region: Region.Glasgow,
     RegionRank: undefined,
@@ -1843,6 +2028,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Paul Sweeney",
+    Email: "sweeney4labour@gmail.com",
     Party: Party.ScottishLabourParty,
     Region: Region.Glasgow,
     RegionRank: 3,
@@ -1853,6 +2039,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "James Adams",
+    Email: "",
     Party: Party.ScottishLabourParty,
     Region: Region.Glasgow,
     RegionRank: undefined,
@@ -1863,6 +2050,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Mo Ameen",
+    Email: "",
     Party: Party.ScottishLabourParty,
     Region: Region.Glasgow,
     RegionRank: undefined,
@@ -1873,6 +2061,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Monica Lennon",
+    Email: "monica@hlslabour.org.uk",
     Party: Party.ScottishLabourParty,
     Region: Region.Glasgow,
     RegionRank: 4,
@@ -1883,6 +2072,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Callum George",
+    Email: "campaign@callumdgeorge.com",
     Party: Party.ScottishLabourParty,
     Region: Region.HighlandsandIslands,
     RegionRank: 6,
@@ -1893,6 +2083,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Eva Kestner",
+    Email: "evakestner4labour@gmail.com",
     Party: Party.ScottishLabourParty,
     Region: Region.HighlandsandIslands,
     RegionRank: 3,
@@ -1903,6 +2094,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Donald MacKinnon",
+    Email: "donaldlabour@gmail.com",
     Party: Party.ScottishLabourParty,
     Region: Region.HighlandsandIslands,
     RegionRank: 2,
@@ -1913,6 +2105,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Shaun Fraser",
+    Email: "shaunfraser90@gmail.com",
     Party: Party.ScottishLabourParty,
     Region: Region.HighlandsandIslands,
     RegionRank: 7,
@@ -1923,6 +2116,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "David Blair",
+    Email: "david.blair@moraylabour.org.uk",
     Party: Party.ScottishLabourParty,
     Region: Region.HighlandsandIslands,
     RegionRank: 8,
@@ -1933,6 +2127,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Mike Macleod",
+    Email: "mike@mikemacleod.scot",
     Party: Party.ScottishLabourParty,
     Region: Region.HighlandsandIslands,
     RegionRank: 5,
@@ -1943,6 +2138,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "John Erskine",
+    Email: "john@johnerskine.net",
     Party: Party.ScottishLabourParty,
     Region: Region.HighlandsandIslands,
     RegionRank: 4,
@@ -1953,6 +2149,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Isla McCay",
+    Email: "islamccaylabour@gmail.com",
     Party: Party.ScottishLabourParty,
     Region: Region.HighlandsandIslands,
     RegionRank: 1,
@@ -1963,6 +2160,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Suzanne Grahame",
+    Email: "clacksdunblane2026@icloud.com",
     Party: Party.ScottishLabourParty,
     Region: Region.MidandFife,
     RegionRank: undefined,
@@ -1973,6 +2171,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Fiona Sword",
+    Email: "fsword11@gmail.com",
     Party: Party.ScottishLabourParty,
     Region: Region.MidandFife,
     RegionRank: 3,
@@ -1983,6 +2182,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Joe Long",
+    Email: "joe.long.2026@protonmail.com",
     Party: Party.ScottishLabourParty,
     Region: Region.MidandFife,
     RegionRank: 2,
@@ -1993,6 +2193,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Elizabeth Carr-Ellis",
+    Email: "",
     Party: Party.ScottishLabourParty,
     Region: Region.MidandFife,
     RegionRank: undefined,
@@ -2003,6 +2204,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Claire Baker",
+    Email: "clairebaker.scotlab@gmail.com",
     Party: Party.ScottishLabourParty,
     Region: Region.MidandFife,
     RegionRank: 1,
@@ -2013,6 +2215,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Afifa Khanam",
+    Email: "",
     Party: Party.ScottishLabourParty,
     Region: Region.MidandFife,
     RegionRank: undefined,
@@ -2023,6 +2226,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Angela Bailey",
+    Email: "angelabaileylabour@gmail.com",
     Party: Party.ScottishLabourParty,
     Region: Region.MidandFife,
     RegionRank: undefined,
@@ -2033,6 +2237,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Luke Thomson",
+    Email: "",
     Party: Party.ScottishLabourParty,
     Region: Region.MidandFife,
     RegionRank: undefined,
@@ -2043,6 +2248,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Kainde Manji",
+    Email: "Kaindeforstirling@gmail.com",
     Party: Party.ScottishLabourParty,
     Region: Region.MidandFife,
     RegionRank: 4,
@@ -2053,6 +2259,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Jenny Laing",
+    Email: "jelaing@aberdeencity.gov.uk",
     Party: Party.ScottishLabourParty,
     Region: Region.NorthEast,
     RegionRank: undefined,
@@ -2063,6 +2270,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Matthew Lee",
+    Email: "",
     Party: Party.ScottishLabourParty,
     Region: Region.NorthEast,
     RegionRank: undefined,
@@ -2073,6 +2281,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Lynn Thomson",
+    Email: "Hello@lynnthomson.com",
     Party: Party.ScottishLabourParty,
     Region: Region.NorthEast,
     RegionRank: 3,
@@ -2083,6 +2292,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Janine Langler",
+    Email: "janine.langler13@gmail.com",
     Party: Party.ScottishLabourParty,
     Region: Region.NorthEast,
     RegionRank: 8,
@@ -2093,6 +2303,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Kate Blake",
+    Email: "Kablake@aberdeencity.gov.uk",
     Party: Party.ScottishLabourParty,
     Region: Region.NorthEast,
     RegionRank: 6,
@@ -2103,6 +2314,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Simon Watson",
+    Email: "imwatson@aberdeencity.gov.uk",
     Party: Party.ScottishLabourParty,
     Region: Region.NorthEast,
     RegionRank: 5,
@@ -2113,6 +2325,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Heather Doran",
+    Email: "HeatherDoranLabour@gmail.com",
     Party: Party.ScottishLabourParty,
     Region: Region.NorthEast,
     RegionRank: 2,
@@ -2123,6 +2336,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Brooke Ritchie",
+    Email: "britchie@eastloathian.gov.uk",
     Party: Party.ScottishLabourParty,
     Region: Region.NorthEast,
     RegionRank: undefined,
@@ -2133,6 +2347,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Cheryl-Ann Cruickshank",
+    Email: "hello@cheryl-anncruickshank.org",
     Party: Party.ScottishLabourParty,
     Region: Region.NorthEast,
     RegionRank: 4,
@@ -2143,6 +2358,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Michael Marra",
+    Email: "michael@michaelmarra.net",
     Party: Party.ScottishLabourParty,
     Region: Region.NorthEast,
     RegionRank: 1,
@@ -2153,6 +2369,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Mett ",
+    Email: "",
     Party: Party.ScottishLabourParty,
     Region: Region.NorthEast,
     RegionRank: 7,
@@ -2163,6 +2380,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Brian McGinley",
+    Email: "mcginleyforayr@gmail.com",
     Party: Party.ScottishLabourParty,
     Region: Region.South,
     RegionRank: undefined,
@@ -2173,6 +2391,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Carol Mochan",
+    Email: "carolmochanccdv@outlook.com",
     Party: Party.ScottishLabourParty,
     Region: Region.South,
     RegionRank: 1,
@@ -2183,6 +2402,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Lynsey Hamilton",
+    Email: "Votelynseyhamilton@gmail.com",
     Party: Party.ScottishLabourParty,
     Region: Region.South,
     RegionRank: undefined,
@@ -2193,6 +2413,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Linda Dorward",
+    Email: "linda.dorward.labour@gmail.com",
     Party: Party.ScottishLabourParty,
     Region: Region.South,
     RegionRank: 3,
@@ -2203,6 +2424,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Joe Fagan",
+    Email: "ekcnlabour@mail.com",
     Party: Party.ScottishLabourParty,
     Region: Region.South,
     RegionRank: 2,
@@ -2213,6 +2435,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Kaymarie Huges",
+    Email: "",
     Party: Party.ScottishLabourParty,
     Region: Region.South,
     RegionRank: undefined,
@@ -2223,6 +2446,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Jack McConnel",
+    Email: "",
     Party: Party.ScottishLabourParty,
     Region: Region.South,
     RegionRank: undefined,
@@ -2233,6 +2457,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Davy Russell",
+    Email: "hls@scottishlabour.org.uk",
     Party: Party.ScottishLabourParty,
     Region: Region.South,
     RegionRank: 5,
@@ -2243,6 +2468,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Ewan McPhee",
+    Email: "",
     Party: Party.ScottishLabourParty,
     Region: Region.South,
     RegionRank: 4,
@@ -2253,6 +2479,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Daniel Coleman",
+    Email: "dan@dan4mstl.org",
     Party: Party.ScottishLabourParty,
     Region: Region.South,
     RegionRank: undefined,
@@ -2263,6 +2490,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Callum McNally",
+    Email: "",
     Party: Party.ScottishLabourParty,
     Region: Region.West,
     RegionRank: undefined,
@@ -2273,6 +2501,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Matthew McGowan",
+    Email: "mattmcgowan4cunninghamenorth@outlook.com",
     Party: Party.ScottishLabourParty,
     Region: Region.West,
     RegionRank: 9,
@@ -2283,6 +2512,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Katy Clark",
+    Email: "",
     Party: Party.ScottishLabourParty,
     Region: Region.West,
     RegionRank: 3,
@@ -2293,6 +2523,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Jackie Baillie",
+    Email: "votejackiebaillie@gmail.com",
     Party: Party.ScottishLabourParty,
     Region: Region.West,
     RegionRank: 1,
@@ -2303,6 +2534,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Kayleigh Quinn",
+    Email: "hello@kayleighquinn.scot",
     Party: Party.ScottishLabourParty,
     Region: Region.West,
     RegionRank: 6,
@@ -2313,6 +2545,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Francesca Brennan",
+    Email: "francescalabour@gmail.com",
     Party: Party.ScottishLabourParty,
     Region: Region.West,
     RegionRank: 5,
@@ -2323,6 +2556,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Neil Bibby",
+    Email: "",
     Party: Party.ScottishLabourParty,
     Region: Region.West,
     RegionRank: 2,
@@ -2333,6 +2567,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Mike McKirdy",
+    Email: "",
     Party: Party.ScottishLabourParty,
     Region: Region.West,
     RegionRank: 7,
@@ -2342,7 +2577,8 @@ export const FullCandidateData26: Candidate[] = [
     Statement: "",
   },
   {
-    Name: "Paul O'Kane",
+    Name: "Paul O`Kane",
+    Email: "paulokanelabour@gmail.com",
     Party: Party.ScottishLabourParty,
     Region: Region.West,
     RegionRank: 4,
@@ -2353,6 +2589,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Colette McDiarmid",
+    Email: "colette.mcdiarmid1@gmail.com",
     Party: Party.ScottishLabourParty,
     Region: Region.West,
     RegionRank: 8,
@@ -2363,6 +2600,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Gillian Mackay",
+    Email: "Gillian.Mackay26@scottishgreens.org.uk",
     Party: Party.ScottishGreenParty,
     Region: Region.CentralScotlandandLothiansWest,
     RegionRank: 1,
@@ -2373,6 +2611,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Claire Williams",
+    Email: "Claire.Williams26@scottishgreens.org.uk",
     Party: Party.ScottishGreenParty,
     Region: Region.CentralScotlandandLothiansWest,
     RegionRank: 2,
@@ -2383,6 +2622,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Cameron Glasgow",
+    Email: "Cameron.Glasgow26@scottishgreens.org.uk",
     Party: Party.ScottishGreenParty,
     Region: Region.CentralScotlandandLothiansWest,
     RegionRank: 3,
@@ -2393,6 +2633,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Lorna Slater",
+    Email: "Lorna.Slater26@scottishgreens.org.uk",
     Party: Party.ScottishGreenParty,
     Region: Region.EdinburghandLothiansEast,
     RegionRank: 1,
@@ -2403,6 +2644,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Kate Nevens",
+    Email: "Kate.Nevens26@scottishgreens.org.uk",
     Party: Party.ScottishGreenParty,
     Region: Region.EdinburghandLothiansEast,
     RegionRank: 2,
@@ -2412,7 +2654,8 @@ export const FullCandidateData26: Candidate[] = [
     Statement: "",
   },
   {
-    Name: "Kayleigh O'Neill",
+    Name: "Kayleigh O`Neill",
+    Email: "Kayleigh.O`Neill26@scottishgreens.org.uk",
     Party: Party.ScottishGreenParty,
     Region: Region.EdinburghandLothiansEast,
     RegionRank: 4,
@@ -2423,6 +2666,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Kate Nevens",
+    Email: "Kate.Nevens26@scottishgreens.org.uk",
     Party: Party.ScottishGreenParty,
     Region: Region.EdinburghandLothiansEast,
     RegionRank: 2,
@@ -2433,6 +2677,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Chas Booth",
+    Email: "Chas.Booth26@scottishgreens.org.uk",
     Party: Party.ScottishGreenParty,
     Region: Region.EdinburghandLothiansEast,
     RegionRank: 5,
@@ -2443,6 +2688,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Adam Al-Khateb",
+    Email: "Adam.Al-Khateb26@scottishgreens.org.uk",
     Party: Party.ScottishGreenParty,
     Region: Region.EdinburghandLothiansEast,
     RegionRank: 6,
@@ -2453,6 +2699,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Jo Phillips",
+    Email: "Jo.Phillips26@scottishgreens.org.uk",
     Party: Party.ScottishGreenParty,
     Region: Region.EdinburghandLothiansEast,
     RegionRank: 7,
@@ -2463,6 +2710,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Mridul Wadhwa",
+    Email: "Mridul.Wadhwa26@scottishgreens.org.uk",
     Party: Party.ScottishGreenParty,
     Region: Region.EdinburghandLothiansEast,
     RegionRank: 8,
@@ -2473,6 +2721,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Dan Heap",
+    Email: "Dan.Heap26@scottishgreens.org.uk",
     Party: Party.ScottishGreenParty,
     Region: Region.EdinburghandLothiansEast,
     RegionRank: 9,
@@ -2483,6 +2732,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Astri Kvassnes",
+    Email: "Astri.Kvassnes26@scottishgreens.org.uk",
     Party: Party.ScottishGreenParty,
     Region: Region.EdinburghandLothiansEast,
     RegionRank: 10,
@@ -2493,6 +2743,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Alex Staniforth",
+    Email: "Alex.Staniforth26@scottishgreens.org.uk",
     Party: Party.ScottishGreenParty,
     Region: Region.EdinburghandLothiansEast,
     RegionRank: 11,
@@ -2503,6 +2754,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Mariusz Cebulski",
+    Email: "Mariusz.Cebulski26@scottishgreens.org.uk",
     Party: Party.ScottishGreenParty,
     Region: Region.EdinburghandLothiansEast,
     RegionRank: 12,
@@ -2513,6 +2765,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Iris Duane",
+    Email: "Iris.Duane26@scottishgreens.org.uk",
     Party: Party.ScottishGreenParty,
     Region: Region.Glasgow,
     RegionRank: 3,
@@ -2523,6 +2776,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Holly Bruce",
+    Email: "Holly.Bruce26@scottishgreens.org.uk",
     Party: Party.ScottishGreenParty,
     Region: Region.Glasgow,
     RegionRank: 2,
@@ -2533,6 +2787,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Patrick Harvie",
+    Email: "Patrick.Harvie26@scottishgreens.org.uk",
     Party: Party.ScottishGreenParty,
     Region: Region.Glasgow,
     RegionRank: 1,
@@ -2543,6 +2798,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Rana NoorMohamed",
+    Email: "Rana.NoorMohamed26@scottishgreens.org.uk",
     Party: Party.ScottishGreenParty,
     Region: Region.Glasgow,
     RegionRank: 4,
@@ -2553,16 +2809,19 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Isabel Ruffell",
+    Email: "Isabel.Ruffell26@scottishgreens.org.uk",
     Party: Party.ScottishGreenParty,
     Region: Region.Glasgow,
     RegionRank: 5,
     SupportBan: Support.Yes,
     SupportLife: Support.Yes,
     SupportHealthcare: Support.Yes,
-    Statement: "",
+    Statement:
+      "As a trans woman, I am in entire agreement with your  campaign, and would do everything in my power to bring about an end to conversion practices in the terms that you set out here. Happily, this is also the position of the Scottish Green Party, and I will add that one of the reasons that I have been a member of Green parties for over a quarter of a century is their support for liberation struggles, including those of trans people. That has not changed. Good luck with the campaign.",
   },
   {
     Name: "Kit Renard",
+    Email: "Kit.Renard26@scottishgreens.org.uk",
     Party: Party.ScottishGreenParty,
     Region: Region.Glasgow,
     RegionRank: 6,
@@ -2573,6 +2832,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Alex Armitage",
+    Email: "Alex.Armitage26@scottishgreens.org.uk",
     Party: Party.ScottishGreenParty,
     Region: Region.HighlandsandIslands,
     RegionRank: 5,
@@ -2583,6 +2843,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Ariane Burgess",
+    Email: "Ariane.Burgess26@scottishgreens.org.uk",
     Party: Party.ScottishGreenParty,
     Region: Region.HighlandsandIslands,
     RegionRank: 1,
@@ -2593,6 +2854,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Kristopher Leask",
+    Email: "Kristopher.Leask26@scottishgreens.org.uk",
     Party: Party.ScottishGreenParty,
     Region: Region.HighlandsandIslands,
     RegionRank: 2,
@@ -2603,6 +2865,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Kate Willis",
+    Email: "Kate.Willis26@scottishgreens.org.uk",
     Party: Party.ScottishGreenParty,
     Region: Region.HighlandsandIslands,
     RegionRank: 3,
@@ -2613,6 +2876,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Draeyk vanderHorn",
+    Email: "Draeyk.vanderHorn26@scottishgreens.org.uk",
     Party: Party.ScottishGreenParty,
     Region: Region.HighlandsandIslands,
     RegionRank: 4,
@@ -2623,6 +2887,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Anne Thomas",
+    Email: "Anne.Thomas26@scottishgreens.org.uk",
     Party: Party.ScottishGreenParty,
     Region: Region.HighlandsandIslands,
     RegionRank: 6,
@@ -2633,6 +2898,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Julie Christie",
+    Email: "Julie.Christie26@scottishgreens.org.uk",
     Party: Party.ScottishGreenParty,
     Region: Region.HighlandsandIslands,
     RegionRank: 7,
@@ -2643,6 +2909,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Mark Ruskell",
+    Email: "Mark.Ruskell26@scottishgreens.org.uk",
     Party: Party.ScottishGreenParty,
     Region: Region.MidandFife,
     RegionRank: 1,
@@ -2653,6 +2920,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Mags Hall",
+    Email: "Mags.Hall26@scottishgreens.org.uk",
     Party: Party.ScottishGreenParty,
     Region: Region.MidandFife,
     RegionRank: 2,
@@ -2663,6 +2931,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Caitlin Ripley",
+    Email: "Caitlin.Ripley26@scottishgreens.org.uk",
     Party: Party.ScottishGreenParty,
     Region: Region.MidandFife,
     RegionRank: 3,
@@ -2673,6 +2942,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Ryan Blackadder",
+    Email: "Ryan.Blackadder26@scottishgreens.org.uk",
     Party: Party.ScottishGreenParty,
     Region: Region.MidandFife,
     RegionRank: 4,
@@ -2683,6 +2953,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Marie Stadtler",
+    Email: "Marie.Stadtler26@scottishgreens.org.uk",
     Party: Party.ScottishGreenParty,
     Region: Region.MidandFife,
     RegionRank: 5,
@@ -2693,6 +2964,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Clare Andrews",
+    Email: "Clare.Andrews26@scottishgreens.org.uk",
     Party: Party.ScottishGreenParty,
     Region: Region.MidandFife,
     RegionRank: 6,
@@ -2703,6 +2975,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Andrew Adam",
+    Email: "Andrew.Adam26@scottishgreens.org.uk",
     Party: Party.ScottishGreenParty,
     Region: Region.MidandFife,
     RegionRank: 7,
@@ -2713,6 +2986,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Paul Vallot",
+    Email: "Paul.Vallot26@scottishgreens.org.uk",
     Party: Party.ScottishGreenParty,
     Region: Region.MidandFife,
     RegionRank: 8,
@@ -2723,6 +2997,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Elspeth Maclachlan",
+    Email: "Elspeth.Maclachlan26@scottishgreens.org.uk",
     Party: Party.ScottishGreenParty,
     Region: Region.MidandFife,
     RegionRank: 9,
@@ -2732,7 +3007,8 @@ export const FullCandidateData26: Candidate[] = [
     Statement: "",
   },
   {
-    Name: "Guy Ingerson",
+    Name: "Maggie Chapman",
+    Email: "Maggie.Chapman26@scottishgreens.org.uk",
     Party: Party.ScottishGreenParty,
     Region: Region.NorthEast,
     RegionRank: 1,
@@ -2742,7 +3018,8 @@ export const FullCandidateData26: Candidate[] = [
     Statement: "",
   },
   {
-    Name: "Maggie Chapman",
+    Name: "Esme Houston",
+    Email: "Esme.Houston26@scottishgreens.org.uk",
     Party: Party.ScottishGreenParty,
     Region: Region.NorthEast,
     RegionRank: 2,
@@ -2752,7 +3029,8 @@ export const FullCandidateData26: Candidate[] = [
     Statement: "",
   },
   {
-    Name: "Esme Houston",
+    Name: "William Linegar",
+    Email: "William.Linegar26@scottishgreens.org.uk",
     Party: Party.ScottishGreenParty,
     Region: Region.NorthEast,
     RegionRank: 3,
@@ -2762,7 +3040,8 @@ export const FullCandidateData26: Candidate[] = [
     Statement: "",
   },
   {
-    Name: "William Linegar",
+    Name: "Sylvia Hardie",
+    Email: "Sylvia.Hardie26@scottishgreens.org.uk",
     Party: Party.ScottishGreenParty,
     Region: Region.NorthEast,
     RegionRank: 4,
@@ -2772,7 +3051,8 @@ export const FullCandidateData26: Candidate[] = [
     Statement: "",
   },
   {
-    Name: "Sylvia Hardie",
+    Name: "Charlotte Horne",
+    Email: "Charlotte.Horne26@scottishgreens.org.uk",
     Party: Party.ScottishGreenParty,
     Region: Region.NorthEast,
     RegionRank: 5,
@@ -2782,20 +3062,11 @@ export const FullCandidateData26: Candidate[] = [
     Statement: "",
   },
   {
-    Name: "Charlotte Horne",
-    Party: Party.ScottishGreenParty,
-    Region: Region.NorthEast,
-    RegionRank: 7,
-    SupportBan: Support.NoReply,
-    SupportLife: Support.NoReply,
-    SupportHealthcare: Support.NoReply,
-    Statement: "",
-  },
-  {
     Name: "Remi Salvan",
+    Email: "Remi.Salvan26@scottishgreens.org.uk",
     Party: Party.ScottishGreenParty,
     Region: Region.NorthEast,
-    RegionRank: 8,
+    RegionRank: 6,
     SupportBan: Support.NoReply,
     SupportLife: Support.NoReply,
     SupportHealthcare: Support.NoReply,
@@ -2803,6 +3074,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Laura Moodie",
+    Email: "Laura.Moodie26@scottishgreens.org.uk",
     Party: Party.ScottishGreenParty,
     Region: Region.South,
     RegionRank: 1,
@@ -2813,6 +3085,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Ann McGuinness",
+    Email: "Ann.McGuinness26@scottishgreens.org.uk",
     Party: Party.ScottishGreenParty,
     Region: Region.South,
     RegionRank: 2,
@@ -2823,6 +3096,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Dominic Ashmole",
+    Email: "Dominic.Ashmole26@scottishgreens.org.uk",
     Party: Party.ScottishGreenParty,
     Region: Region.South,
     RegionRank: 3,
@@ -2833,6 +3107,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Neil MacKinnon",
+    Email: "Neil.MacKinnon26@scottishgreens.org.uk",
     Party: Party.ScottishGreenParty,
     Region: Region.South,
     RegionRank: 4,
@@ -2843,6 +3118,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Barbra Harvie",
+    Email: "Barbra.Harvie26@scottishgreens.org.uk",
     Party: Party.ScottishGreenParty,
     Region: Region.South,
     RegionRank: 5,
@@ -2853,6 +3129,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Cameron Garrett",
+    Email: "Cameron.Garrett26@scottishgreens.org.uk",
     Party: Party.ScottishGreenParty,
     Region: Region.South,
     RegionRank: 6,
@@ -2863,6 +3140,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Tim Clancey",
+    Email: "Tim.Clancey26@scottishgreens.org.uk",
     Party: Party.ScottishGreenParty,
     Region: Region.South,
     RegionRank: 7,
@@ -2873,6 +3151,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Tom Kerr",
+    Email: "Tom.Kerr26@scottishgreens.org.uk",
     Party: Party.ScottishGreenParty,
     Region: Region.South,
     RegionRank: 8,
@@ -2883,6 +3162,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Korin Vallance",
+    Email: "Korin.Vallance26@scottishgreens.org.uk",
     Party: Party.ScottishGreenParty,
     Region: Region.South,
     RegionRank: 9,
@@ -2893,6 +3173,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Ross Greer",
+    Email: "Ross.Greer26@scottishgreens.org.uk",
     Party: Party.ScottishGreenParty,
     Region: Region.West,
     RegionRank: 1,
@@ -2903,6 +3184,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Cara McKee",
+    Email: "Cara.McKee26@scottishgreens.org.uk",
     Party: Party.ScottishGreenParty,
     Region: Region.West,
     RegionRank: 2,
@@ -2913,6 +3195,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Karen Sharkey",
+    Email: "Karen.Sharkey26@scottishgreens.org.uk",
     Party: Party.ScottishGreenParty,
     Region: Region.West,
     RegionRank: 3,
@@ -2923,6 +3206,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Ian Sinkins",
+    Email: "Ian.Sinkins26@scottishgreens.org.uk",
     Party: Party.ScottishGreenParty,
     Region: Region.West,
     RegionRank: 4,
@@ -2933,6 +3217,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Paula Baker",
+    Email: "Paula.Baker26@scottishgreens.org.uk",
     Party: Party.ScottishGreenParty,
     Region: Region.West,
     RegionRank: 5,
@@ -2943,6 +3228,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Ross Collins",
+    Email: "Ross.Collins26@scottishgreens.org.uk",
     Party: Party.ScottishGreenParty,
     Region: Region.West,
     RegionRank: 6,
@@ -2953,6 +3239,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Ed Thornley",
+    Email: "",
     Party: Party.ScottishLiberalDemocrats,
     Region: Region.CentralScotlandandLothiansWest,
     RegionRank: undefined,
@@ -2963,6 +3250,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Caron Lindsay",
+    Email: "",
     Party: Party.ScottishLiberalDemocrats,
     Region: Region.CentralScotlandandLothiansWest,
     RegionRank: undefined,
@@ -2973,6 +3261,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Stephen Harte",
+    Email: "",
     Party: Party.ScottishLiberalDemocrats,
     Region: Region.CentralScotlandandLothiansWest,
     RegionRank: undefined,
@@ -2983,6 +3272,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Daniel Mancini",
+    Email: "",
     Party: Party.ScottishLiberalDemocrats,
     Region: Region.CentralScotlandandLothiansWest,
     RegionRank: undefined,
@@ -2993,6 +3283,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Brian Howieson",
+    Email: "",
     Party: Party.ScottishLiberalDemocrats,
     Region: Region.CentralScotlandandLothiansWest,
     RegionRank: undefined,
@@ -3003,6 +3294,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Paul McGarry",
+    Email: "paul@paulmcgarry.org",
     Party: Party.ScottishLiberalDemocrats,
     Region: Region.CentralScotlandandLothiansWest,
     RegionRank: 1,
@@ -3013,6 +3305,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Lucy Smith",
+    Email: "",
     Party: Party.ScottishLiberalDemocrats,
     Region: Region.CentralScotlandandLothiansWest,
     RegionRank: 2,
@@ -3023,6 +3316,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Hayley Bennie",
+    Email: "",
     Party: Party.ScottishLiberalDemocrats,
     Region: Region.CentralScotlandandLothiansWest,
     RegionRank: undefined,
@@ -3033,6 +3327,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Den Munnoch",
+    Email: "",
     Party: Party.ScottishLiberalDemocrats,
     Region: Region.CentralScotlandandLothiansWest,
     RegionRank: undefined,
@@ -3043,6 +3338,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Tim McKay",
+    Email: "",
     Party: Party.ScottishLiberalDemocrats,
     Region: Region.EdinburghandLothiansEast,
     RegionRank: undefined,
@@ -3053,6 +3349,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Charles Dundas",
+    Email: "charles.dundas@gmail.com",
     Party: Party.ScottishLiberalDemocrats,
     Region: Region.EdinburghandLothiansEast,
     RegionRank: 3,
@@ -3063,6 +3360,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Alan Grant",
+    Email: "",
     Party: Party.ScottishLiberalDemocrats,
     Region: Region.EdinburghandLothiansEast,
     RegionRank: undefined,
@@ -3073,6 +3371,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Liss Owen",
+    Email: "",
     Party: Party.ScottishLiberalDemocrats,
     Region: Region.EdinburghandLothiansEast,
     RegionRank: undefined,
@@ -3083,6 +3382,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Alex Cole-Hamilton",
+    Email: "",
     Party: Party.ScottishLiberalDemocrats,
     Region: Region.EdinburghandLothiansEast,
     RegionRank: undefined,
@@ -3093,6 +3393,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Sanne Dijkstra-Downie",
+    Email: "sanne@edinburghlibdems.org",
     Party: Party.ScottishLiberalDemocrats,
     Region: Region.EdinburghandLothiansEast,
     RegionRank: 1,
@@ -3103,6 +3404,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Andy Williamson",
+    Email: "",
     Party: Party.ScottishLiberalDemocrats,
     Region: Region.EdinburghandLothiansEast,
     RegionRank: undefined,
@@ -3113,6 +3415,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Jane Pickard",
+    Email: "jane_pickard@hotmail.com",
     Party: Party.ScottishLiberalDemocrats,
     Region: Region.EdinburghandLothiansEast,
     RegionRank: 2,
@@ -3123,6 +3426,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Jenny Butler",
+    Email: "",
     Party: Party.ScottishLiberalDemocrats,
     Region: Region.EdinburghandLothiansEast,
     RegionRank: undefined,
@@ -3133,6 +3437,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Lewis Younie",
+    Email: "",
     Party: Party.ScottishLiberalDemocrats,
     Region: Region.EdinburghandLothiansEast,
     RegionRank: 4,
@@ -3143,6 +3448,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "James Speirs",
+    Email: "",
     Party: Party.ScottishLiberalDemocrats,
     Region: Region.Glasgow,
     RegionRank: 4,
@@ -3153,6 +3459,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Amy Carman",
+    Email: "",
     Party: Party.ScottishLiberalDemocrats,
     Region: Region.Glasgow,
     RegionRank: undefined,
@@ -3163,6 +3470,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Peter McLaughlin",
+    Email: "",
     Party: Party.ScottishLiberalDemocrats,
     Region: Region.Glasgow,
     RegionRank: undefined,
@@ -3173,6 +3481,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Paul Kennedy",
+    Email: "paul@dunbartonshirelibdems.uk",
     Party: Party.ScottishLiberalDemocrats,
     Region: Region.Glasgow,
     RegionRank: 3,
@@ -3183,6 +3492,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Nicholas Moohan",
+    Email: "",
     Party: Party.ScottishLiberalDemocrats,
     Region: Region.Glasgow,
     RegionRank: undefined,
@@ -3192,7 +3502,8 @@ export const FullCandidateData26: Candidate[] = [
     Statement: "",
   },
   {
-    Name: "Daniel O'Malley",
+    Name: "Daniel O`Malley",
+    Email: "danieljohnscotlibdems@gmail.com",
     Party: Party.ScottishLiberalDemocrats,
     Region: Region.Glasgow,
     RegionRank: 1,
@@ -3203,6 +3514,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Rachel Park",
+    Email: "",
     Party: Party.ScottishLiberalDemocrats,
     Region: Region.Glasgow,
     RegionRank: undefined,
@@ -3213,6 +3525,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Patrick Logue",
+    Email: "",
     Party: Party.ScottishLiberalDemocrats,
     Region: Region.Glasgow,
     RegionRank: undefined,
@@ -3223,6 +3536,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Alan Reid",
+    Email: "alanreidargyllbute@yahoo.com",
     Party: Party.ScottishLiberalDemocrats,
     Region: Region.HighlandsandIslands,
     RegionRank: undefined,
@@ -3233,6 +3547,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "David Green",
+    Email: "",
     Party: Party.ScottishLiberalDemocrats,
     Region: Region.HighlandsandIslands,
     RegionRank: undefined,
@@ -3243,6 +3558,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Jamie Dobson",
+    Email: "",
     Party: Party.ScottishLiberalDemocrats,
     Region: Region.HighlandsandIslands,
     RegionRank: undefined,
@@ -3253,6 +3569,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Neil Alexander",
+    Email: "",
     Party: Party.ScottishLiberalDemocrats,
     Region: Region.HighlandsandIslands,
     RegionRank: undefined,
@@ -3263,6 +3580,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Morven-May McCallum",
+    Email: "",
     Party: Party.ScottishLiberalDemocrats,
     Region: Region.HighlandsandIslands,
     RegionRank: undefined,
@@ -3273,6 +3591,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Liam McArthur",
+    Email: "",
     Party: Party.ScottishLiberalDemocrats,
     Region: Region.HighlandsandIslands,
     RegionRank: undefined,
@@ -3283,6 +3602,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Emma Macdonald",
+    Email: "emma.sheltlandsld@gmail.com",
     Party: Party.ScottishLiberalDemocrats,
     Region: Region.HighlandsandIslands,
     RegionRank: undefined,
@@ -3293,6 +3613,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Andrew Baxter",
+    Email: "",
     Party: Party.ScottishLiberalDemocrats,
     Region: Region.HighlandsandIslands,
     RegionRank: undefined,
@@ -3303,6 +3624,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Sally Pattle",
+    Email: "sallywestlothianlibdem@gmail.com",
     Party: Party.ScottishLiberalDemocrats,
     Region: Region.MidandFife,
     RegionRank: undefined,
@@ -3313,6 +3635,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "James Calder",
+    Email: "",
     Party: Party.ScottishLiberalDemocrats,
     Region: Region.MidandFife,
     RegionRank: undefined,
@@ -3323,6 +3646,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Lauren Buchanan-Quigley",
+    Email: "",
     Party: Party.ScottishLiberalDemocrats,
     Region: Region.MidandFife,
     RegionRank: undefined,
@@ -3333,6 +3657,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Willie Rennie",
+    Email: "",
     Party: Party.ScottishLiberalDemocrats,
     Region: Region.MidandFife,
     RegionRank: undefined,
@@ -3343,6 +3668,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Fraser Graham",
+    Email: "",
     Party: Party.ScottishLiberalDemocrats,
     Region: Region.MidandFife,
     RegionRank: undefined,
@@ -3353,6 +3679,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Ed Scotcher",
+    Email: "",
     Party: Party.ScottishLiberalDemocrats,
     Region: Region.MidandFife,
     RegionRank: undefined,
@@ -3363,6 +3690,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Claire McLaren",
+    Email: "",
     Party: Party.ScottishLiberalDemocrats,
     Region: Region.MidandFife,
     RegionRank: undefined,
@@ -3373,6 +3701,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Amanda Clark",
+    Email: "",
     Party: Party.ScottishLiberalDemocrats,
     Region: Region.MidandFife,
     RegionRank: undefined,
@@ -3383,6 +3712,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Jill Reilly",
+    Email: "",
     Party: Party.ScottishLiberalDemocrats,
     Region: Region.MidandFife,
     RegionRank: undefined,
@@ -3393,6 +3723,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Claire McLaren",
+    Email: "",
     Party: Party.ScottishLiberalDemocrats,
     Region: Region.MidandFife,
     RegionRank: 1,
@@ -3403,6 +3734,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Yi-pei Turvey",
+    Email: "",
     Party: Party.ScottishLiberalDemocrats,
     Region: Region.NorthEast,
     RegionRank: 1,
@@ -3413,6 +3745,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Mel Sullivan",
+    Email: "",
     Party: Party.ScottishLiberalDemocrats,
     Region: Region.NorthEast,
     RegionRank: undefined,
@@ -3423,6 +3756,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Michael Turvey",
+    Email: "mturvey.libdem@gmail.com",
     Party: Party.ScottishLiberalDemocrats,
     Region: Region.NorthEast,
     RegionRank: 2,
@@ -3433,6 +3767,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "David Evans",
+    Email: "",
     Party: Party.ScottishLiberalDemocrats,
     Region: Region.NorthEast,
     RegionRank: undefined,
@@ -3443,6 +3778,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Jeff Goodhall",
+    Email: "",
     Party: Party.ScottishLiberalDemocrats,
     Region: Region.NorthEast,
     RegionRank: 5,
@@ -3453,6 +3789,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Martyn Knights",
+    Email: "",
     Party: Party.ScottishLiberalDemocrats,
     Region: Region.NorthEast,
     RegionRank: undefined,
@@ -3463,6 +3800,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Isobel Knights",
+    Email: "",
     Party: Party.ScottishLiberalDemocrats,
     Region: Region.NorthEast,
     RegionRank: undefined,
@@ -3473,6 +3811,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Ian Bailey",
+    Email: "",
     Party: Party.ScottishLiberalDemocrats,
     Region: Region.NorthEast,
     RegionRank: undefined,
@@ -3483,6 +3822,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Tanvir Ahmad",
+    Email: "",
     Party: Party.ScottishLiberalDemocrats,
     Region: Region.NorthEast,
     RegionRank: 3,
@@ -3493,6 +3833,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Daniel Coleman",
+    Email: "dan@dan4mstl.org",
     Party: Party.ScottishLiberalDemocrats,
     Region: Region.NorthEast,
     RegionRank: undefined,
@@ -3503,6 +3844,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Marjory Millum",
+    Email: "",
     Party: Party.ScottishLiberalDemocrats,
     Region: Region.NorthEast,
     RegionRank: 4,
@@ -3513,6 +3855,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Desmond Bouce",
+    Email: "",
     Party: Party.ScottishLiberalDemocrats,
     Region: Region.South,
     RegionRank: undefined,
@@ -3523,6 +3866,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Karen Utting",
+    Email: "",
     Party: Party.ScottishLiberalDemocrats,
     Region: Region.South,
     RegionRank: undefined,
@@ -3533,6 +3877,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Richard Brodie",
+    Email: "",
     Party: Party.ScottishLiberalDemocrats,
     Region: Region.South,
     RegionRank: 4,
@@ -3543,6 +3888,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Ian McDonald",
+    Email: "",
     Party: Party.ScottishLiberalDemocrats,
     Region: Region.South,
     RegionRank: undefined,
@@ -3553,6 +3899,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Leigh Butler",
+    Email: "",
     Party: Party.ScottishLiberalDemocrats,
     Region: Region.South,
     RegionRank: undefined,
@@ -3563,6 +3910,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Ray Georgeson",
+    Email: "",
     Party: Party.ScottishLiberalDemocrats,
     Region: Region.South,
     RegionRank: 2,
@@ -3573,6 +3921,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Tracey Warman",
+    Email: "",
     Party: Party.ScottishLiberalDemocrats,
     Region: Region.South,
     RegionRank: undefined,
@@ -3583,6 +3932,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Aisha Mir",
+    Email: "",
     Party: Party.ScottishLiberalDemocrats,
     Region: Region.South,
     RegionRank: 3,
@@ -3593,6 +3943,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Michael Gregori",
+    Email: "",
     Party: Party.ScottishLiberalDemocrats,
     Region: Region.South,
     RegionRank: undefined,
@@ -3603,6 +3954,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Duncan Dunlop",
+    Email: "dunlopdunc@gmail.com",
     Party: Party.ScottishLiberalDemocrats,
     Region: Region.South,
     RegionRank: 1,
@@ -3613,6 +3965,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Charlotte Olcay",
+    Email: "",
     Party: Party.ScottishLiberalDemocrats,
     Region: Region.South,
     RegionRank: 5,
@@ -3623,6 +3976,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Ben Langmead",
+    Email: "",
     Party: Party.ScottishLiberalDemocrats,
     Region: Region.West,
     RegionRank: undefined,
@@ -3633,6 +3987,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Christine Murdoch",
+    Email: "",
     Party: Party.ScottishLiberalDemocrats,
     Region: Region.West,
     RegionRank: undefined,
@@ -3643,6 +3998,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Emma Farthing",
+    Email: "",
     Party: Party.ScottishLiberalDemocrats,
     Region: Region.West,
     RegionRank: undefined,
@@ -3653,6 +4009,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Elaine Ford",
+    Email: "",
     Party: Party.ScottishLiberalDemocrats,
     Region: Region.West,
     RegionRank: undefined,
@@ -3663,6 +4020,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Euan Davidson",
+    Email: "",
     Party: Party.ScottishLiberalDemocrats,
     Region: Region.West,
     RegionRank: undefined,
@@ -3673,6 +4031,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Jamie Greene",
+    Email: "",
     Party: Party.ScottishLiberalDemocrats,
     Region: Region.West,
     RegionRank: undefined,
@@ -3683,6 +4042,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "James Kenyon",
+    Email: "",
     Party: Party.ScottishLiberalDemocrats,
     Region: Region.West,
     RegionRank: undefined,
@@ -3693,6 +4053,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Grant Toghill",
+    Email: "",
     Party: Party.ScottishLiberalDemocrats,
     Region: Region.West,
     RegionRank: undefined,
@@ -3703,6 +4064,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Ross Stalker",
+    Email: "",
     Party: Party.ScottishLiberalDemocrats,
     Region: Region.West,
     RegionRank: undefined,
@@ -3713,6 +4075,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Adam Harley",
+    Email: "adam.harley@scotlibdems.org.uk",
     Party: Party.ScottishLiberalDemocrats,
     Region: Region.West,
     RegionRank: 1,
@@ -3723,6 +4086,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Graham Simpson",
+    Email: "",
     Party: Party.Reform,
     Region: Region.CentralScotlandandLothiansWest,
     RegionRank: undefined,
@@ -3733,6 +4097,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Malcolm Jones",
+    Email: "",
     Party: Party.Reform,
     Region: Region.CentralScotlandandLothiansWest,
     RegionRank: undefined,
@@ -3743,6 +4108,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "David McLennan",
+    Email: "",
     Party: Party.Reform,
     Region: Region.CentralScotlandandLothiansWest,
     RegionRank: undefined,
@@ -3753,6 +4119,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Amanda Lindsay",
+    Email: "",
     Party: Party.Reform,
     Region: Region.CentralScotlandandLothiansWest,
     RegionRank: undefined,
@@ -3763,6 +4130,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Steven Grant",
+    Email: "",
     Party: Party.Reform,
     Region: Region.CentralScotlandandLothiansWest,
     RegionRank: undefined,
@@ -3773,6 +4141,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Amanda Bland",
+    Email: "",
     Party: Party.Reform,
     Region: Region.CentralScotlandandLothiansWest,
     RegionRank: undefined,
@@ -3783,6 +4152,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Richard Fairley",
+    Email: "",
     Party: Party.Reform,
     Region: Region.CentralScotlandandLothiansWest,
     RegionRank: undefined,
@@ -3793,6 +4163,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Duncan Macmillan",
+    Email: "",
     Party: Party.Reform,
     Region: Region.CentralScotlandandLothiansWest,
     RegionRank: undefined,
@@ -3803,6 +4174,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "George Hobbins",
+    Email: "",
     Party: Party.Reform,
     Region: Region.CentralScotlandandLothiansWest,
     RegionRank: undefined,
@@ -3813,6 +4185,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Nigel Douglas",
+    Email: "",
     Party: Party.Reform,
     Region: Region.EdinburghandLothiansEast,
     RegionRank: undefined,
@@ -3823,6 +4196,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Gary Neil",
+    Email: "",
     Party: Party.Reform,
     Region: Region.EdinburghandLothiansEast,
     RegionRank: undefined,
@@ -3833,6 +4207,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Angela Ross",
+    Email: "",
     Party: Party.Reform,
     Region: Region.EdinburghandLothiansEast,
     RegionRank: undefined,
@@ -3843,6 +4218,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "David Lees",
+    Email: "",
     Party: Party.Reform,
     Region: Region.EdinburghandLothiansEast,
     RegionRank: undefined,
@@ -3853,6 +4229,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "James Glen",
+    Email: "",
     Party: Party.Reform,
     Region: Region.EdinburghandLothiansEast,
     RegionRank: undefined,
@@ -3863,6 +4240,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Andrew McLaughlin",
+    Email: "",
     Party: Party.Reform,
     Region: Region.EdinburghandLothiansEast,
     RegionRank: undefined,
@@ -3873,6 +4251,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Cameron Rose",
+    Email: "",
     Party: Party.Reform,
     Region: Region.EdinburghandLothiansEast,
     RegionRank: undefined,
@@ -3883,6 +4262,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Charles Turner",
+    Email: "",
     Party: Party.Reform,
     Region: Region.EdinburghandLothiansEast,
     RegionRank: undefined,
@@ -3893,6 +4273,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Pal Chidambaram",
+    Email: "",
     Party: Party.Reform,
     Region: Region.EdinburghandLothiansEast,
     RegionRank: undefined,
@@ -3903,6 +4284,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Sean O’Hagan",
+    Email: "",
     Party: Party.Reform,
     Region: Region.Glasgow,
     RegionRank: undefined,
@@ -3913,6 +4295,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Thomas Kerr",
+    Email: "",
     Party: Party.Reform,
     Region: Region.Glasgow,
     RegionRank: undefined,
@@ -3923,6 +4306,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Kim Schmullian",
+    Email: "",
     Party: Party.Reform,
     Region: Region.Glasgow,
     RegionRank: undefined,
@@ -3933,6 +4317,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Paul Bennie",
+    Email: "",
     Party: Party.Reform,
     Region: Region.Glasgow,
     RegionRank: undefined,
@@ -3943,6 +4328,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Audrey Dempsey",
+    Email: "",
     Party: Party.Reform,
     Region: Region.Glasgow,
     RegionRank: undefined,
@@ -3953,6 +4339,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Aimee Alexander",
+    Email: "",
     Party: Party.Reform,
     Region: Region.Glasgow,
     RegionRank: undefined,
@@ -3963,6 +4350,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Gordon Millar",
+    Email: "",
     Party: Party.Reform,
     Region: Region.Glasgow,
     RegionRank: undefined,
@@ -3973,6 +4361,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Allan Lyons",
+    Email: "",
     Party: Party.Reform,
     Region: Region.Glasgow,
     RegionRank: undefined,
@@ -3983,6 +4372,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Amanda Hampsey",
+    Email: "",
     Party: Party.Reform,
     Region: Region.HighlandsandIslands,
     RegionRank: undefined,
@@ -3993,6 +4383,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Steve Welsh",
+    Email: "",
     Party: Party.Reform,
     Region: Region.HighlandsandIslands,
     RegionRank: undefined,
@@ -4003,6 +4394,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Fred Campbell",
+    Email: "",
     Party: Party.Reform,
     Region: Region.HighlandsandIslands,
     RegionRank: undefined,
@@ -4013,6 +4405,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Max Bannerman",
+    Email: "",
     Party: Party.Reform,
     Region: Region.HighlandsandIslands,
     RegionRank: undefined,
@@ -4023,6 +4416,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Eileanan an",
+    Email: "",
     Party: Party.Reform,
     Region: Region.HighlandsandIslands,
     RegionRank: undefined,
@@ -4033,6 +4427,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "John Coupland",
+    Email: "",
     Party: Party.Reform,
     Region: Region.HighlandsandIslands,
     RegionRank: undefined,
@@ -4043,6 +4438,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Vic Currie",
+    Email: "",
     Party: Party.Reform,
     Region: Region.HighlandsandIslands,
     RegionRank: undefined,
@@ -4053,6 +4449,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Jon Whitton",
+    Email: "",
     Party: Party.Reform,
     Region: Region.HighlandsandIslands,
     RegionRank: undefined,
@@ -4063,6 +4460,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Mike Collier",
+    Email: "",
     Party: Party.Reform,
     Region: Region.MidandFife,
     RegionRank: undefined,
@@ -4073,6 +4471,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Mark Davies",
+    Email: "",
     Party: Party.Reform,
     Region: Region.MidandFife,
     RegionRank: undefined,
@@ -4083,6 +4482,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Otto Inglis",
+    Email: "",
     Party: Party.Reform,
     Region: Region.MidandFife,
     RegionRank: undefined,
@@ -4093,6 +4493,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Julie McDougall",
+    Email: "",
     Party: Party.Reform,
     Region: Region.MidandFife,
     RegionRank: undefined,
@@ -4103,6 +4504,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Kenneth Morton",
+    Email: "",
     Party: Party.Reform,
     Region: Region.MidandFife,
     RegionRank: undefined,
@@ -4113,6 +4515,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "shire ",
+    Email: "",
     Party: Party.Reform,
     Region: Region.MidandFife,
     RegionRank: undefined,
@@ -4123,6 +4526,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Rachael Wright",
+    Email: "",
     Party: Party.Reform,
     Region: Region.MidandFife,
     RegionRank: undefined,
@@ -4133,6 +4537,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Duncan Massey",
+    Email: "",
     Party: Party.Reform,
     Region: Region.NorthEast,
     RegionRank: undefined,
@@ -4143,6 +4548,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Claudia Leith",
+    Email: "",
     Party: Party.Reform,
     Region: Region.NorthEast,
     RegionRank: undefined,
@@ -4153,6 +4559,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "John Crawley",
+    Email: "",
     Party: Party.Reform,
     Region: Region.NorthEast,
     RegionRank: undefined,
@@ -4163,6 +4570,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Jo Hart",
+    Email: "",
     Party: Party.Reform,
     Region: Region.NorthEast,
     RegionRank: undefined,
@@ -4173,6 +4581,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Laurie Carnie",
+    Email: "",
     Party: Party.Reform,
     Region: Region.NorthEast,
     RegionRank: undefined,
@@ -4183,6 +4592,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "James Wylie",
+    Email: "",
     Party: Party.Reform,
     Region: Region.NorthEast,
     RegionRank: undefined,
@@ -4193,6 +4603,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Conrad Ritchie",
+    Email: "",
     Party: Party.Reform,
     Region: Region.NorthEast,
     RegionRank: undefined,
@@ -4203,6 +4614,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Mark Simpson",
+    Email: "",
     Party: Party.Reform,
     Region: Region.NorthEast,
     RegionRank: undefined,
@@ -4213,6 +4625,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Andrew Russell",
+    Email: "",
     Party: Party.Reform,
     Region: Region.South,
     RegionRank: undefined,
@@ -4223,6 +4636,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Andrew Scott",
+    Email: "",
     Party: Party.Reform,
     Region: Region.South,
     RegionRank: undefined,
@@ -4233,6 +4647,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Daniel Clarke",
+    Email: "",
     Party: Party.Reform,
     Region: Region.South,
     RegionRank: undefined,
@@ -4243,6 +4658,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "David Kirkwood",
+    Email: "",
     Party: Party.Reform,
     Region: Region.South,
     RegionRank: undefined,
@@ -4253,6 +4669,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Tim Kelly",
+    Email: "",
     Party: Party.Reform,
     Region: Region.South,
     RegionRank: undefined,
@@ -4263,6 +4680,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Jamie Langan",
+    Email: "",
     Party: Party.Reform,
     Region: Region.South,
     RegionRank: undefined,
@@ -4273,6 +4691,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Senga Beresford",
+    Email: "",
     Party: Party.Reform,
     Region: Region.South,
     RegionRank: undefined,
@@ -4283,6 +4702,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "John McNamee",
+    Email: "",
     Party: Party.Reform,
     Region: Region.South,
     RegionRank: undefined,
@@ -4293,6 +4713,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Anne Millar",
+    Email: "",
     Party: Party.Reform,
     Region: Region.South,
     RegionRank: undefined,
@@ -4303,6 +4724,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Carolyn Grant",
+    Email: "",
     Party: Party.Reform,
     Region: Region.South,
     RegionRank: undefined,
@@ -4313,6 +4735,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Andy White",
+    Email: "",
     Party: Party.Reform,
     Region: Region.West,
     RegionRank: undefined,
@@ -4323,6 +4746,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Mike Mann",
+    Email: "",
     Party: Party.Reform,
     Region: Region.West,
     RegionRank: undefined,
@@ -4333,6 +4757,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Matthew McLean",
+    Email: "",
     Party: Party.Reform,
     Region: Region.West,
     RegionRank: undefined,
@@ -4343,6 +4768,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "David Smith",
+    Email: "",
     Party: Party.Reform,
     Region: Region.West,
     RegionRank: undefined,
@@ -4353,6 +4779,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Donald McNiven",
+    Email: "",
     Party: Party.Reform,
     Region: Region.West,
     RegionRank: undefined,
@@ -4363,6 +4790,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Malcolm Offord",
+    Email: "",
     Party: Party.Reform,
     Region: Region.West,
     RegionRank: undefined,
@@ -4373,6 +4801,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Alec Leishman",
+    Email: "",
     Party: Party.Reform,
     Region: Region.West,
     RegionRank: undefined,
@@ -4383,6 +4812,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Moira Ramage",
+    Email: "",
     Party: Party.Reform,
     Region: Region.West,
     RegionRank: undefined,
@@ -4393,6 +4823,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Jamie McGuire",
+    Email: "",
     Party: Party.Reform,
     Region: Region.West,
     RegionRank: undefined,
@@ -4403,6 +4834,7 @@ export const FullCandidateData26: Candidate[] = [
   },
   {
     Name: "Faten Hameed",
+    Email: "",
     Party: Party.Reform,
     Region: Region.West,
     RegionRank: undefined,

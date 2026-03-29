@@ -13,14 +13,39 @@ import {
   Support,
   type Candidate,
 } from "../data/Types26";
+import {
+  EMAIL_BODY_26,
+  EMAIL_SUBJECT_26,
+} from "../data/CandidateEmailTemplate26";
 import { CamelCaseToSentence } from "../utils/camelCaseToSentence";
 import { FullCandidateData26 } from "../data/Candidates2026";
 import { GetPartyLogo } from "../utils/getPartyLogo";
+
+const PARTY_SHORT_NAMES: Partial<Record<Party, string>> = {
+  [Party.ScottishNationalParty]: "SNP",
+  [Party.ScottishGreenParty]: "SGP",
+  [Party.ScottishLiberalDemocrats]: "LibDems",
+  [Party.ScottishConservativeParty]: "Conservatives",
+  [Party.ScottishLabourParty]: "Labour",
+};
+
+const EMAIL_SUBJECT_PARAM_26 = encodeURIComponent(EMAIL_SUBJECT_26);
+const EMAIL_BODY_PARAM_26 = encodeURIComponent(EMAIL_BODY_26).replace(
+  /%0A/g,
+  "%0D%0A",
+);
+
+const getPartyLabel = (party: Party): string =>
+  PARTY_SHORT_NAMES[party] ?? CamelCaseToSentence(Party[party]);
+
+const getPartyFullLabel = (party: Party): string =>
+  CamelCaseToSentence(Party[party]);
 
 function Candidates2026() {
   const [nameFilter, setNameFilter] = useState("");
   const [partyFilter, setPartyFilter] = useState<number | "">("");
   const [regionFilter, setRegionFilter] = useState<number | "">("");
+  const [constituencyFilter, setConstituencyFilter] = useState("");
 
   // Memoize enum keys and candidate names to avoid recalculation on every render
   const uniqueNames = useMemo(
@@ -28,15 +53,93 @@ function Candidates2026() {
     [],
   );
 
-  const partyKeys = useMemo(
-    () => Object.keys(Party).filter((key) => isNaN(Number(key))),
-    [],
-  );
+  const partyFilterOptions = useMemo(() => {
+    const counts = new Map<number, number>();
+
+    for (const candidate of FullCandidateData26) {
+      counts.set(candidate.Party, (counts.get(candidate.Party) ?? 0) + 1);
+    }
+
+    return Array.from(counts.entries())
+      .map(([party, total]) => ({
+        party,
+        total,
+        label: getPartyFullLabel(party),
+      }))
+      .sort((a, b) => {
+        if (b.total !== a.total) {
+          return b.total - a.total;
+        }
+
+        return a.label.localeCompare(b.label);
+      });
+  }, []);
 
   const regionKeys = useMemo(
     () => Object.keys(Region).filter((key) => isNaN(Number(key))),
     [],
   );
+
+  const constituencyKeys = useMemo(
+    () => Object.keys(Constituency).filter((key) => isNaN(Number(key))),
+    [],
+  );
+
+  const partiesInData = useMemo(
+    () =>
+      Array.from(
+        new Set(FullCandidateData26.map((candidate) => candidate.Party)),
+      )
+        .map((party) => ({
+          party,
+          label: CamelCaseToSentence(Party[party]),
+        }))
+        .sort((a, b) => a.label.localeCompare(b.label)),
+    [],
+  );
+
+  // Add party enum values here as manifesto pledges are confirmed.
+  const inclusiveBanManifestoParties = useMemo(() => new Set<Party>(), []);
+
+  const partyPledgeStats = useMemo(() => {
+    const stats = new Map<number, { total: number; pledged: number }>();
+
+    for (const candidate of FullCandidateData26) {
+      const current = stats.get(candidate.Party) ?? { total: 0, pledged: 0 };
+      current.total += 1;
+
+      const isPledged =
+        candidate.SupportBan === Support.Yes &&
+        candidate.SupportLife === Support.Yes &&
+        candidate.SupportHealthcare === Support.Yes;
+
+      if (isPledged) {
+        current.pledged += 1;
+      }
+
+      stats.set(candidate.Party, current);
+    }
+
+    return Array.from(stats.entries())
+      .map(([party, counts]) => ({
+        party,
+        label: getPartyLabel(party),
+        total: counts.total,
+        pledged: counts.pledged,
+        proportion: counts.total === 0 ? 0 : counts.pledged / counts.total,
+      }))
+      .sort((a, b) => {
+        if (b.proportion !== a.proportion) {
+          return b.proportion - a.proportion;
+        }
+
+        if (b.pledged !== a.pledged) {
+          return b.pledged - a.pledged;
+        }
+
+        return a.label.localeCompare(b.label);
+      });
+  }, []);
 
   const filteredData = useMemo(
     () =>
@@ -49,10 +152,19 @@ function Candidates2026() {
         const regionMatch =
           regionFilter === "" ||
           (candidate.Region !== undefined && candidate.Region === regionFilter);
+        const candidateConstituencyKey =
+          candidate.Constituency === undefined
+            ? ""
+            : typeof candidate.Constituency === "number"
+              ? Constituency[candidate.Constituency]
+              : String(candidate.Constituency);
+        const constituencyMatch =
+          constituencyFilter === "" ||
+          candidateConstituencyKey === constituencyFilter;
 
-        return nameMatch && partyMatch && regionMatch;
+        return nameMatch && partyMatch && regionMatch && constituencyMatch;
       }),
-    [nameFilter, partyFilter, regionFilter],
+    [nameFilter, partyFilter, regionFilter, constituencyFilter],
   );
 
   const columnHelper = createColumnHelper<Candidate>();
@@ -61,6 +173,25 @@ function Candidates2026() {
     columnHelper.accessor("Name", {
       header: () => "Name",
       cell: (info) => info.getValue(),
+    }),
+    columnHelper.accessor("Email", {
+      header: () => "Email your candidate",
+      cell: (info) => {
+        const email = info.getValue();
+        if (!email) {
+          return "";
+        }
+
+        return (
+          <a
+            href={`mailto:${email}?subject=${EMAIL_SUBJECT_PARAM_26}&body=${EMAIL_BODY_PARAM_26}`}
+            className="email-button"
+            aria-label={`Email ${email}`}
+          >
+            Email
+          </a>
+        );
+      },
     }),
     columnHelper.accessor("Party", {
       header: () => "Party",
@@ -122,8 +253,12 @@ function Candidates2026() {
       header: () => "Region",
       cell: (info) => {
         const region = info.getValue();
-        return CamelCaseToSentence(
-          region === undefined ? undefined : Region[region],
+        return (
+          <span className="nowrap-cell">
+            {CamelCaseToSentence(
+              region === undefined ? undefined : Region[region],
+            )}
+          </span>
         );
       },
     }),
@@ -154,6 +289,40 @@ function Candidates2026() {
   return (
     <div className="page-content">
       <h2>Candidates 2026</h2>
+      <div className="manifesto-tracker">
+        <h3>Inclusive Ban In Manifesto</h3>
+        <div className="manifesto-logo-grid">
+          {partiesInData.map((item) => {
+            const hasManifestoPledge = inclusiveBanManifestoParties.has(
+              item.party,
+            );
+            return (
+              <div key={item.party} className="manifesto-logo-item">
+                <div
+                  className={`manifesto-logo ${hasManifestoPledge ? "" : "manifesto-logo-muted"}`}
+                  title={item.label}
+                >
+                  {GetPartyLogo(item.party)}
+                </div>
+                <p>{item.label}</p>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+      <div className="party-pledge-tracker">
+        <h3>Party Pledge Tracker</h3>
+        <div className="party-pledge-grid">
+          {partyPledgeStats.map((item) => (
+            <div key={item.party} className="party-pledge-item">
+              <p className="party-pledge-name">{item.label}</p>
+              <p className="party-pledge-count">
+                {item.pledged}/{item.total} pledged
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
       <div className="filter-controls">
         <div className="filter-input">
           <label htmlFor="nameInput">Name:</label>
@@ -171,6 +340,7 @@ function Candidates2026() {
               setNameFilter(e.target.value);
               setPartyFilter("");
               setRegionFilter("");
+              setConstituencyFilter("");
             }}
             list="candidateNames"
           />
@@ -187,17 +357,17 @@ function Candidates2026() {
             value={partyFilter}
             onChange={(e) => {
               setNameFilter("");
+              setConstituencyFilter("");
               setPartyFilter(
                 e.target.value === "" ? "" : Number(e.target.value),
               );
             }}
           >
             <option value="">All Parties</option>
-            {partyKeys.map((key) => {
-              const partyIndex = Party[key as keyof typeof Party];
+            {partyFilterOptions.map((option) => {
               return (
-                <option key={partyIndex} value={partyIndex}>
-                  {CamelCaseToSentence(key)}
+                <option key={option.party} value={option.party}>
+                  {option.label}
                 </option>
               );
             })}
@@ -210,6 +380,7 @@ function Candidates2026() {
             value={regionFilter}
             onChange={(e) => {
               setNameFilter("");
+              setConstituencyFilter("");
               setRegionFilter(
                 e.target.value === "" ? "" : Number(e.target.value),
               );
@@ -220,6 +391,28 @@ function Candidates2026() {
               const regionIndex = Region[key as keyof typeof Region];
               return (
                 <option key={regionIndex} value={regionIndex}>
+                  {CamelCaseToSentence(key)}
+                </option>
+              );
+            })}
+          </select>
+        </div>
+        <div className="filter-input">
+          <label htmlFor="constituencySelect">Constituency:</label>
+          <select
+            id="constituencySelect"
+            value={constituencyFilter}
+            onChange={(e) => {
+              setNameFilter("");
+              setPartyFilter("");
+              setRegionFilter("");
+              setConstituencyFilter(e.target.value);
+            }}
+          >
+            <option value="">All Constituencies</option>
+            {constituencyKeys.map((key) => {
+              return (
+                <option key={key} value={key}>
                   {CamelCaseToSentence(key)}
                 </option>
               );

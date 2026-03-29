@@ -148,6 +148,93 @@ body {
   }
 }
 
+.manifesto-tracker {
+  margin-bottom: 1.5rem;
+
+  h3 {
+    margin: 0 0 0.4rem 0;
+    font-size: 1.1rem;
+  }
+
+  p {
+    margin: 0 0 0.75rem 0;
+  }
+
+  .manifesto-logo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+    gap: 0.8rem;
+  }
+
+  .manifesto-logo-item {
+    border: 0.1rem solid #555;
+    border-radius: 0.3rem;
+    padding: 0.5rem;
+    text-align: center;
+
+    p {
+      margin: 0.4rem 0 0 0;
+      font-size: 0.9rem;
+    }
+  }
+
+  .manifesto-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      height: 2.2rem;
+      width: auto;
+      max-width: 100%;
+    }
+  }
+
+  .manifesto-logo-muted {
+    filter: grayscale(100%) opacity(55%);
+  }
+}
+
+.party-pledge-tracker {
+  margin-bottom: 1.5rem;
+
+  h3 {
+    margin: 0 0 0.75rem 0;
+    font-size: 1.1rem;
+  }
+
+  .party-pledge-grid {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 0.6rem;
+    overflow-x: auto;
+    padding-bottom: 0.2rem;
+  }
+
+  .party-pledge-item {
+    flex: 0 0 auto;
+    min-width: 10.5rem;
+    border: 0.1rem solid #555;
+    border-radius: 0.3rem;
+    padding: 0.35rem 0.55rem;
+  }
+
+  .party-pledge-name,
+  .party-pledge-count {
+    margin: 0;
+  }
+
+  .party-pledge-name {
+    font-weight: 600;
+    font-size: 0.9rem;
+  }
+
+  .party-pledge-count {
+    margin-top: 0.2rem;
+    font-size: 0.85rem;
+  }
+}
+
 .policy {
   width: calc(100vw - 10rem);
   max-width: 1000px;
@@ -175,6 +262,25 @@ body {
   padding: 0;
   border-radius: 0;
   font-weight: 400;
+}
+
+.email-button {
+  display: inline-block;
+  padding: 0.25rem 0.6rem;
+  border: 0.1rem solid #646cff;
+  border-radius: 0.3rem;
+  text-decoration: none;
+  font-weight: 600;
+  color: #646cff;
+}
+
+.email-button:hover {
+  color: #998aff;
+  border-color: #998aff;
+}
+
+.nowrap-cell {
+  white-space: nowrap;
 }
 
 @media (max-width: 1200px) {
