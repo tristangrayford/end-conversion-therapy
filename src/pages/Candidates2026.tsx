@@ -41,6 +41,39 @@ const getPartyLabel = (party: Party): string =>
 const getPartyFullLabel = (party: Party): string =>
   CamelCaseToSentence(Party[party]);
 
+const getConstituencyKey = (candidate: Candidate): string => {
+  if (candidate.Constituency !== undefined) {
+    if (typeof candidate.Constituency === "number") {
+      return `constituency:${Constituency[candidate.Constituency] ?? ""}`;
+    }
+
+    return `constituency:${String(candidate.Constituency)}`;
+  }
+
+  if (candidate.Region !== undefined) {
+    return `region:${Region[candidate.Region] ?? ""}`;
+  }
+
+  return "";
+};
+
+const getConstituencyLabel = (candidate: Candidate): string => {
+  if (candidate.Constituency !== undefined) {
+    const constituencyLabel =
+      typeof candidate.Constituency === "number"
+        ? Constituency[candidate.Constituency]
+        : String(candidate.Constituency);
+
+    return CamelCaseToSentence(constituencyLabel);
+  }
+
+  if (candidate.Region !== undefined) {
+    return CamelCaseToSentence(Region[candidate.Region]);
+  }
+
+  return "Not published";
+};
+
 function Candidates2026() {
   const [nameFilter, setNameFilter] = useState("");
   const [partyFilter, setPartyFilter] = useState<number | "">("");
@@ -80,10 +113,19 @@ function Candidates2026() {
     [],
   );
 
-  const constituencyKeys = useMemo(
-    () => Object.keys(Constituency).filter((key) => isNaN(Number(key))),
-    [],
-  );
+  const constituencyFilterOptions = useMemo(() => {
+    return Array.from(
+      new Set(
+        FullCandidateData26.map((candidate) => getConstituencyKey(candidate))
+          .filter((key) => key !== ""),
+      ),
+    )
+      .map((key) => ({
+        key,
+        label: CamelCaseToSentence(key.replace(/^constituency:|^region:/, "")),
+      }))
+      .sort((a, b) => a.label.localeCompare(b.label));
+  }, []);
 
   const partiesInData = useMemo(
     () =>
@@ -152,12 +194,7 @@ function Candidates2026() {
         const regionMatch =
           regionFilter === "" ||
           (candidate.Region !== undefined && candidate.Region === regionFilter);
-        const candidateConstituencyKey =
-          candidate.Constituency === undefined
-            ? ""
-            : typeof candidate.Constituency === "number"
-              ? Constituency[candidate.Constituency]
-              : String(candidate.Constituency);
+        const candidateConstituencyKey = getConstituencyKey(candidate);
         const constituencyMatch =
           constituencyFilter === "" ||
           candidateConstituencyKey === constituencyFilter;
@@ -269,10 +306,7 @@ function Candidates2026() {
     columnHelper.accessor("Constituency", {
       header: () => "Constituency",
       cell: (info) => {
-        const constituency = info.getValue();
-        return CamelCaseToSentence(
-          constituency === undefined ? undefined : Constituency[constituency],
-        );
+        return getConstituencyLabel(info.row.original);
       },
     }),
     columnHelper.accessor("Statement", {
@@ -410,10 +444,10 @@ function Candidates2026() {
             }}
           >
             <option value="">All Constituencies</option>
-            {constituencyKeys.map((key) => {
+            {constituencyFilterOptions.map((option) => {
               return (
-                <option key={key} value={key}>
-                  {CamelCaseToSentence(key)}
+                <option key={option.key} value={option.key}>
+                  {option.label}
                 </option>
               );
             })}
