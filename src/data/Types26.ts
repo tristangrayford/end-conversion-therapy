@@ -134,4 +134,12 @@ export enum Party {
   RestoreScotland,
   ScotiaFuture,
   Reform,
+  ScottishWorkersPartyOfBritain,
+  ScottishSocialistParty,
+  EqualityParty,
+  IndependenceForScotlandParty,
+  EdinburghEastLothianPeople,
+  AnimalWelfareParty,
+  AllianceToLiberateScotland,
+  AdvanceUK,
 }
