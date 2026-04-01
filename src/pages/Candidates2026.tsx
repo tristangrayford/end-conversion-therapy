@@ -127,18 +127,22 @@ function Candidates2026() {
       .sort((a, b) => a.label.localeCompare(b.label));
   }, []);
 
-  const partiesInData = useMemo(
-    () =>
-      Array.from(
-        new Set(FullCandidateData26.map((candidate) => candidate.Party)),
-      )
-        .map((party) => ({
-          party,
-          label: CamelCaseToSentence(Party[party]),
-        }))
-        .sort((a, b) => a.label.localeCompare(b.label)),
-    [],
-  );
+  const partiesInData = useMemo(() => {
+    const counts = new Map<number, number>();
+    for (const candidate of FullCandidateData26) {
+      counts.set(candidate.Party, (counts.get(candidate.Party) ?? 0) + 1);
+    }
+    return Array.from(counts.entries())
+      .map(([party, total]) => ({
+        party,
+        label: CamelCaseToSentence(Party[party]),
+        total,
+      }))
+      .sort((a, b) => {
+        if (b.total !== a.total) return b.total - a.total;
+        return a.label.localeCompare(b.label);
+      });
+  }, []);
 
   // Add party enum values here as manifesto pledges are confirmed.
   const inclusiveBanManifestoParties = useMemo(() => new Set<Party>(), []);
@@ -171,6 +175,10 @@ function Candidates2026() {
         proportion: counts.total === 0 ? 0 : counts.pledged / counts.total,
       }))
       .sort((a, b) => {
+        if (b.total !== a.total) {
+          return b.total - a.total;
+        }
+
         if (b.proportion !== a.proportion) {
           return b.proportion - a.proportion;
         }
@@ -325,8 +333,26 @@ function Candidates2026() {
       <h2>Candidates 2026</h2>
       <div className="manifesto-tracker">
         <h3>Inclusive Ban In Manifesto</h3>
-        <div className="manifesto-logo-grid">
-          {partiesInData.map((item) => {
+        <div className="manifesto-logo-grid manifesto-logo-grid-major">
+          {partiesInData.slice(0, 6).map((item) => {
+            const hasManifestoPledge = inclusiveBanManifestoParties.has(
+              item.party,
+            );
+            return (
+              <div key={item.party} className="manifesto-logo-item manifesto-logo-item-major">
+                <div
+                  className={`manifesto-logo ${hasManifestoPledge ? "" : "manifesto-logo-muted"}`}
+                  title={item.label}
+                >
+                  {GetPartyLogo(item.party)}
+                </div>
+                <p>{item.label}</p>
+              </div>
+            );
+          })}
+        </div>
+        <div className="manifesto-logo-grid manifesto-logo-grid-minor">
+          {partiesInData.slice(6).map((item) => {
             const hasManifestoPledge = inclusiveBanManifestoParties.has(
               item.party,
             );

@@ -176,8 +176,16 @@ body {
 
   .manifesto-logo-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
     gap: 0.8rem;
+  }
+
+  .manifesto-logo-grid-major {
+    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+    margin-bottom: 0.8rem;
+  }
+
+  .manifesto-logo-grid-minor {
+    grid-template-columns: repeat(auto-fit, minmax(6rem, 1fr));
   }
 
   .manifesto-logo-item {
@@ -192,6 +200,24 @@ body {
     }
   }
 
+  .manifesto-logo-grid-minor .manifesto-logo-item {
+    padding: 0.3rem;
+
+    p {
+      font-size: 0.75rem;
+    }
+  }
+
+  .manifesto-logo-grid-minor .manifesto-logo img {
+    height: 1.5rem;
+  }
+
+  .manifesto-logo-item-major {
+    p {
+      font-size: 1.05rem;
+    }
+  }
+
   .manifesto-logo {
     display: flex;
     justify-content: center;
@@ -202,6 +228,10 @@ body {
       width: auto;
       max-width: 100%;
     }
+  }
+
+  .manifesto-logo-item-major .manifesto-logo img {
+    height: 3.2rem;
   }
 
   .manifesto-logo-muted {
