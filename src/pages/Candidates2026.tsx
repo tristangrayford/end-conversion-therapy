@@ -175,6 +175,12 @@ function Candidates2026() {
         proportion: counts.total === 0 ? 0 : counts.pledged / counts.total,
       }))
       .sort((a, b) => {
+        const aHasPledges = a.pledged > 0 ? 1 : 0;
+        const bHasPledges = b.pledged > 0 ? 1 : 0;
+        if (bHasPledges !== aHasPledges) {
+          return bHasPledges - aHasPledges;
+        }
+
         if (b.total !== a.total) {
           return b.total - a.total;
         }
