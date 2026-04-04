@@ -97,7 +97,12 @@ function Candidates2026() {
   const [partyFilter, setPartyFilter] = useState<number | "">("");
   const [regionFilter, setRegionFilter] = useState<number | "">("");
   const [constituencyFilter, setConstituencyFilter] = useState("");
-
+  const filterByParty = (party: number) => {
+    setNameFilter("");
+    setRegionFilter("");
+    setConstituencyFilter("");
+    setPartyFilter((prev) => (prev === party ? "" : party));
+  };
   // Memoize enum keys and candidate names to avoid recalculation on every render
   const uniqueNames = useMemo(
     () => Array.from(new Set(FullCandidateData26.map((c) => c.Name))).sort(),
@@ -367,6 +372,7 @@ function Candidates2026() {
               <div
                 key={item.party}
                 className="manifesto-logo-item manifesto-logo-item-major"
+                onClick={() => filterByParty(item.party)}
               >
                 <div
                   className={`manifesto-logo ${hasManifestoPledge ? "" : "manifesto-logo-muted"}`}
@@ -385,7 +391,7 @@ function Candidates2026() {
               item.party,
             );
             return (
-              <div key={item.party} className="manifesto-logo-item">
+              <div key={item.party} className="manifesto-logo-item" onClick={() => filterByParty(item.party)}>
                 <div
                   className={`manifesto-logo ${hasManifestoPledge ? "" : "manifesto-logo-muted"}`}
                   title={item.label}
@@ -408,6 +414,7 @@ function Candidates2026() {
               style={{
                 borderColor: PARTY_COLORS[item.party as Party] ?? "#555",
               }}
+              onClick={() => filterByParty(item.party)}
             >
               <p className="party-pledge-name" title={item.label}>{item.label}</p>
               <p

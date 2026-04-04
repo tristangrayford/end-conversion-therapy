@@ -193,6 +193,7 @@ body {
     border-radius: 0.3rem;
     padding: 0.5rem;
     text-align: center;
+    cursor: pointer;
 
     p {
       margin: 0.4rem 0 0 0;
@@ -261,6 +262,7 @@ body {
     border: 0.2rem solid #555;
     border-radius: 0.3rem;
     padding: 0.35rem 0.55rem;
+    cursor: pointer;
   }
 
   .party-pledge-name,
