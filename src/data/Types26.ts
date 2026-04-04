@@ -145,4 +145,7 @@ export enum Party {
   ScottishCommonParty,
   HeritageParty,
   AllianceForDemocracyAndFreedom,
+  WorkersParty,
+  IndependenceforScotlandParty,
+  ChristianParty,
 }
