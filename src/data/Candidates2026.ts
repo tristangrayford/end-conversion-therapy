@@ -411,9 +411,9 @@ export const FullCandidateData26: Candidate[] = [
     Constituency: Constituency.None,
     Region: Region.Glasgow,
     RegionRank: 7,
-    SupportBan: Support.NoReply,
-    SupportLife: Support.NoReply,
-    SupportHealthcare: Support.NoReply,
+    SupportBan: Support.Yes,
+    SupportLife: Support.Yes,
+    SupportHealthcare: Support.Yes,
     Statement: "",
   },
   {
@@ -3573,7 +3573,8 @@ export const FullCandidateData26: Candidate[] = [
     SupportBan: Support.Yes,
     SupportLife: Support.Yes,
     SupportHealthcare: Support.Yes,
-    Statement: "",
+    Statement:
+      "With enormous enthusiasm, I am proud to back the ECT pledge  which reflects Scottish Lib Dem values and policies. I hope we can gather a cross party majority behind this pledge in the newly elected Parliament",
   },
   {
     Name: "Daniel Mancini",
@@ -6002,7 +6003,7 @@ export const FullCandidateData26: Candidate[] = [
   {
     Name: "Janice Elizabeth MacKay",
     Email: "",
-    Party: Party.UKIP,
+    Party: Party.UkIndependenceParty,
     Constituency: Constituency.None,
     Region: Region.South,
     RegionRank: 1,
@@ -6014,7 +6015,7 @@ export const FullCandidateData26: Candidate[] = [
   {
     Name: "Laurie James Steele",
     Email: "",
-    Party: Party.UKIP,
+    Party: Party.UkIndependenceParty,
     Constituency: Constituency.None,
     Region: Region.South,
     RegionRank: 2,
@@ -6026,7 +6027,7 @@ export const FullCandidateData26: Candidate[] = [
   {
     Name: "Robert Bilcliff",
     Email: "",
-    Party: Party.UKIP,
+    Party: Party.UkIndependenceParty,
     Constituency: Constituency.None,
     Region: Region.South,
     RegionRank: 3,
@@ -6038,7 +6039,7 @@ export const FullCandidateData26: Candidate[] = [
   {
     Name: "Gail Bilcliff",
     Email: "",
-    Party: Party.UKIP,
+    Party: Party.UkIndependenceParty,
     Constituency: Constituency.None,
     Region: Region.South,
     RegionRank: 4,
@@ -6050,7 +6051,7 @@ export const FullCandidateData26: Candidate[] = [
   {
     Name: "Colin Sullivan",
     Email: "",
-    Party: Party.UKIP,
+    Party: Party.UkIndependenceParty,
     Constituency: Constituency.None,
     Region: Region.South,
     RegionRank: 5,

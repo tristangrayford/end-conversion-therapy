@@ -74,7 +74,11 @@ body {
 .no-support,
 .support {
   border: 0.1rem solid #121212;
-  margin-bottom: 1rem;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  align-self: flex-end;
 }
 
 .support {
@@ -175,17 +179,19 @@ body {
   }
 
   .manifesto-logo-grid {
-    display: grid;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 0.8rem;
   }
 
   .manifesto-logo-grid-major {
-    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
     margin-bottom: 0.8rem;
   }
 
   .manifesto-logo-grid-minor {
-    grid-template-columns: repeat(auto-fit, minmax(4.5rem, 1fr));
+    flex-wrap: nowrap;
+    overflow-x: auto;
   }
 
   .manifesto-logo-item {
@@ -194,6 +200,7 @@ body {
     padding: 0.5rem;
     text-align: center;
     cursor: pointer;
+    min-width: 6rem;
 
     p {
       margin: 0.4rem 0 0 0;
@@ -201,11 +208,18 @@ body {
     }
   }
 
+  .manifesto-logo-item-pledged {
+    border: 0.2rem solid green;
+  }
+
   .manifesto-logo-grid-minor .manifesto-logo-item {
     padding: 0.2rem;
+    min-width: 0;
+    flex-shrink: 1;
 
     p {
       font-size: 0.65rem;
+      max-width: 4.5rem;
     }
   }
 

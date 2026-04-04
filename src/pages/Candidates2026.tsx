@@ -42,9 +42,19 @@ const PARTY_COLORS: Partial<Record<Party, string>> = {
   [Party.ScottishSocialistParty]: "#CC0000",
   [Party.CommunistPartyOfBritain]: "#CC0000",
   [Party.UkIndependenceParty]: "#70147A",
-  [Party.UKIP]: "#70147A",
   [Party.ScottishLibertarianParty]: "#F4C430",
   [Party.Independent]: "#AAAAAA",
+  [Party.ScottishWorkersPartyOfBritain]: "#D32F2F",
+  [Party.IndependentGreenVoice]: "#4CAF50",
+  [Party.IndependenceForScotlandParty]: "#0052A4",
+  [Party.AnimalWelfareParty]: "#41924B",
+  [Party.HeritageParty]: "#722F37",
+  [Party.EqualityParty]: "#7B2D8E",
+  [Party.AllianceToLiberateScotland]: "#0065BF",
+  [Party.AllianceForDemocracyAndFreedom]: "#2C7A7B",
+  [Party.AdvanceUK]: "#4A90D9",
+  [Party.EdinburghEastLothianPeople]: "#6B8E23",
+  [Party.ScottishCommonParty]: "#607D8B",
 };
 
 const EMAIL_SUBJECT_PARAM_26 = encodeURIComponent(EMAIL_SUBJECT_26);
@@ -97,6 +107,7 @@ function Candidates2026() {
   const [partyFilter, setPartyFilter] = useState<number | "">("");
   const [regionFilter, setRegionFilter] = useState<number | "">("");
   const [constituencyFilter, setConstituencyFilter] = useState("");
+  const [supportFilter, setSupportFilter] = useState(false);
   const filterByParty = (party: number) => {
     setNameFilter("");
     setRegionFilter("");
@@ -157,6 +168,7 @@ function Candidates2026() {
       counts.set(candidate.Party, (counts.get(candidate.Party) ?? 0) + 1);
     }
     return Array.from(counts.entries())
+      .filter(([party]) => party !== Party.Independent)
       .map(([party, total]) => ({
         party,
         label: CamelCaseToSentence(Party[party]),
@@ -221,6 +233,12 @@ function Candidates2026() {
       });
   }, []);
 
+  const partyPledgeRank = useMemo(() => {
+    const rank = new Map<number, number>();
+    partyPledgeStats.forEach((item, index) => rank.set(item.party, index));
+    return rank;
+  }, [partyPledgeStats]);
+
   const filteredData = useMemo(
     () =>
       FullCandidateData26.filter((candidate) => {
@@ -237,9 +255,42 @@ function Candidates2026() {
           constituencyFilter === "" ||
           candidateConstituencyKey === constituencyFilter;
 
-        return nameMatch && partyMatch && regionMatch && constituencyMatch;
+        const supportMatch =
+          !supportFilter ||
+          candidate.SupportBan === Support.Yes ||
+          candidate.SupportLife === Support.Yes ||
+          candidate.SupportHealthcare === Support.Yes;
+
+        return (
+          nameMatch &&
+          partyMatch &&
+          regionMatch &&
+          constituencyMatch &&
+          supportMatch
+        );
+      }).sort((a, b) => {
+        const aRank = partyPledgeRank.get(a.Party) ?? Infinity;
+        const bRank = partyPledgeRank.get(b.Party) ?? Infinity;
+        if (aRank !== bRank) {
+          return aRank - bRank;
+        }
+        if (
+          a.Region !== undefined &&
+          b.Region !== undefined &&
+          a.Region === b.Region
+        ) {
+          return (a.RegionRank ?? Infinity) - (b.RegionRank ?? Infinity);
+        }
+        return 0;
       }),
-    [nameFilter, partyFilter, regionFilter, constituencyFilter],
+    [
+      nameFilter,
+      partyFilter,
+      regionFilter,
+      constituencyFilter,
+      supportFilter,
+      partyPledgeRank,
+    ],
   );
 
   const columnHelper = createColumnHelper<Candidate>();
@@ -371,7 +422,7 @@ function Candidates2026() {
             return (
               <div
                 key={item.party}
-                className="manifesto-logo-item manifesto-logo-item-major"
+                className={`manifesto-logo-item manifesto-logo-item-major ${hasManifestoPledge ? "manifesto-logo-item-pledged" : ""}`}
                 onClick={() => filterByParty(item.party)}
               >
                 <div
@@ -391,7 +442,12 @@ function Candidates2026() {
               item.party,
             );
             return (
-              <div key={item.party} className="manifesto-logo-item" onClick={() => filterByParty(item.party)}>
+              <div
+                key={item.party}
+                className={`manifesto-logo-item ${hasManifestoPledge ? "manifesto-logo-item-pledged" : ""}`}
+                onClick={() => filterByParty(item.party)}
+                title={item.label}
+              >
                 <div
                   className={`manifesto-logo ${hasManifestoPledge ? "" : "manifesto-logo-muted"}`}
                   title={item.label}
@@ -416,7 +472,9 @@ function Candidates2026() {
               }}
               onClick={() => filterByParty(item.party)}
             >
-              <p className="party-pledge-name" title={item.label}>{item.label}</p>
+              <p className="party-pledge-name" title={item.label}>
+                {item.label}
+              </p>
               <p
                 className="party-pledge-count"
                 style={item.pledged === 0 ? { color: "#e74c3c" } : undefined}
@@ -428,6 +486,14 @@ function Candidates2026() {
         </div>
       </div>
       <div className="filter-controls">
+        <div className="filter-input">
+          <button
+            className={supportFilter ? "support" : "no-support"}
+            onClick={() => setSupportFilter((prev) => !prev)}
+          >
+            Supported Us
+          </button>
+        </div>
         <div className="filter-input">
           <label htmlFor="nameInput">Name:</label>
           <input
