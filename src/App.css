@@ -189,6 +189,11 @@ body {
     margin-bottom: 0.8rem;
   }
 
+  .manifesto-logo-grid-major .manifesto-logo-item {
+    flex: 1 1 0;
+    min-width: 0;
+  }
+
   .manifesto-logo-grid-minor {
     flex-wrap: nowrap;
     overflow-x: auto;
