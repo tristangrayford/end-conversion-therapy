@@ -142,4 +142,8 @@ export enum Party {
   AnimalWelfareParty,
   AllianceToLiberateScotland,
   AdvanceUK,
+  UKIP,
+  ScottishCommonParty,
+  HeritageParty,
+  AllianceForDemocracyAndFreedom,
 }

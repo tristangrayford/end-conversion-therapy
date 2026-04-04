@@ -29,6 +29,24 @@ const PARTY_SHORT_NAMES: Partial<Record<Party, string>> = {
   [Party.ScottishLabourParty]: "Labour",
 };
 
+const PARTY_COLORS: Partial<Record<Party, string>> = {
+  [Party.ScottishNationalParty]: "#FDF38E",
+  [Party.ScottishGreenParty]: "#00A651",
+  [Party.ScottishLiberalDemocrats]: "#FAA61A",
+  [Party.ScottishConservativeParty]: "#0087DC",
+  [Party.ScottishLabourParty]: "#E4003B",
+  [Party.AlbaParty]: "#005EB8",
+  [Party.ReformUkScotland]: "#12B6CF",
+  [Party.Reform]: "#12B6CF",
+  [Party.ScottishFamilyParty]: "#002395",
+  [Party.ScottishSocialistParty]: "#CC0000",
+  [Party.CommunistPartyOfBritain]: "#CC0000",
+  [Party.UkIndependenceParty]: "#70147A",
+  [Party.UKIP]: "#70147A",
+  [Party.ScottishLibertarianParty]: "#F4C430",
+  [Party.Independent]: "#AAAAAA",
+};
+
 const EMAIL_SUBJECT_PARAM_26 = encodeURIComponent(EMAIL_SUBJECT_26);
 const EMAIL_BODY_PARAM_26 = encodeURIComponent(EMAIL_BODY_26).replace(
   /%0A/g,
@@ -116,8 +134,9 @@ function Candidates2026() {
   const constituencyFilterOptions = useMemo(() => {
     return Array.from(
       new Set(
-        FullCandidateData26.map((candidate) => getConstituencyKey(candidate))
-          .filter((key) => key !== ""),
+        FullCandidateData26.map((candidate) =>
+          getConstituencyKey(candidate),
+        ).filter((key) => key !== ""),
       ),
     )
       .map((key) => ({
@@ -345,7 +364,10 @@ function Candidates2026() {
               item.party,
             );
             return (
-              <div key={item.party} className="manifesto-logo-item manifesto-logo-item-major">
+              <div
+                key={item.party}
+                className="manifesto-logo-item manifesto-logo-item-major"
+              >
                 <div
                   className={`manifesto-logo ${hasManifestoPledge ? "" : "manifesto-logo-muted"}`}
                   title={item.label}
@@ -380,9 +402,18 @@ function Candidates2026() {
         <h3>Party Pledge Tracker</h3>
         <div className="party-pledge-grid">
           {partyPledgeStats.map((item) => (
-            <div key={item.party} className="party-pledge-item">
-              <p className="party-pledge-name">{item.label}</p>
-              <p className="party-pledge-count">
+            <div
+              key={item.party}
+              className="party-pledge-item"
+              style={{
+                borderColor: PARTY_COLORS[item.party as Party] ?? "#555",
+              }}
+            >
+              <p className="party-pledge-name" title={item.label}>{item.label}</p>
+              <p
+                className="party-pledge-count"
+                style={item.pledged === 0 ? { color: "#e74c3c" } : undefined}
+              >
                 {item.pledged}/{item.total} pledged
               </p>
             </div>

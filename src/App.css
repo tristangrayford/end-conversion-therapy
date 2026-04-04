@@ -185,7 +185,7 @@ body {
   }
 
   .manifesto-logo-grid-minor {
-    grid-template-columns: repeat(auto-fit, minmax(6rem, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(4.5rem, 1fr));
   }
 
   .manifesto-logo-item {
@@ -201,15 +201,15 @@ body {
   }
 
   .manifesto-logo-grid-minor .manifesto-logo-item {
-    padding: 0.3rem;
+    padding: 0.2rem;
 
     p {
-      font-size: 0.75rem;
+      font-size: 0.65rem;
     }
   }
 
   .manifesto-logo-grid-minor .manifesto-logo img {
-    height: 1.5rem;
+    height: 1.2rem;
   }
 
   .manifesto-logo-item-major {
@@ -257,8 +257,8 @@ body {
 
   .party-pledge-item {
     flex: 0 0 auto;
-    min-width: 10.5rem;
-    border: 0.1rem solid #555;
+    width: 7.5rem;
+    border: 0.2rem solid #555;
     border-radius: 0.3rem;
     padding: 0.35rem 0.55rem;
   }
@@ -271,6 +271,9 @@ body {
   .party-pledge-name {
     font-weight: 600;
     font-size: 0.9rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   .party-pledge-count {
