@@ -6,13 +6,8 @@ import {
   useReactTable,
   type TableOptions,
 } from "@tanstack/react-table";
-import {
-  Constituency,
-  Party,
-  Region,
-  Support,
-  type Candidate,
-} from "../data/Types";
+import { Constituency, Region, Support, type Candidate } from "../data/Types21";
+import { Party } from "../data/Party";
 import { FullCandidateData } from "../data/Candidates2021";
 import { CamelCaseToSentence } from "../utils/camelCaseToSentence";
 import { GetPartyLogo } from "../utils/getPartyLogo";
@@ -27,7 +22,7 @@ function Elected2021() {
     if (!support) {
       setStupport(Support.Yes);
       setData(
-        FullCandidateData.filter((c) => c.Support == Support.Yes && c.Elected)
+        FullCandidateData.filter((c) => c.Support == Support.Yes && c.Elected),
       );
     } else {
       setStupport(null);
@@ -103,7 +98,7 @@ function Elected2021() {
                 <th key={header.id}>
                   {flexRender(
                     header.column.columnDef.header,
-                    header.getContext()
+                    header.getContext(),
                   )}
                 </th>
               ))}

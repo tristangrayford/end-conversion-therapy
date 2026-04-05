@@ -6,13 +6,13 @@ import {
   type TableOptions,
 } from "@tanstack/react-table";
 import { useMemo, useState } from "react";
+import { Constituency, Region, Support, type Candidate } from "../data/Types26";
+import { Party } from "../data/Party";
 import {
-  Constituency,
-  Party,
-  Region,
-  Support,
-  type Candidate,
-} from "../data/Types26";
+  PARTY_COLORS,
+  getPartyLabel,
+  getPartyFullLabel,
+} from "../data/partyData";
 import {
   EMAIL_BODY_26,
   EMAIL_SUBJECT_26,
@@ -21,53 +21,11 @@ import { CamelCaseToSentence } from "../utils/camelCaseToSentence";
 import { FullCandidateData26 } from "../data/Candidates2026";
 import { GetPartyLogo } from "../utils/getPartyLogo";
 
-const PARTY_SHORT_NAMES: Partial<Record<Party, string>> = {
-  [Party.ScottishNationalParty]: "SNP",
-  [Party.ScottishGreenParty]: "SGP",
-  [Party.ScottishLiberalDemocrats]: "LibDems",
-  [Party.ScottishConservativeParty]: "Conservatives",
-  [Party.ScottishLabourParty]: "Labour",
-};
-
-const PARTY_COLORS: Partial<Record<Party, string>> = {
-  [Party.ScottishNationalParty]: "#FDF38E",
-  [Party.ScottishGreenParty]: "#00A651",
-  [Party.ScottishLiberalDemocrats]: "#FAA61A",
-  [Party.ScottishConservativeParty]: "#0087DC",
-  [Party.ScottishLabourParty]: "#E4003B",
-  [Party.AlbaParty]: "#005EB8",
-  [Party.ReformUkScotland]: "#12B6CF",
-  [Party.Reform]: "#12B6CF",
-  [Party.ScottishFamilyParty]: "#002395",
-  [Party.ScottishSocialistParty]: "#CC0000",
-  [Party.CommunistPartyOfBritain]: "#CC0000",
-  [Party.UkIndependenceParty]: "#70147A",
-  [Party.ScottishLibertarianParty]: "#F4C430",
-  [Party.Independent]: "#AAAAAA",
-  [Party.ScottishWorkersPartyOfBritain]: "#D32F2F",
-  [Party.IndependentGreenVoice]: "#4CAF50",
-  [Party.IndependenceForScotlandParty]: "#0052A4",
-  [Party.AnimalWelfareParty]: "#41924B",
-  [Party.HeritageParty]: "#722F37",
-  [Party.EqualityParty]: "#7B2D8E",
-  [Party.AllianceToLiberateScotland]: "#0065BF",
-  [Party.AllianceForDemocracyAndFreedom]: "#2C7A7B",
-  [Party.AdvanceUK]: "#4A90D9",
-  [Party.EdinburghEastLothianPeople]: "#6B8E23",
-  [Party.ScottishCommonParty]: "#607D8B",
-};
-
 const EMAIL_SUBJECT_PARAM_26 = encodeURIComponent(EMAIL_SUBJECT_26);
 const EMAIL_BODY_PARAM_26 = encodeURIComponent(EMAIL_BODY_26).replace(
   /%0A/g,
   "%0D%0A",
 );
-
-const getPartyLabel = (party: Party): string =>
-  PARTY_SHORT_NAMES[party] ?? CamelCaseToSentence(Party[party]);
-
-const getPartyFullLabel = (party: Party): string =>
-  CamelCaseToSentence(Party[party]);
 
 const getConstituencyKey = (candidate: Candidate): string => {
   if (candidate.Constituency !== undefined) {
@@ -182,6 +140,11 @@ function Candidates2026() {
 
   // Add party enum values here as manifesto pledges are confirmed.
   const inclusiveBanManifestoParties = useMemo(() => new Set<Party>(), []);
+
+  const hostileManifestoParties = useMemo(
+    () => new Set<Party>([Party.ScottishFamilyParty]),
+    [],
+  );
 
   const partyPledgeStats = useMemo(() => {
     const stats = new Map<number, { total: number; pledged: number }>();
@@ -419,19 +382,23 @@ function Candidates2026() {
             const hasManifestoPledge = inclusiveBanManifestoParties.has(
               item.party,
             );
+            const isHostile = hostileManifestoParties.has(item.party);
             return (
               <div
                 key={item.party}
-                className={`manifesto-logo-item manifesto-logo-item-major ${hasManifestoPledge ? "manifesto-logo-item-pledged" : ""}`}
+                className={`manifesto-logo-item manifesto-logo-item-major ${hasManifestoPledge ? "manifesto-logo-item-pledged" : ""} ${isHostile ? "manifesto-logo-item-hostile" : ""}`}
                 onClick={() => filterByParty(item.party)}
               >
                 <div
-                  className={`manifesto-logo ${hasManifestoPledge ? "" : "manifesto-logo-muted"}`}
+                  className={`manifesto-logo ${hasManifestoPledge || isHostile ? "" : "manifesto-logo-muted"}`}
                   title={item.label}
                 >
                   {GetPartyLogo(item.party)}
                 </div>
                 <p>{item.label}</p>
+                {isHostile && (
+                  <span className="manifesto-hostile-cross">✗</span>
+                )}
               </div>
             );
           })}
@@ -441,27 +408,35 @@ function Candidates2026() {
             const hasManifestoPledge = inclusiveBanManifestoParties.has(
               item.party,
             );
+            const isHostile = hostileManifestoParties.has(item.party);
             return (
               <div
                 key={item.party}
-                className={`manifesto-logo-item ${hasManifestoPledge ? "manifesto-logo-item-pledged" : ""}`}
+                className={`manifesto-logo-item ${hasManifestoPledge ? "manifesto-logo-item-pledged" : ""} ${isHostile ? "manifesto-logo-item-hostile" : ""}`}
                 onClick={() => filterByParty(item.party)}
                 title={item.label}
               >
                 <div
-                  className={`manifesto-logo ${hasManifestoPledge ? "" : "manifesto-logo-muted"}`}
+                  className={`manifesto-logo ${hasManifestoPledge || isHostile ? "" : "manifesto-logo-muted"}`}
                   title={item.label}
                 >
                   {GetPartyLogo(item.party)}
                 </div>
-                <p>{item.label}</p>
+                <p>{getPartyLabel(item.party)}</p>
+                {isHostile && (
+                  <span className="manifesto-hostile-cross">✗</span>
+                )}
               </div>
             );
           })}
         </div>
       </div>
       <div className="party-pledge-tracker">
-        <h3>Party Pledge Tracker</h3>
+        <h3>
+          Party Pledge Tracker (
+          {partyPledgeStats.reduce((sum, item) => sum + item.pledged, 0)}{" "}
+          pledged)
+        </h3>
         <div className="party-pledge-grid">
           {partyPledgeStats.map((item) => (
             <div

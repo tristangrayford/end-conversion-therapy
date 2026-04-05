@@ -1,3 +1,5 @@
+import { Party } from "./Party";
+
 export type Candidate = {
   Name: string;
   RegionRank?: number;
@@ -101,33 +103,4 @@ export enum Constituency {
   Dunfermline,
   GlasgowCathcart,
   GlasgowKelvin,
-}
-
-export enum Party {
-  AbolishTheScottishParliamentParty,
-  AlbaParty,
-  AllForUnity,
-  CommunistPartyOfBritain,
-  FreedomAlliance,
-  ScottishConservativeParty,
-  ScottishFamilyParty,
-  ScottishGreenParty,
-  ScottishLabourParty,
-  ScottishLiberalDemocrats,
-  ScottishNationalParty,
-  ScottishLibertarianParty,
-  UkIndependenceParty,
-  TradeUnionistAndSocialistCoalition,
-  ScottishWomensEqualityParty,
-  SocialDemocraticParty,
-  ScottishRenew,
-  VanguardParty,
-  Independent,
-  IndependentGreenVoice,
-  ReformUkScotland,
-  ReclaimParty,
-  LiberalParty,
-  RestoreScotland,
-  ScotiaFuture,
-  Reform,
 }

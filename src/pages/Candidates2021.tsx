@@ -5,60 +5,17 @@ import {
   useReactTable,
   type TableOptions,
 } from "@tanstack/react-table";
+import { Constituency, Region, Support, type Candidate } from "../data/Types21";
+import { Party } from "../data/Party";
 import {
-  Constituency,
-  Party,
-  Region,
-  Support,
-  type Candidate,
-} from "../data/Types";
+  PARTY_COLORS,
+  getPartyLabel,
+  getPartyFullLabel,
+} from "../data/partyData";
 import { FullCandidateData } from "../data/Candidates2021";
 import { CamelCaseToSentence } from "../utils/camelCaseToSentence";
 import { GetPartyLogo } from "../utils/getPartyLogo";
 import { useMemo, useState } from "react";
-
-const PARTY_SHORT_NAMES: Partial<Record<Party, string>> = {
-  [Party.ScottishNationalParty]: "SNP",
-  [Party.ScottishGreenParty]: "SGP",
-  [Party.ScottishLiberalDemocrats]: "LibDems",
-  [Party.ScottishConservativeParty]: "Conservatives",
-  [Party.ScottishLabourParty]: "Labour",
-};
-
-const PARTY_COLORS: Partial<Record<Party, string>> = {
-  [Party.ScottishNationalParty]: "#FDF38E",
-  [Party.ScottishGreenParty]: "#00A651",
-  [Party.ScottishLiberalDemocrats]: "#FAA61A",
-  [Party.ScottishConservativeParty]: "#0087DC",
-  [Party.ScottishLabourParty]: "#E4003B",
-  [Party.AlbaParty]: "#005EB8",
-  [Party.ReformUkScotland]: "#12B6CF",
-  [Party.Reform]: "#12B6CF",
-  [Party.ScottishFamilyParty]: "#002395",
-  [Party.CommunistPartyOfBritain]: "#CC0000",
-  [Party.UkIndependenceParty]: "#70147A",
-  [Party.ScottishLibertarianParty]: "#F4C430",
-  [Party.Independent]: "#AAAAAA",
-  [Party.IndependentGreenVoice]: "#4CAF50",
-  [Party.AllForUnity]: "#1C3A6E",
-  [Party.TradeUnionistAndSocialistCoalition]: "#E5004B",
-  [Party.ScottishWomensEqualityParty]: "#7B2D8E",
-  [Party.SocialDemocraticParty]: "#C41E3A",
-  [Party.ScottishRenew]: "#2E86C1",
-  [Party.VanguardParty]: "#333333",
-  [Party.FreedomAlliance]: "#D4A017",
-  [Party.ReclaimParty]: "#1B3A5C",
-  [Party.LiberalParty]: "#FDBB30",
-  [Party.RestoreScotland]: "#4682B4",
-  [Party.ScotiaFuture]: "#2E8B57",
-  [Party.AbolishTheScottishParliamentParty]: "#8B0000",
-};
-
-const getPartyLabel = (party: Party): string =>
-  PARTY_SHORT_NAMES[party] ?? CamelCaseToSentence(Party[party]);
-
-const getPartyFullLabel = (party: Party): string =>
-  CamelCaseToSentence(Party[party]);
 
 const getConstituencyKey = (candidate: Candidate): string => {
   if (candidate.Constituency !== undefined) {
@@ -343,14 +300,18 @@ function Candidates2021() {
                 >
                   {GetPartyLogo(item.party)}
                 </div>
-                <p>{item.label}</p>
+                <p>{getPartyLabel(item.party)}</p>
               </div>
             );
           })}
         </div>
       </div>
       <div className="party-pledge-tracker">
-        <h3>Party Pledge Tracker</h3>
+        <h3>
+          Party Pledge Tracker (
+          {partyPledgeStats.reduce((sum, item) => sum + item.pledged, 0)}{" "}
+          pledged)
+        </h3>
         <div className="party-pledge-grid">
           {partyPledgeStats.map((item) => (
             <div

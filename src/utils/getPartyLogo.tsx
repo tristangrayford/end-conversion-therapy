@@ -1,6 +1,5 @@
 import type { ReactElement } from "react";
-import { Party } from "../data/Types";
-import { Party as Party26 } from "../data/Types26";
+import { Party } from "../data/Party";
 import Abolish from "../assets/Abolish.jpg";
 import Alba from "../assets/AlbaParty.jpg";
 import AllForUnity from "../assets/AllForUnity.png";
@@ -26,7 +25,7 @@ import UKIP from "../assets/UKIP.png";
 import WEP from "../assets/WEP.jpg";
 import Reform from "../assets/Reform.png";
 
-export const GetPartyLogo = (party: Party | Party26): ReactElement => {
+export const GetPartyLogo = (party: Party): ReactElement => {
   switch (party) {
     case Party.AbolishTheScottishParliamentParty:
       return <img src={Abolish} />;

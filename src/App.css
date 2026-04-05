@@ -197,6 +197,7 @@ body {
   .manifesto-logo-grid-minor {
     flex-wrap: nowrap;
     overflow-x: auto;
+    gap: 0.4rem;
   }
 
   .manifesto-logo-item {
@@ -217,14 +218,41 @@ body {
     border: 0.2rem solid green;
   }
 
+  .manifesto-logo-item-hostile {
+    border: 0.2rem solid #e74c3c;
+
+    p {
+      color: #e74c3c;
+    }
+
+    .manifesto-logo {
+      position: relative;
+
+      &::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: #e74c3c;
+        mix-blend-mode: screen;
+        pointer-events: none;
+      }
+    }
+
+    .manifesto-hostile-cross {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #e74c3c;
+      line-height: 1;
+    }
+  }
+
   .manifesto-logo-grid-minor .manifesto-logo-item {
     padding: 0.2rem;
     min-width: 0;
-    flex-shrink: 1;
+    flex: 1 1 0;
 
     p {
       font-size: 0.65rem;
-      max-width: 4.5rem;
     }
   }
 

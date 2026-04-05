@@ -1,3 +1,5 @@
+import { Party } from "./Party";
+
 export type Candidate = {
   Name: string;
   Email?: string;
@@ -105,47 +107,4 @@ export enum Constituency {
   StrathkelvinandBearsden,
   FifeNorthEast,
   None,
-}
-
-export enum Party {
-  AbolishTheScottishParliamentParty,
-  AlbaParty,
-  AllForUnity,
-  CommunistPartyOfBritain,
-  FreedomAlliance,
-  ScottishConservativeParty,
-  ScottishFamilyParty,
-  ScottishGreenParty,
-  ScottishLabourParty,
-  ScottishLiberalDemocrats,
-  ScottishNationalParty,
-  ScottishLibertarianParty,
-  UkIndependenceParty,
-  TradeUnionistAndSocialistCoalition,
-  ScottishWomensEqualityParty,
-  SocialDemocraticParty,
-  ScottishRenew,
-  VanguardParty,
-  Independent,
-  IndependentGreenVoice,
-  ReformUkScotland,
-  ReclaimParty,
-  LiberalParty,
-  RestoreScotland,
-  ScotiaFuture,
-  Reform,
-  ScottishWorkersPartyOfBritain,
-  ScottishSocialistParty,
-  EqualityParty,
-  IndependenceForScotlandParty,
-  EdinburghEastLothianPeople,
-  AnimalWelfareParty,
-  AllianceToLiberateScotland,
-  AdvanceUK,
-  ScottishCommonParty,
-  HeritageParty,
-  AllianceForDemocracyAndFreedom,
-  WorkersParty,
-  IndependenceforScotlandParty,
-  ChristianParty,
 }
