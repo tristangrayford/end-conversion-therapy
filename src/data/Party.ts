@@ -25,7 +25,6 @@ export enum Party {
   RestoreScotland,
   ScotiaFuture,
   Reform,
-  ScottishWorkersPartyOfBritain,
   ScottishSocialistParty,
   EqualityParty,
   IndependenceForScotlandParty,
@@ -38,4 +37,7 @@ export enum Party {
   AllianceForDemocracyAndFreedom,
   WorkersParty,
   ChristianParty,
+  ScottishRuralParty,
+  SocialistLabourParty,
+  TheLiberalParty,
 }

@@ -146,6 +146,50 @@ function Candidates2026() {
     [],
   );
 
+  const questionableManifestoParties = useMemo(
+    () => new Set<Party>([Party.ScottishLabourParty]),
+    [],
+  );
+
+  const partialPledgeManifestoParties = useMemo(
+    () => new Set<Party>([Party.ScottishGreenParty]),
+    [],
+  );
+
+  const manifestoTooltips = useMemo(
+    () =>
+      new Map<Party, string[]>([
+        [
+          Party.ScottishGreenParty,
+          [
+            "Calls for a comprehensive ban on conversion therapy covering all settings, such as religious, informal, community, family-based and therapeutic, with clear protections for affirming healthcare, and inclusive of trans, non-binary, and asexual identities. This ban will be backed by appropriate criminal and civil penalties, and a statutory right of survivors to support and advocacy.",
+            "Calls on the UK Government to remove its block on much-needed Gender Recognition legislation and update it with international best practice HOWEVER lack of mention of trans inclusion in areas of everyday life such as workplaces and sport.",
+            "Significant manifesto commitments to unlocking and improving provision of trans healthcare.",
+          ],
+        ],
+        [
+          Party.ScottishLabourParty,
+          [
+            "Only backs a conversion practices ban from Westminster, not from the Scottish Parliament.",
+            'Actively hostile to LGBTQ+ lives in society, proposing deeply segregationist policy that would drive trans people out of public life everywhere from "the NHS, schools, sport, and everyday life".',
+            "No mention at all of trans healthcare in the manifesto but proposing segregating trans people in the NHS. Ban on trans healthcare provision advanced by the UK Labour Government.",
+          ],
+        ],
+        [
+          Party.ScottishFamilyParty,
+          [
+            "Would ban gender transition and institute conversion practices through the NHS.",
+            "Would ban inclusive education in schools and any gender non-conforming expression.",
+          ],
+        ],
+      ]),
+    [],
+  );
+
+  const [activeTooltipParty, setActiveTooltipParty] = useState<Party | null>(
+    null,
+  );
+
   const partyPledgeStats = useMemo(() => {
     const stats = new Map<number, { total: number; pledged: number }>();
 
@@ -304,9 +348,11 @@ function Candidates2026() {
         const supportClass =
           supportValue === Support.Yes
             ? "support-yes"
-            : supportValue === Support.No
-              ? "support-no"
-              : "support-neutral";
+            : supportValue === Support.YesWithCaveats
+              ? "support-caveats"
+              : supportValue === Support.No
+                ? "support-no"
+                : "support-neutral";
         return <span className={supportClass}>{supportLabel}</span>;
       },
     }),
@@ -318,9 +364,11 @@ function Candidates2026() {
         const supportClass =
           supportValue === Support.Yes
             ? "support-yes"
-            : supportValue === Support.No
-              ? "support-no"
-              : "support-neutral";
+            : supportValue === Support.YesWithCaveats
+              ? "support-caveats"
+              : supportValue === Support.No
+                ? "support-no"
+                : "support-neutral";
         return <span className={supportClass}>{supportLabel}</span>;
       },
     }),
@@ -332,9 +380,11 @@ function Candidates2026() {
         const supportClass =
           supportValue === Support.Yes
             ? "support-yes"
-            : supportValue === Support.No
-              ? "support-no"
-              : "support-neutral";
+            : supportValue === Support.YesWithCaveats
+              ? "support-caveats"
+              : supportValue === Support.No
+                ? "support-no"
+                : "support-neutral";
         return <span className={supportClass}>{supportLabel}</span>;
       },
     }),
@@ -383,14 +433,27 @@ function Candidates2026() {
               item.party,
             );
             const isHostile = hostileManifestoParties.has(item.party);
+            const isQuestionable = questionableManifestoParties.has(item.party);
+            const isPartialPledge = partialPledgeManifestoParties.has(
+              item.party,
+            );
+            const tooltipItems = manifestoTooltips.get(item.party);
+            const isTooltipActive = activeTooltipParty === item.party;
             return (
               <div
                 key={item.party}
-                className={`manifesto-logo-item manifesto-logo-item-major ${hasManifestoPledge ? "manifesto-logo-item-pledged" : ""} ${isHostile ? "manifesto-logo-item-hostile" : ""}`}
-                onClick={() => filterByParty(item.party)}
+                className={`manifesto-logo-item manifesto-logo-item-major ${hasManifestoPledge ? "manifesto-logo-item-pledged" : ""} ${isHostile ? "manifesto-logo-item-hostile" : ""} ${isQuestionable ? "manifesto-logo-item-questionable" : ""} ${isPartialPledge ? "manifesto-logo-item-partial" : ""} ${tooltipItems ? "manifesto-has-tooltip" : ""}`}
+                onClick={() => {
+                  if (tooltipItems) {
+                    setActiveTooltipParty(isTooltipActive ? null : item.party);
+                  } else {
+                    setActiveTooltipParty(null);
+                    filterByParty(item.party);
+                  }
+                }}
               >
                 <div
-                  className={`manifesto-logo ${hasManifestoPledge || isHostile ? "" : "manifesto-logo-muted"}`}
+                  className={`manifesto-logo ${hasManifestoPledge || isHostile || isQuestionable || isPartialPledge ? "" : "manifesto-logo-muted"}`}
                   title={item.label}
                 >
                   {GetPartyLogo(item.party)}
@@ -398,6 +461,34 @@ function Candidates2026() {
                 <p>{item.label}</p>
                 {isHostile && (
                   <span className="manifesto-hostile-cross">✗</span>
+                )}
+                {isQuestionable && (
+                  <span className="manifesto-questionable-icons">
+                    <span className="manifesto-qmark manifesto-qmark-grey">
+                      ?
+                    </span>
+                    <span className="manifesto-cross-red">❌❌</span>
+                  </span>
+                )}
+                {isPartialPledge && (
+                  <span className="manifesto-partial-icons">
+                    ✅
+                    <span className="manifesto-qmark manifesto-qmark-green">
+                      ?+
+                    </span>
+                    ✅
+                  </span>
+                )}
+                {tooltipItems && (
+                  <div
+                    className={`manifesto-tooltip ${isTooltipActive ? "manifesto-tooltip-active" : ""}`}
+                  >
+                    <ul>
+                      {tooltipItems.map((text, i) => (
+                        <li key={i}>{text}</li>
+                      ))}
+                    </ul>
+                  </div>
                 )}
               </div>
             );
@@ -409,15 +500,37 @@ function Candidates2026() {
               item.party,
             );
             const isHostile = hostileManifestoParties.has(item.party);
+            const isQuestionable = questionableManifestoParties.has(item.party);
+            const isPartialPledge = partialPledgeManifestoParties.has(
+              item.party,
+            );
+            const tooltipItems = manifestoTooltips.get(item.party);
+            const isTooltipActive = activeTooltipParty === item.party;
             return (
               <div
                 key={item.party}
-                className={`manifesto-logo-item ${hasManifestoPledge ? "manifesto-logo-item-pledged" : ""} ${isHostile ? "manifesto-logo-item-hostile" : ""}`}
-                onClick={() => filterByParty(item.party)}
+                className={`manifesto-logo-item ${hasManifestoPledge ? "manifesto-logo-item-pledged" : ""} ${isHostile ? "manifesto-logo-item-hostile" : ""} ${isQuestionable ? "manifesto-logo-item-questionable" : ""} ${isPartialPledge ? "manifesto-logo-item-partial" : ""} ${tooltipItems ? "manifesto-has-tooltip" : ""}`}
+                onClick={() => {
+                  if (tooltipItems) {
+                    setActiveTooltipParty(isTooltipActive ? null : item.party);
+                  } else {
+                    setActiveTooltipParty(null);
+                    filterByParty(item.party);
+                  }
+                }}
+                onMouseEnter={() =>
+                  tooltipItems && setActiveTooltipParty(item.party)
+                }
+                onMouseLeave={() =>
+                  tooltipItems &&
+                  setActiveTooltipParty((prev) =>
+                    prev === item.party ? null : prev,
+                  )
+                }
                 title={item.label}
               >
                 <div
-                  className={`manifesto-logo ${hasManifestoPledge || isHostile ? "" : "manifesto-logo-muted"}`}
+                  className={`manifesto-logo ${hasManifestoPledge || isHostile || isQuestionable || isPartialPledge ? "" : "manifesto-logo-muted"}`}
                   title={item.label}
                 >
                   {GetPartyLogo(item.party)}
@@ -426,10 +539,47 @@ function Candidates2026() {
                 {isHostile && (
                   <span className="manifesto-hostile-cross">✗</span>
                 )}
+                {isQuestionable && (
+                  <span className="manifesto-questionable-icons">
+                    <span className="manifesto-qmark manifesto-qmark-grey">
+                      ?
+                    </span>
+                    <span className="manifesto-cross-red">❌❌</span>
+                  </span>
+                )}
+                {isPartialPledge && (
+                  <span className="manifesto-partial-icons">
+                    ✅
+                    <span className="manifesto-qmark manifesto-qmark-green">
+                      ?+
+                    </span>
+                    ✅
+                  </span>
+                )}
+                {tooltipItems && (
+                  <div
+                    className={`manifesto-tooltip ${isTooltipActive ? "manifesto-tooltip-active" : ""}`}
+                  >
+                    <ul>
+                      {tooltipItems.map((text, i) => (
+                        <li key={i}>{text}</li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
               </div>
             );
           })}
         </div>
+        {activeTooltipParty && manifestoTooltips.has(activeTooltipParty) && (
+          <div className="manifesto-tooltip manifesto-tooltip-active manifesto-tooltip-standalone">
+            <ul>
+              {manifestoTooltips.get(activeTooltipParty)!.map((text, i) => (
+                <li key={i}>{text}</li>
+              ))}
+            </ul>
+          </div>
+        )}
       </div>
       <div className="party-pledge-tracker">
         <h3>

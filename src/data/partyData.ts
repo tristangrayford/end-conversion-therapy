@@ -29,7 +29,6 @@ export const PARTY_COLORS: Partial<Record<Party, string>> = {
   [Party.ScottishLibertarianParty]: "#F4C430",
   [Party.Independent]: "#AAAAAA",
   [Party.IndependentGreenVoice]: "#4CAF50",
-  [Party.ScottishWorkersPartyOfBritain]: "#D32F2F",
   [Party.IndependenceForScotlandParty]: "#0052A4",
   [Party.AnimalWelfareParty]: "#41924B",
   [Party.HeritageParty]: "#722F37",

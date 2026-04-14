@@ -3,6 +3,7 @@
   top: 0;
   width: 100%;
   height: 100%;
+  box-sizing: border-box;
 }
 
 body {
@@ -168,6 +169,7 @@ body {
 
 .manifesto-tracker {
   margin-bottom: 1.5rem;
+  position: relative;
 
   h3 {
     margin: 0 0 0.4rem 0;
@@ -190,13 +192,12 @@ body {
   }
 
   .manifesto-logo-grid-major .manifesto-logo-item {
-    flex: 1 1 0;
-    min-width: 0;
+    flex: 1 1 calc(30% - 0.8rem);
+    min-width: 4.5rem;
   }
 
   .manifesto-logo-grid-minor {
-    flex-wrap: nowrap;
-    overflow-x: auto;
+    flex-wrap: wrap;
     gap: 0.4rem;
   }
 
@@ -207,11 +208,64 @@ body {
     text-align: center;
     cursor: pointer;
     min-width: 6rem;
+    position: relative;
 
     p {
       margin: 0.4rem 0 0 0;
       font-size: 0.9rem;
     }
+  }
+
+  .manifesto-tooltip {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    background: #1a1a2e;
+    border: 1px solid #555;
+    border-radius: 0.4rem;
+    padding: 0.6rem 0.8rem;
+    text-align: left;
+    width: max-content;
+    max-width: 24rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    margin-top: 0.3rem;
+
+    ul {
+      margin: 0;
+      padding: 0 0 0 1.2rem;
+      list-style: disc;
+    }
+
+    li {
+      font-size: 0.8rem;
+      line-height: 1.4;
+      margin-bottom: 0.4rem;
+      color: #ddd;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .manifesto-has-tooltip:hover .manifesto-tooltip,
+  .manifesto-tooltip-active {
+    display: block;
+  }
+
+  .manifesto-tooltip-standalone {
+    position: absolute;
+    top: auto;
+    left: 0;
+    right: 0;
+    transform: none;
+    margin-top: 0.3rem;
+    max-width: 100%;
+    width: auto;
+    z-index: 20;
   }
 
   .manifesto-logo-item-pledged {
@@ -246,13 +300,58 @@ body {
     }
   }
 
+  .manifesto-logo-item-questionable {
+    border: 0.2rem solid #e74c3c;
+
+    p {
+      color: #e74c3c;
+    }
+
+    .manifesto-questionable-icons {
+      font-size: 1.5rem;
+      font-weight: bold;
+      line-height: 1;
+    }
+  }
+
+  .manifesto-logo-item-partial {
+    border: 0.2rem solid green;
+
+    .manifesto-partial-icons {
+      font-size: 1.5rem;
+      font-weight: bold;
+      line-height: 1;
+    }
+  }
+
+  .manifesto-qmark {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-right: 0.15rem;
+    display: inline;
+  }
+
+  .manifesto-qmark-grey {
+    color: #888;
+  }
+
+  .manifesto-qmark-green {
+    color: green;
+  }
+
+  .manifesto-cross-red {
+    font-size: 1.2rem;
+  }
+
   .manifesto-logo-grid-minor .manifesto-logo-item {
     padding: 0.2rem;
-    min-width: 0;
+    min-width: 2.5rem;
     flex: 1 1 0;
 
     p {
       font-size: 0.65rem;
+      overflow-wrap: normal;
+      word-break: normal;
     }
   }
 
@@ -347,6 +446,14 @@ body {
 .support-no {
   background-color: #ff6b6b;
   color: #2f0000;
+  padding: 0.4rem;
+  border-radius: 0.25rem;
+  font-weight: 600;
+}
+
+.support-caveats {
+  background-color: #ffa94d;
+  color: #3b1f00;
   padding: 0.4rem;
   border-radius: 0.25rem;
   font-weight: 600;

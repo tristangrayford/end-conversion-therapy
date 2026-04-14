@@ -24,6 +24,20 @@ import TUSC from "../assets/TUSC.png";
 import UKIP from "../assets/UKIP.png";
 import WEP from "../assets/WEP.jpg";
 import Reform from "../assets/Reform.png";
+import SSP from "../assets/SSP_logo.png";
+import AdvanceUKLogo from "../assets/AdvanceUK.svg";
+import TheLiberalPartyLogo from "../assets/TheLiberalParty.svg";
+import AnimalWelfare from "../assets/AnimalWelfare.png";
+import ATLS from "../assets/ATLS.png";
+import ChristianPartyLogo from "../assets/ChristianParty.svg";
+import HeritagePartyLogo from "../assets/HeritageParty.png";
+import ISP from "../assets/ISP.png";
+import WorkersPartyLogo from "../assets/WorkersParty.svg";
+import SocialistLabour from "../assets/SocialistLabour.png";
+import ADFLogo from "../assets/ADF.png";
+import ScottishCommonPartyLogo from "../assets/ScottishCommonParty.webp";
+import ScottishRuralPartyLogo from "../assets/ScottishRuralParty.jpg";
+import EDELLogo from "../assets/EDEL.jpg";
 
 export const GetPartyLogo = (party: Party): ReactElement => {
   switch (party) {
@@ -75,6 +89,34 @@ export const GetPartyLogo = (party: Party): ReactElement => {
       return <img src={WEP} />;
     case Party.Reform:
       return <img src={Reform} />;
+    case Party.ScottishSocialistParty:
+      return <img src={SSP} />;
+    case Party.AdvanceUK:
+      return <img src={AdvanceUKLogo} />;
+    case Party.TheLiberalParty:
+      return <img src={TheLiberalPartyLogo} />;
+    case Party.AnimalWelfareParty:
+      return <img src={AnimalWelfare} />;
+    case Party.AllianceToLiberateScotland:
+      return <img src={ATLS} />;
+    case Party.ChristianParty:
+      return <img src={ChristianPartyLogo} />;
+    case Party.HeritageParty:
+      return <img src={HeritagePartyLogo} />;
+    case Party.IndependenceForScotlandParty:
+      return <img src={ISP} />;
+    case Party.WorkersParty:
+      return <img src={WorkersPartyLogo} />;
+    case Party.SocialistLabourParty:
+      return <img src={SocialistLabour} />;
+    case Party.AllianceForDemocracyAndFreedom:
+      return <img src={ADFLogo} />;
+    case Party.ScottishCommonParty:
+      return <img src={ScottishCommonPartyLogo} />;
+    case Party.ScottishRuralParty:
+      return <img src={ScottishRuralPartyLogo} />;
+    case Party.EdinburghEastLothianPeople:
+      return <img src={EDELLogo} />;
     default:
       return <div></div>;
   }
