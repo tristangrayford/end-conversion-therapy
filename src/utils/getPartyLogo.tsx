@@ -21,7 +21,7 @@ import SNP from "../assets/SNP.svg";
 import Sovereignty from "../assets/Sovereignty.jpg";
 import Tories from "../assets/Tories.jpg";
 import TUSC from "../assets/TUSC.png";
-import UKIP from "../assets/UKIP.png";
+import UKIP from "../assets/Screenshot 2026-04-17 162036.png";
 import WEP from "../assets/WEP.jpg";
 import Reform from "../assets/Reform.png";
 import SSP from "../assets/SSP_logo.png";
@@ -38,6 +38,7 @@ import ADFLogo from "../assets/ADF.png";
 import ScottishCommonPartyLogo from "../assets/ScottishCommonParty.webp";
 import ScottishRuralPartyLogo from "../assets/ScottishRuralParty.jpg";
 import EDELLogo from "../assets/EDEL.jpg";
+import EqualityPartyLogo from "../assets/image.png";
 
 export const GetPartyLogo = (party: Party): ReactElement => {
   switch (party) {
@@ -117,6 +118,8 @@ export const GetPartyLogo = (party: Party): ReactElement => {
       return <img src={ScottishRuralPartyLogo} />;
     case Party.EdinburghEastLothianPeople:
       return <img src={EDELLogo} />;
+    case Party.EqualityParty:
+      return <img src={EqualityPartyLogo} />;
     default:
       return <div></div>;
   }

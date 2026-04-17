@@ -189,16 +189,25 @@ body {
 
   .manifesto-logo-grid-major {
     margin-bottom: 0.8rem;
+    align-items: stretch;
   }
 
   .manifesto-logo-grid-major .manifesto-logo-item {
     flex: 1 1 calc(30% - 0.8rem);
     min-width: 4.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    p {
+      flex-grow: 1;
+    }
   }
 
   .manifesto-logo-grid-minor {
     flex-wrap: wrap;
     gap: 0.4rem;
+    align-items: stretch;
   }
 
   .manifesto-logo-item {
@@ -218,18 +227,15 @@ body {
 
   .manifesto-tooltip {
     display: none;
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    transform: translateX(-50%);
+    position: fixed;
     z-index: 10;
     background: #1a1a2e;
     border: 1px solid #555;
     border-radius: 0.4rem;
     padding: 0.6rem 0.8rem;
     text-align: left;
-    width: max-content;
-    max-width: 24rem;
+    left: 2rem;
+    right: 2rem;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
     margin-top: 0.3rem;
 
@@ -257,14 +263,11 @@ body {
   }
 
   .manifesto-tooltip-standalone {
-    position: absolute;
-    top: auto;
-    left: 0;
-    right: 0;
+    position: fixed;
+    left: 2rem;
+    right: 2rem;
     transform: none;
     margin-top: 0.3rem;
-    max-width: 100%;
-    width: auto;
     z-index: 20;
   }
 
@@ -324,6 +327,24 @@ body {
     }
   }
 
+  .manifesto-logo-item-partial-questionable {
+    border: 0.2rem solid green;
+
+    .manifesto-partial-icons {
+      font-size: 1.5rem;
+      font-weight: bold;
+      line-height: 1;
+    }
+  }
+
+  .manifesto-logo-item-hostile-questionable {
+    border: 0.2rem solid #e74c3c;
+
+    p {
+      color: #e74c3c;
+    }
+  }
+
   .manifesto-qmark {
     font-size: 1.5rem;
     font-weight: bold;
@@ -333,25 +354,53 @@ body {
 
   .manifesto-qmark-grey {
     color: #888;
+    line-height: 12px;
   }
 
   .manifesto-qmark-green {
     color: green;
   }
 
+  .manifesto-qmark-red {
+    color: #e74c3c;
+  }
+
+  .manifesto-minus {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: green;
+    margin-left: -0.3rem;
+    margin-right: 0.15rem;
+    display: inline;
+  }
+
   .manifesto-cross-red {
     font-size: 1.2rem;
+    position: relative;
+    top: -1px;
   }
 
   .manifesto-logo-grid-minor .manifesto-logo-item {
     padding: 0.2rem;
-    min-width: 2.5rem;
+    padding-bottom: 1rem;
+    min-width: 3rem;
     flex: 1 1 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
     p {
       font-size: 0.65rem;
       overflow-wrap: normal;
       word-break: normal;
+      flex-grow: 1;
+    }
+
+    .manifesto-hostile-cross,
+    .manifesto-questionable-icons,
+    .manifesto-partial-icons,
+    .manifesto-qmark {
+      line-height: 0.5rem;
     }
   }
 
@@ -480,6 +529,11 @@ body {
 .email-button:hover {
   color: #998aff;
   border-color: #998aff;
+}
+
+.statement-cell {
+  max-height: 10rem;
+  overflow-y: auto;
 }
 
 .nowrap-cell {

@@ -1,6 +1,5 @@
 import {
   createColumnHelper,
-  flexRender,
   getCoreRowModel,
   useReactTable,
   type TableOptions,
@@ -9,17 +8,29 @@ import { useMemo, useState } from "react";
 import { Constituency, Region, Support, type Candidate } from "../data/Types26";
 import { Party } from "../data/Party";
 import {
-  PARTY_COLORS,
-  getPartyLabel,
-  getPartyFullLabel,
-} from "../data/partyData";
-import {
   EMAIL_BODY_26,
   EMAIL_SUBJECT_26,
 } from "../data/CandidateEmailTemplate26";
 import { CamelCaseToSentence } from "../utils/camelCaseToSentence";
 import { FullCandidateData26 } from "../data/Candidates2026";
 import { GetPartyLogo } from "../utils/getPartyLogo";
+import {
+  makeGetConstituencyKey,
+  makeGetConstituencyLabel,
+  computeUniqueNames,
+  computePartyFilterOptions,
+  computeRegionOptions,
+  computeConstituencyFilterOptions,
+  computePartiesInData,
+  computePartyPledgeStats,
+  computePartyPledgeRank,
+  filterAndSortCandidates,
+} from "../utils/candidateUtils";
+import { CandidateFilterControls } from "../components/candidates/CandidateFilterControls";
+import { PartyPledgeTracker } from "../components/candidates/PartyPledgeTracker";
+import { CandidatesTable } from "../components/candidates/CandidatesTable";
+import { ManifestoTracker26 } from "../components/candidates/ManifestoTracker26";
+import { renderSupportCell } from "../components/candidates/SupportCell";
 
 const EMAIL_SUBJECT_PARAM_26 = encodeURIComponent(EMAIL_SUBJECT_26);
 const EMAIL_BODY_PARAM_26 = encodeURIComponent(EMAIL_BODY_26).replace(
@@ -27,38 +38,12 @@ const EMAIL_BODY_PARAM_26 = encodeURIComponent(EMAIL_BODY_26).replace(
   "%0D%0A",
 );
 
-const getConstituencyKey = (candidate: Candidate): string => {
-  if (candidate.Constituency !== undefined) {
-    if (typeof candidate.Constituency === "number") {
-      return `constituency:${Constituency[candidate.Constituency] ?? ""}`;
-    }
-
-    return `constituency:${String(candidate.Constituency)}`;
-  }
-
-  if (candidate.Region !== undefined) {
-    return `region:${Region[candidate.Region] ?? ""}`;
-  }
-
-  return "";
-};
-
-const getConstituencyLabel = (candidate: Candidate): string => {
-  if (candidate.Constituency !== undefined) {
-    const constituencyLabel =
-      typeof candidate.Constituency === "number"
-        ? Constituency[candidate.Constituency]
-        : String(candidate.Constituency);
-
-    return CamelCaseToSentence(constituencyLabel);
-  }
-
-  if (candidate.Region !== undefined) {
-    return CamelCaseToSentence(Region[candidate.Region]);
-  }
-
-  return "Not published";
-};
+const getConstituencyKey = makeGetConstituencyKey(Constituency, Region);
+const getConstituencyLabel = makeGetConstituencyLabel(
+  Constituency,
+  Region,
+  "Not published",
+);
 
 function Candidates2026() {
   const [nameFilter, setNameFilter] = useState("");
@@ -72,224 +57,64 @@ function Candidates2026() {
     setConstituencyFilter("");
     setPartyFilter((prev) => (prev === party ? "" : party));
   };
-  // Memoize enum keys and candidate names to avoid recalculation on every render
   const uniqueNames = useMemo(
-    () => Array.from(new Set(FullCandidateData26.map((c) => c.Name))).sort(),
+    () => computeUniqueNames(FullCandidateData26),
     [],
   );
 
-  const partyFilterOptions = useMemo(() => {
-    const counts = new Map<number, number>();
-
-    for (const candidate of FullCandidateData26) {
-      counts.set(candidate.Party, (counts.get(candidate.Party) ?? 0) + 1);
-    }
-
-    return Array.from(counts.entries())
-      .map(([party, total]) => ({
-        party,
-        total,
-        label: getPartyFullLabel(party),
-      }))
-      .sort((a, b) => {
-        if (b.total !== a.total) {
-          return b.total - a.total;
-        }
-
-        return a.label.localeCompare(b.label);
-      });
-  }, []);
-
-  const regionKeys = useMemo(
-    () => Object.keys(Region).filter((key) => isNaN(Number(key))),
+  const partyFilterOptions = useMemo(
+    () => computePartyFilterOptions(FullCandidateData26),
     [],
   );
 
-  const constituencyFilterOptions = useMemo(() => {
-    return Array.from(
-      new Set(
-        FullCandidateData26.map((candidate) =>
-          getConstituencyKey(candidate),
-        ).filter((key) => key !== ""),
-      ),
-    )
-      .map((key) => ({
-        key,
-        label: CamelCaseToSentence(key.replace(/^constituency:|^region:/, "")),
-      }))
-      .sort((a, b) => a.label.localeCompare(b.label));
-  }, []);
+  const regionOptions = useMemo(() => computeRegionOptions(Region), []);
 
-  const partiesInData = useMemo(() => {
-    const counts = new Map<number, number>();
-    for (const candidate of FullCandidateData26) {
-      counts.set(candidate.Party, (counts.get(candidate.Party) ?? 0) + 1);
-    }
-    return Array.from(counts.entries())
-      .filter(([party]) => party !== Party.Independent)
-      .map(([party, total]) => ({
-        party,
-        label: CamelCaseToSentence(Party[party]),
-        total,
-      }))
-      .sort((a, b) => {
-        if (b.total !== a.total) return b.total - a.total;
-        return a.label.localeCompare(b.label);
-      });
-  }, []);
-
-  // Add party enum values here as manifesto pledges are confirmed.
-  const inclusiveBanManifestoParties = useMemo(() => new Set<Party>(), []);
-
-  const hostileManifestoParties = useMemo(
-    () => new Set<Party>([Party.ScottishFamilyParty]),
-    [],
-  );
-
-  const questionableManifestoParties = useMemo(
-    () => new Set<Party>([Party.ScottishLabourParty]),
-    [],
-  );
-
-  const partialPledgeManifestoParties = useMemo(
-    () => new Set<Party>([Party.ScottishGreenParty]),
-    [],
-  );
-
-  const manifestoTooltips = useMemo(
+  const constituencyFilterOptions = useMemo(
     () =>
-      new Map<Party, string[]>([
-        [
-          Party.ScottishGreenParty,
-          [
-            "Calls for a comprehensive ban on conversion therapy covering all settings, such as religious, informal, community, family-based and therapeutic, with clear protections for affirming healthcare, and inclusive of trans, non-binary, and asexual identities. This ban will be backed by appropriate criminal and civil penalties, and a statutory right of survivors to support and advocacy.",
-            "Calls on the UK Government to remove its block on much-needed Gender Recognition legislation and update it with international best practice HOWEVER lack of mention of trans inclusion in areas of everyday life such as workplaces and sport.",
-            "Significant manifesto commitments to unlocking and improving provision of trans healthcare.",
-          ],
-        ],
-        [
-          Party.ScottishLabourParty,
-          [
-            "Only backs a conversion practices ban from Westminster, not from the Scottish Parliament.",
-            'Actively hostile to LGBTQ+ lives in society, proposing deeply segregationist policy that would drive trans people out of public life everywhere from "the NHS, schools, sport, and everyday life".',
-            "No mention at all of trans healthcare in the manifesto but proposing segregating trans people in the NHS. Ban on trans healthcare provision advanced by the UK Labour Government.",
-          ],
-        ],
-        [
-          Party.ScottishFamilyParty,
-          [
-            "Would ban gender transition and institute conversion practices through the NHS.",
-            "Would ban inclusive education in schools and any gender non-conforming expression.",
-          ],
-        ],
-      ]),
+      computeConstituencyFilterOptions(FullCandidateData26, getConstituencyKey),
     [],
   );
 
-  const [activeTooltipParty, setActiveTooltipParty] = useState<Party | null>(
-    null,
+  const partiesInData = useMemo(
+    () => computePartiesInData(FullCandidateData26),
+    [],
   );
 
-  const partyPledgeStats = useMemo(() => {
-    const stats = new Map<number, { total: number; pledged: number }>();
+  const partyPledgeStats = useMemo(
+    () =>
+      computePartyPledgeStats(
+        FullCandidateData26,
+        (c) =>
+          c.SupportBan === Support.Yes &&
+          c.SupportLife === Support.Yes &&
+          c.SupportHealthcare === Support.Yes,
+      ),
+    [],
+  );
 
-    for (const candidate of FullCandidateData26) {
-      const current = stats.get(candidate.Party) ?? { total: 0, pledged: 0 };
-      current.total += 1;
-
-      const isPledged =
-        candidate.SupportBan === Support.Yes &&
-        candidate.SupportLife === Support.Yes &&
-        candidate.SupportHealthcare === Support.Yes;
-
-      if (isPledged) {
-        current.pledged += 1;
-      }
-
-      stats.set(candidate.Party, current);
-    }
-
-    return Array.from(stats.entries())
-      .map(([party, counts]) => ({
-        party,
-        label: getPartyLabel(party),
-        total: counts.total,
-        pledged: counts.pledged,
-        proportion: counts.total === 0 ? 0 : counts.pledged / counts.total,
-      }))
-      .sort((a, b) => {
-        const aHasPledges = a.pledged > 0 ? 1 : 0;
-        const bHasPledges = b.pledged > 0 ? 1 : 0;
-        if (bHasPledges !== aHasPledges) {
-          return bHasPledges - aHasPledges;
-        }
-
-        if (b.total !== a.total) {
-          return b.total - a.total;
-        }
-
-        if (b.proportion !== a.proportion) {
-          return b.proportion - a.proportion;
-        }
-
-        if (b.pledged !== a.pledged) {
-          return b.pledged - a.pledged;
-        }
-
-        return a.label.localeCompare(b.label);
-      });
-  }, []);
-
-  const partyPledgeRank = useMemo(() => {
-    const rank = new Map<number, number>();
-    partyPledgeStats.forEach((item, index) => rank.set(item.party, index));
-    return rank;
-  }, [partyPledgeStats]);
+  const partyPledgeRank = useMemo(
+    () => computePartyPledgeRank(partyPledgeStats),
+    [partyPledgeStats],
+  );
 
   const filteredData = useMemo(
     () =>
-      FullCandidateData26.filter((candidate) => {
-        const nameMatch = candidate.Name.toLowerCase().includes(
-          nameFilter.toLowerCase(),
-        );
-        const partyMatch =
-          partyFilter === "" || candidate.Party === partyFilter;
-        const regionMatch =
-          regionFilter === "" ||
-          (candidate.Region !== undefined && candidate.Region === regionFilter);
-        const candidateConstituencyKey = getConstituencyKey(candidate);
-        const constituencyMatch =
-          constituencyFilter === "" ||
-          candidateConstituencyKey === constituencyFilter;
-
-        const supportMatch =
-          !supportFilter ||
-          candidate.SupportBan === Support.Yes ||
-          candidate.SupportLife === Support.Yes ||
-          candidate.SupportHealthcare === Support.Yes;
-
-        return (
-          nameMatch &&
-          partyMatch &&
-          regionMatch &&
-          constituencyMatch &&
-          supportMatch
-        );
-      }).sort((a, b) => {
-        const aRank = partyPledgeRank.get(a.Party) ?? Infinity;
-        const bRank = partyPledgeRank.get(b.Party) ?? Infinity;
-        if (aRank !== bRank) {
-          return aRank - bRank;
-        }
-        if (
-          a.Region !== undefined &&
-          b.Region !== undefined &&
-          a.Region === b.Region
-        ) {
-          return (a.RegionRank ?? Infinity) - (b.RegionRank ?? Infinity);
-        }
-        return 0;
-      }),
+      filterAndSortCandidates(
+        FullCandidateData26,
+        {
+          nameFilter,
+          partyFilter,
+          regionFilter,
+          constituencyFilter,
+          supportFilter,
+        },
+        getConstituencyKey,
+        (c) =>
+          c.SupportBan === Support.Yes ||
+          c.SupportLife === Support.Yes ||
+          c.SupportHealthcare === Support.Yes,
+        partyPledgeRank,
+      ),
     [
       nameFilter,
       partyFilter,
@@ -342,51 +167,36 @@ function Candidates2026() {
     }),
     columnHelper.accessor("SupportBan", {
       header: () => "Supports a Ban",
-      cell: (info) => {
-        const supportValue = info.getValue();
-        const supportLabel = CamelCaseToSentence(Support[supportValue]);
-        const supportClass =
-          supportValue === Support.Yes
-            ? "support-yes"
-            : supportValue === Support.YesWithCaveats
-              ? "support-caveats"
-              : supportValue === Support.No
-                ? "support-no"
-                : "support-neutral";
-        return <span className={supportClass}>{supportLabel}</span>;
-      },
+      cell: (info) =>
+        renderSupportCell(
+          info.getValue(),
+          Support,
+          Support.Yes,
+          Support.YesWithCaveats,
+          Support.No,
+        ),
     }),
     columnHelper.accessor("SupportLife", {
       header: () => "Supports an Inclusive Society",
-      cell: (info) => {
-        const supportValue = info.getValue();
-        const supportLabel = CamelCaseToSentence(Support[supportValue]);
-        const supportClass =
-          supportValue === Support.Yes
-            ? "support-yes"
-            : supportValue === Support.YesWithCaveats
-              ? "support-caveats"
-              : supportValue === Support.No
-                ? "support-no"
-                : "support-neutral";
-        return <span className={supportClass}>{supportLabel}</span>;
-      },
+      cell: (info) =>
+        renderSupportCell(
+          info.getValue(),
+          Support,
+          Support.Yes,
+          Support.YesWithCaveats,
+          Support.No,
+        ),
     }),
     columnHelper.accessor("SupportHealthcare", {
       header: () => "Supports Trans Healthcare",
-      cell: (info) => {
-        const supportValue = info.getValue();
-        const supportLabel = CamelCaseToSentence(Support[supportValue]);
-        const supportClass =
-          supportValue === Support.Yes
-            ? "support-yes"
-            : supportValue === Support.YesWithCaveats
-              ? "support-caveats"
-              : supportValue === Support.No
-                ? "support-no"
-                : "support-neutral";
-        return <span className={supportClass}>{supportLabel}</span>;
-      },
+      cell: (info) =>
+        renderSupportCell(
+          info.getValue(),
+          Support,
+          Support.Yes,
+          Support.YesWithCaveats,
+          Support.No,
+        ),
     }),
     columnHelper.accessor("Region", {
       header: () => "Region",
@@ -413,7 +223,7 @@ function Candidates2026() {
     }),
     columnHelper.accessor("Statement", {
       header: () => "Statement",
-      cell: (info) => info.getValue(),
+      cell: (info) => <div className="statement-cell">{info.getValue()}</div>,
     }),
   ];
   const options: TableOptions<Candidate> = {
@@ -425,329 +235,36 @@ function Candidates2026() {
   return (
     <div className="page-content">
       <h2>Candidates 2026</h2>
-      <div className="manifesto-tracker">
-        <h3>Inclusive Ban In Manifesto</h3>
-        <div className="manifesto-logo-grid manifesto-logo-grid-major">
-          {partiesInData.slice(0, 6).map((item) => {
-            const hasManifestoPledge = inclusiveBanManifestoParties.has(
-              item.party,
-            );
-            const isHostile = hostileManifestoParties.has(item.party);
-            const isQuestionable = questionableManifestoParties.has(item.party);
-            const isPartialPledge = partialPledgeManifestoParties.has(
-              item.party,
-            );
-            const tooltipItems = manifestoTooltips.get(item.party);
-            const isTooltipActive = activeTooltipParty === item.party;
-            return (
-              <div
-                key={item.party}
-                className={`manifesto-logo-item manifesto-logo-item-major ${hasManifestoPledge ? "manifesto-logo-item-pledged" : ""} ${isHostile ? "manifesto-logo-item-hostile" : ""} ${isQuestionable ? "manifesto-logo-item-questionable" : ""} ${isPartialPledge ? "manifesto-logo-item-partial" : ""} ${tooltipItems ? "manifesto-has-tooltip" : ""}`}
-                onClick={() => {
-                  if (tooltipItems) {
-                    setActiveTooltipParty(isTooltipActive ? null : item.party);
-                  } else {
-                    setActiveTooltipParty(null);
-                    filterByParty(item.party);
-                  }
-                }}
-              >
-                <div
-                  className={`manifesto-logo ${hasManifestoPledge || isHostile || isQuestionable || isPartialPledge ? "" : "manifesto-logo-muted"}`}
-                  title={item.label}
-                >
-                  {GetPartyLogo(item.party)}
-                </div>
-                <p>{item.label}</p>
-                {isHostile && (
-                  <span className="manifesto-hostile-cross">✗</span>
-                )}
-                {isQuestionable && (
-                  <span className="manifesto-questionable-icons">
-                    <span className="manifesto-qmark manifesto-qmark-grey">
-                      ?
-                    </span>
-                    <span className="manifesto-cross-red">❌❌</span>
-                  </span>
-                )}
-                {isPartialPledge && (
-                  <span className="manifesto-partial-icons">
-                    ✅
-                    <span className="manifesto-qmark manifesto-qmark-green">
-                      ?+
-                    </span>
-                    ✅
-                  </span>
-                )}
-                {tooltipItems && (
-                  <div
-                    className={`manifesto-tooltip ${isTooltipActive ? "manifesto-tooltip-active" : ""}`}
-                  >
-                    <ul>
-                      {tooltipItems.map((text, i) => (
-                        <li key={i}>{text}</li>
-                      ))}
-                    </ul>
-                  </div>
-                )}
-              </div>
-            );
-          })}
-        </div>
-        <div className="manifesto-logo-grid manifesto-logo-grid-minor">
-          {partiesInData.slice(6).map((item) => {
-            const hasManifestoPledge = inclusiveBanManifestoParties.has(
-              item.party,
-            );
-            const isHostile = hostileManifestoParties.has(item.party);
-            const isQuestionable = questionableManifestoParties.has(item.party);
-            const isPartialPledge = partialPledgeManifestoParties.has(
-              item.party,
-            );
-            const tooltipItems = manifestoTooltips.get(item.party);
-            const isTooltipActive = activeTooltipParty === item.party;
-            return (
-              <div
-                key={item.party}
-                className={`manifesto-logo-item ${hasManifestoPledge ? "manifesto-logo-item-pledged" : ""} ${isHostile ? "manifesto-logo-item-hostile" : ""} ${isQuestionable ? "manifesto-logo-item-questionable" : ""} ${isPartialPledge ? "manifesto-logo-item-partial" : ""} ${tooltipItems ? "manifesto-has-tooltip" : ""}`}
-                onClick={() => {
-                  if (tooltipItems) {
-                    setActiveTooltipParty(isTooltipActive ? null : item.party);
-                  } else {
-                    setActiveTooltipParty(null);
-                    filterByParty(item.party);
-                  }
-                }}
-                onMouseEnter={() =>
-                  tooltipItems && setActiveTooltipParty(item.party)
-                }
-                onMouseLeave={() =>
-                  tooltipItems &&
-                  setActiveTooltipParty((prev) =>
-                    prev === item.party ? null : prev,
-                  )
-                }
-                title={item.label}
-              >
-                <div
-                  className={`manifesto-logo ${hasManifestoPledge || isHostile || isQuestionable || isPartialPledge ? "" : "manifesto-logo-muted"}`}
-                  title={item.label}
-                >
-                  {GetPartyLogo(item.party)}
-                </div>
-                <p>{getPartyLabel(item.party)}</p>
-                {isHostile && (
-                  <span className="manifesto-hostile-cross">✗</span>
-                )}
-                {isQuestionable && (
-                  <span className="manifesto-questionable-icons">
-                    <span className="manifesto-qmark manifesto-qmark-grey">
-                      ?
-                    </span>
-                    <span className="manifesto-cross-red">❌❌</span>
-                  </span>
-                )}
-                {isPartialPledge && (
-                  <span className="manifesto-partial-icons">
-                    ✅
-                    <span className="manifesto-qmark manifesto-qmark-green">
-                      ?+
-                    </span>
-                    ✅
-                  </span>
-                )}
-                {tooltipItems && (
-                  <div
-                    className={`manifesto-tooltip ${isTooltipActive ? "manifesto-tooltip-active" : ""}`}
-                  >
-                    <ul>
-                      {tooltipItems.map((text, i) => (
-                        <li key={i}>{text}</li>
-                      ))}
-                    </ul>
-                  </div>
-                )}
-              </div>
-            );
-          })}
-        </div>
-        {activeTooltipParty && manifestoTooltips.has(activeTooltipParty) && (
-          <div className="manifesto-tooltip manifesto-tooltip-active manifesto-tooltip-standalone">
-            <ul>
-              {manifestoTooltips.get(activeTooltipParty)!.map((text, i) => (
-                <li key={i}>{text}</li>
-              ))}
-            </ul>
-          </div>
-        )}
-      </div>
-      <div className="party-pledge-tracker">
-        <h3>
-          Party Pledge Tracker (
-          {partyPledgeStats.reduce((sum, item) => sum + item.pledged, 0)}{" "}
-          pledged)
-        </h3>
-        <div className="party-pledge-grid">
-          {partyPledgeStats.map((item) => (
-            <div
-              key={item.party}
-              className="party-pledge-item"
-              style={{
-                borderColor: PARTY_COLORS[item.party as Party] ?? "#555",
-              }}
-              onClick={() => filterByParty(item.party)}
-            >
-              <p className="party-pledge-name" title={item.label}>
-                {item.label}
-              </p>
-              <p
-                className="party-pledge-count"
-                style={item.pledged === 0 ? { color: "#e74c3c" } : undefined}
-              >
-                {item.pledged}/{item.total} pledged
-              </p>
-            </div>
-          ))}
-        </div>
-      </div>
-      <div className="filter-controls">
-        <div className="filter-input">
-          <button
-            className={supportFilter ? "support" : "no-support"}
-            onClick={() => setSupportFilter((prev) => !prev)}
-          >
-            Supported Us
-          </button>
-        </div>
-        <div className="filter-input">
-          <label htmlFor="nameInput">Name:</label>
-          <input
-            id="nameInput"
-            type="text"
-            placeholder="Search candidate..."
-            value={nameFilter}
-            onFocus={() => {
-              if (nameFilter && uniqueNames.includes(nameFilter)) {
-                setNameFilter("");
-              }
-            }}
-            onChange={(e) => {
-              setNameFilter(e.target.value);
-              setPartyFilter("");
-              setRegionFilter("");
-              setConstituencyFilter("");
-            }}
-            list="candidateNames"
-          />
-          <datalist id="candidateNames">
-            {uniqueNames.map((name) => (
-              <option key={name} value={name} />
-            ))}
-          </datalist>
-        </div>
-        <div className="filter-input">
-          <label htmlFor="partySelect">Party:</label>
-          <select
-            id="partySelect"
-            value={partyFilter}
-            onChange={(e) => {
-              setNameFilter("");
-              setConstituencyFilter("");
-              setPartyFilter(
-                e.target.value === "" ? "" : Number(e.target.value),
-              );
-            }}
-          >
-            <option value="">All Parties</option>
-            {partyFilterOptions.map((option) => {
-              return (
-                <option key={option.party} value={option.party}>
-                  {option.label}
-                </option>
-              );
-            })}
-          </select>
-        </div>
-        <div className="filter-input">
-          <label htmlFor="regionSelect">Region:</label>
-          <select
-            id="regionSelect"
-            value={regionFilter}
-            onChange={(e) => {
-              setNameFilter("");
-              setConstituencyFilter("");
-              setRegionFilter(
-                e.target.value === "" ? "" : Number(e.target.value),
-              );
-            }}
-          >
-            <option value="">All Regions</option>
-            {regionKeys.map((key) => {
-              const regionIndex = Region[key as keyof typeof Region];
-              return (
-                <option key={regionIndex} value={regionIndex}>
-                  {CamelCaseToSentence(key)}
-                </option>
-              );
-            })}
-          </select>
-        </div>
-        <div className="filter-input">
-          <label htmlFor="constituencySelect">Constituency:</label>
-          <select
-            id="constituencySelect"
-            value={constituencyFilter}
-            onChange={(e) => {
-              setNameFilter("");
-              setPartyFilter("");
-              setRegionFilter("");
-              setConstituencyFilter(e.target.value);
-            }}
-          >
-            <option value="">All Constituencies</option>
-            {constituencyFilterOptions.map((option) => {
-              return (
-                <option key={option.key} value={option.key}>
-                  {option.label}
-                </option>
-              );
-            })}
-          </select>
-        </div>
-      </div>
-      <table className="candidates-table">
-        <thead>
-          {table.getHeaderGroups().map((headerGroup) => (
-            <tr key={headerGroup.id}>
-              {headerGroup.headers.map((header) => (
-                <th key={header.id}>
-                  {flexRender(
-                    header.column.columnDef.header,
-                    header.getContext(),
-                  )}
-                </th>
-              ))}
-            </tr>
-          ))}
-        </thead>
-        <tbody>
-          {table.getRowModel().rows.length === 0 ? (
-            <tr>
-              <td colSpan={columns.length}>No candidate data available yet.</td>
-            </tr>
-          ) : (
-            table.getRowModel().rows.map((row) => (
-              <tr key={row.id}>
-                {row.getVisibleCells().map((cell) => (
-                  <td key={cell.id}>
-                    {flexRender(cell.column.columnDef.cell, cell.getContext())}
-                  </td>
-                ))}
-              </tr>
-            ))
-          )}
-        </tbody>
-      </table>
+      <ManifestoTracker26
+        partiesInData={partiesInData}
+        onPartyClick={filterByParty}
+      />
+      <PartyPledgeTracker
+        stats={partyPledgeStats}
+        onPartyClick={filterByParty}
+      />
+      <CandidateFilterControls
+        idPrefix=""
+        nameFilter={nameFilter}
+        setNameFilter={setNameFilter}
+        partyFilter={partyFilter}
+        setPartyFilter={setPartyFilter}
+        regionFilter={regionFilter}
+        setRegionFilter={setRegionFilter}
+        constituencyFilter={constituencyFilter}
+        setConstituencyFilter={setConstituencyFilter}
+        supportFilter={supportFilter}
+        setSupportFilter={setSupportFilter}
+        uniqueNames={uniqueNames}
+        partyOptions={partyFilterOptions}
+        regionOptions={regionOptions}
+        constituencyOptions={constituencyFilterOptions}
+      />
+      <CandidatesTable
+        table={table}
+        columnCount={columns.length}
+        emptyMessage="No candidate data available yet."
+      />
     </div>
   );
 }

@@ -8,9 +8,11 @@ export const PARTY_SHORT_NAMES: Partial<Record<Party, string>> = {
   [Party.ScottishConservativeParty]: "Conservatives",
   [Party.ScottishLabourParty]: "Labour",
   [Party.UkIndependenceParty]: "UKIP",
-  [Party.IndependenceForScotlandParty]: "IFSP",
+  [Party.IndependenceForScotlandParty]: "ISP",
   [Party.TradeUnionistAndSocialistCoalition]: "TUSC",
   [Party.IndependentGreenVoice]: "IGV",
+  [Party.AdvanceUK]: "Advance UK",
+  [Party.EdinburghEastLothianPeople]: "Edinburgh & East Lothian People",
 };
 
 export const PARTY_COLORS: Partial<Record<Party, string>> = {
