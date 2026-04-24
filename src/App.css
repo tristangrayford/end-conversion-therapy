@@ -9,10 +9,11 @@
 body {
   color: #121212;
   background-color: white;
-  place-items: start;
 
   .page-content {
     max-width: 1500px;
+    width: 100%;
+    box-sizing: border-box;
     padding: 2rem;
   }
 }
@@ -227,17 +228,19 @@ body {
 
   .manifesto-tooltip {
     display: none;
-    position: fixed;
     z-index: 10;
     background: #1a1a2e;
     border: 1px solid #555;
     border-radius: 0.4rem;
     padding: 0.6rem 0.8rem;
     text-align: left;
-    left: 2rem;
-    right: 2rem;
+    width: 100%;
+    max-width: 500px;
+    box-sizing: border-box;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-    margin-top: 0.3rem;
+    margin-top: 0.5rem;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 
     ul {
       margin: 0;
@@ -257,19 +260,11 @@ body {
     }
   }
 
-  .manifesto-has-tooltip:hover .manifesto-tooltip,
   .manifesto-tooltip-active {
     display: block;
   }
 
-  .manifesto-tooltip-standalone {
-    position: fixed;
-    left: 2rem;
-    right: 2rem;
-    transform: none;
-    margin-top: 0.3rem;
-    z-index: 20;
-  }
+
 
   .manifesto-logo-item-pledged {
     border: 0.2rem solid green;
@@ -598,6 +593,10 @@ body {
 }
 
 @media (max-width: 500px) {
+  #root {
+    padding: 0.5rem;
+  }
+
   body {
     .page-content {
       padding: 0rem;

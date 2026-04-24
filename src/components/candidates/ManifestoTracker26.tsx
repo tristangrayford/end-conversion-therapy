@@ -1,4 +1,4 @@
-import { useState, useMemo } from "react";
+import { useState, useMemo, useRef, useCallback } from "react";
 import { Party } from "../../data/Party";
 import { getPartyLabel } from "../../data/partyData";
 import { GetPartyLogo } from "../../utils/getPartyLogo";
@@ -332,12 +332,48 @@ export function ManifestoTracker26({
   const [activeTooltipParty, setActiveTooltipParty] = useState<Party | null>(
     null,
   );
+  const hideTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const showTooltip = useCallback((party: Party) => {
+    if (hideTimeout.current) {
+      clearTimeout(hideTimeout.current);
+      hideTimeout.current = null;
+    }
+    setActiveTooltipParty(party);
+  }, []);
+
+  const scheduleHide = useCallback((party: Party) => {
+    hideTimeout.current = setTimeout(() => {
+      setActiveTooltipParty((prev) => (prev === party ? null : prev));
+    }, 150);
+  }, []);
 
   const majorParties = useMemo(
     () => partiesInData.slice(0, 6),
     [partiesInData],
   );
   const minorParties = useMemo(() => partiesInData.slice(6), [partiesInData]);
+
+  const majorPartySet = useMemo(() => new Set(majorParties.map(p => p.party)), [majorParties]);
+
+  const renderTooltip = (parties: Set<Party>) => {
+    if (!activeTooltipParty || !parties.has(activeTooltipParty) || !MANIFESTO_TOOLTIPS.has(activeTooltipParty)) return null;
+    return (
+      <div
+        className="manifesto-tooltip manifesto-tooltip-active"
+        onMouseEnter={() => showTooltip(activeTooltipParty)}
+        onMouseLeave={() => scheduleHide(activeTooltipParty)}
+      >
+        <ul>
+          {MANIFESTO_TOOLTIPS.get(activeTooltipParty)!.map((text, i) => (
+            <li key={i}>{text}</li>
+          ))}
+        </ul>
+      </div>
+    );
+  };
+
+  const minorPartySet = useMemo(() => new Set(minorParties.map(p => p.party)), [minorParties]);
 
   return (
     <div className="manifesto-tracker">
@@ -359,6 +395,8 @@ export function ManifestoTracker26({
                   onPartyClick(item.party);
                 }
               }}
+              onMouseEnter={() => tooltipItems && showTooltip(item.party)}
+              onMouseLeave={() => tooltipItems && scheduleHide(item.party)}
             >
               <div
                 className={`manifesto-logo ${c.hasClassification ? "" : "manifesto-logo-muted"}`}
@@ -368,21 +406,11 @@ export function ManifestoTracker26({
               </div>
               <p>{item.label}</p>
               <ManifestoStatusIcons {...c} />
-              {tooltipItems && (
-                <div
-                  className={`manifesto-tooltip ${isTooltipActive ? "manifesto-tooltip-active" : ""}`}
-                >
-                  <ul>
-                    {tooltipItems.map((text, i) => (
-                      <li key={i}>{text}</li>
-                    ))}
-                  </ul>
-                </div>
-              )}
             </div>
           );
         })}
       </div>
+      {renderTooltip(majorPartySet)}
       <div className="manifesto-logo-grid manifesto-logo-grid-minor">
         {minorParties.map((item) => {
           const c = getItemClassifications(item.party);
@@ -400,15 +428,8 @@ export function ManifestoTracker26({
                   onPartyClick(item.party);
                 }
               }}
-              onMouseEnter={() =>
-                tooltipItems && setActiveTooltipParty(item.party)
-              }
-              onMouseLeave={() =>
-                tooltipItems &&
-                setActiveTooltipParty((prev) =>
-                  prev === item.party ? null : prev,
-                )
-              }
+              onMouseEnter={() => tooltipItems && showTooltip(item.party)}
+              onMouseLeave={() => tooltipItems && scheduleHide(item.party)}
               title={item.label}
             >
               <div
@@ -423,15 +444,7 @@ export function ManifestoTracker26({
           );
         })}
       </div>
-      {activeTooltipParty && MANIFESTO_TOOLTIPS.has(activeTooltipParty) && (
-        <div className="manifesto-tooltip manifesto-tooltip-active manifesto-tooltip-standalone">
-          <ul>
-            {MANIFESTO_TOOLTIPS.get(activeTooltipParty)!.map((text, i) => (
-              <li key={i}>{text}</li>
-            ))}
-          </ul>
-        </div>
-      )}
+      {renderTooltip(minorPartySet)}
     </div>
   );
 }
