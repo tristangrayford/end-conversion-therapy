@@ -3560,9 +3560,9 @@ export const FullCandidateData26: Candidate[] = [
     Constituency: Constituency.None,
     Region: Region.West,
     RegionRank: 6,
-    SupportBan: Support.NoReply,
-    SupportLife: Support.NoReply,
-    SupportHealthcare: Support.NoReply,
+    SupportBan: Support.Yes,
+    SupportLife: Support.Yes,
+    SupportHealthcare: Support.Yes,
     Statement: "",
   },
   {
